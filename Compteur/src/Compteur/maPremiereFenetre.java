@@ -68,7 +68,7 @@ public class maPremiereFenetre extends JFrame implements ActionListener{
 		//Menu 
 		JMenuBar barreMenu = new JMenuBar();
 		
-		//Fichier mais sans la possibilité de quitter
+		//Fichier 
 		menu = new JMenu("Fichier");
 		menu.setMnemonic(KeyEvent.VK_M);
 		jmi = new JMenuItem("Quitter");
