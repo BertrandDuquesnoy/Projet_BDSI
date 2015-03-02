@@ -7,61 +7,59 @@
 <link type="text/css" rel="stylesheet" href="CSS/style.css" />
 </head>
 	<body>
-	<!-- <div id="bandeau">
-		<a href="http://www.telecomnancy.eu/" id="logoTN" class="logo-img"><img src="images/logoTN.png" alt= "Logo TELECOM Nancy" width="180" height="100"/></a>
-		<h1 class="titre_page" style="position:absolute; top: 2%; left:33%">RELATIONS INTERNATIONALES</h1>
-		<p id="connexion">
-			Prénom Nom <br/>
-			<a href="">Déconnection</a>
-		</p>
-	</div> -->
 	<%@ include file="header.jsp" %>
 	<div id="cote_gauche">
 		<div id="infos_univ" class="infos">
 			<p class="text_paragraph">
-				<p align="center"><img src="images/logo_univ/uqac.jpg" width="140" height="80" style="align:center" /></p>
-				Université du Québec à  Chicoutimi
+				<p align="center"><img src="${university.logo_path}" width="140" height="80" style="align:center" /></p>
+				${university.nom}
 			</p>
-			<a href="http://www.uqac.ca" class="lien_default">Site : www.uqac.ca</a>
+			<a href="http://www.uqac.ca" class="lien_default">Site : ${university.url }</a>
 		</div>
 		<div id="infos_univ_details" class="infos">
 			<p class="text_paragraph">
-				Ville : Saguenay <br/>
-				Pays : <img src="images/pays/canada.png"> Canada <br/>
-				Type : Université publique <br/>
-				Langue : Français <br/>
-				Date de fondation : 1969 <br/>
-				Nombre d'étudiants : 6500 <br/>
+				Ville : ${university.ville} <br/>
+				Pays : <img src="images/pays/canada.png"> ${university.pays} <br/>
+				Type : ${university.type} <br/>
+				Langue : ${university.langue} <br/>
+				Date de fondation : ${university.dateFondation} <br/>
+				Nombre d'�tudiants : ${university.nbEtudiants} <br/>
 			</p>
 			<div id="lien_convention">
-				<a href="conventions/convention1.pdf" class="lien_default" style="align:center; color: #6C2466; text-decoration: underline">Convention en pdf</a>
+				<a href="${university.convention_path }" class="lien_default" style="align:center; color: #6C2466; text-decoration: underline">Convention en pdf</a>
 			</div>
 		</div>
 		<div id="lien_res_sociaux">
-				<a href="https://www.facebook.com/TELECOMNancy" id="logo_fb"><img src="images/facebook.png" width="30" height="30"/></a>
-				<a href="https://twitter.com/telecomnancy" id="logo_tw"><img src="images/twitter.png" width="30" height="30"/></a>
-				<a href="https://www.linkedin.com/company/telecom-nancy" id="logo_ln"><img src="images/linkedin.png" width="30" height="30"/></a>
+				<a href="${university.facebook_link}" id="logo_fb"><img src="images/facebook.png" width="30" height="30"/></a>
+				<a href="${university.twitter_link }" id="logo_tw"><img src="images/twitter.png" width="30" height="30"/></a>
+				<a href="${university.linkedin_link }" id="logo_ln"><img src="images/linkedin.png" width="30" height="30"/></a>
 		</div>
 	</div>
 	
 	<div>
-		<p id="options_admin"><span class="options_admin">Suprrimer la fiche</span>   <span class="options_admin">Modifier</span></p>
+		<p id="options_admin"><span class="options_admin">Supprimer la fiche</span>   <span class="options_admin">Modifier</span></p>
 	</div>
 	<div id="corps">
-		<p class="titre_section">Université du Québec à Chicoutimi 
-			<img src="images/etoileNotation.jpg" width="25px" height="25px">
-			<img src="images/etoileNotation.jpg" width="25px" height="25px">
-			<img src="images/etoileNotation.jpg" width="25px" height="25px">
-			<img src="images/etoileVide.png" width="25px" height="25px">
-			<img src="images/etoileVide.png" width="25px" height="25px"> 
-			<span style="color: #6C2466">3.7/5</span>
+		<p class="titre_section">${university.nom} 
+			<c:set var="cpt" value="0" scope="page"/>
+			<c:if test="${university.note > 1}">
+				<c:forEach var="i" begin="0" end="${university.note-1}">	
+					<c:set var="cpt" value="${cpt+1}"/>
+					<img src="images/etoileNotation.jpg" width="25px" height="25px">
+				</c:forEach>
+			</c:if>
+			<c:if test="${cpt < 5}">
+				<c:forEach var="i" begin="0" end="${5-cpt-1}">
+					<img src="images/etoileVide.png" width="25px" height="25px"/>
+				</c:forEach>
+			</c:if>
+			<span style="color: #6C2466">${university.note}/5</span>
 		</p>
 		<p>
-			L'Université du Québec à Chicoutimi (UQAC) est une université francophone située au cœur de Chicoutimi, un arrondissement de la ville de Saguenay, dans la province de Québec, au Canada. Elle est affiliée à l'Université du Québec (UQ).
-Fondée en 1969, elle figure parmi les plus modernes au Québec. Outre son campus principal, l'université dispose de centres d'études à La Malbaie, Saint-Félicien, Alma et Sept-Îles. En 2004, 6 648 étudiants y étaient inscrits, ce qui en fait la troisième des neuf institutions membres de l'UQ, après l'UQAM et l'UQTR. Ses chercheurs en technologies de l'aluminium, en foresterie, en études sur le givrage, en géologie et en histoire des populations sont particulièrement bien reconnus.
+			${university.description}
 		</p>
-		<p><span class="nb_etudiants_partis">Nombre d'étudiants de TELECOM Nancy, partis dans cette université : 3</span></p>
-		<p><span class="nb_etudiants_partis">Liste des étudiants :  </span></p>
+		<p><span class="nb_etudiants_partis">Nombre d'�tudiants de TELECOM Nancy, partis dans cette universit� : ${university.nbEtudiants}</span></p>
+		<p><span class="nb_etudiants_partis">Liste des �tudiants :  </span></p>
 		<p>Alexandre Adam - Promo 2015 - Marketing <span class="voir_plus">(voir plus) </span> <hr class="separateur"/> </p>
 	</div>
 	</body>
