@@ -14,7 +14,7 @@
 				<p align="center"><img src="${university.logo_path}" width="140" height="80" style="align:center" /></p>
 				${university.nom}
 			</p>
-			<a href="http://www.uqac.ca" class="lien_default">Site : ${university.url }</a>
+			<a href="${university.url}" class="lien_default">Site : ${university.url }</a>
 		</div>
 		<div id="infos_univ_details" class="infos">
 			<p class="text_paragraph">
@@ -37,7 +37,7 @@
 	</div>
 	
 	<div>
-		<p id="options_admin"><span class="options_admin">Supprimer la fiche</span>   <span class="options_admin">Modifier</span></p>
+		<p id="options_admin"><span class="options_admin">Supprimer la fiche</span>  <a href="university?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin"> Modifier</span></a></p>
 	</div>
 	<div id="corps">
 		<p class="titre_section">${university.nom} 

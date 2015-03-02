@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class UniversityBean {
 
+	private int id;
 	private String nom;
 	private String url;
 	private String logo_path;
@@ -14,6 +15,7 @@ public class UniversityBean {
 //	private ArrayList<Personne> ;
 	
 	public UniversityBean(){
+		id = 0;
 		nom = "null";
 		url = "null";
 		logo_path = "null";
@@ -28,6 +30,14 @@ public class UniversityBean {
 		twitter_link = "null";
 		linkedin_link = "null";
 		note = 5;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNom() {
