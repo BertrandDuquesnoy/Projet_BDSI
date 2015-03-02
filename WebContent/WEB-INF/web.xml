@@ -21,4 +21,8 @@
 	<servlet-name>University</servlet-name>
 	<url-pattern>/university</url-pattern>
 </servlet-mapping>
+<servlet-mapping>
+	<servlet-name>University</servlet-name>
+	<url-pattern>/university/modif</url-pattern>
+</servlet-mapping>
 </web-app>
