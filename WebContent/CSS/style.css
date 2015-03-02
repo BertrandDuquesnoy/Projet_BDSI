@@ -18,7 +18,7 @@ html {font: 10px #000000; font-family: 'Trebuchet MS';}
 /* POSITION */
 #cote_gauche {position: absolute; left: 2%; top: 20%;}
 #connexion {position: absolute; right: 2%; top: 2%;}
-#corps {position: absolute; left: 25%; top: 27%; padding: 10px 10px 10px;}
+#corps {position: absolute; left: 25%; top: 18%; padding: 10px 10px 10px;}
 #options_admin {color: #6C2466; position: absolute; left: 25%; top: 15%;}
 
 /* CONTENU */
