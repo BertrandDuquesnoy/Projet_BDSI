@@ -12,6 +12,7 @@ public class InfosPersonne{
 
 	PersonBean personne;
 	String pilote = "com.mysql.jdbc.Driver";
+	String nomBase = "bdsi_sie1";
 
 	public InfosPersonne(){
 		personne = new PersonBean();
@@ -21,11 +22,11 @@ public class InfosPersonne{
 		try{
 			Class.forName(pilote);
 
-			Connection connexion = DriverManager.getConnection("jdbc:mysql://bdsi.telecomnancy.eu:3306/"+"bdsi_sie1","sie1","sie1");
+			Connection connexion = DriverManager.getConnection("jdbc:mysql://bdsi.telecomnancy.eu:3306/"+nomBase,"sie1","sie1");
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM testEtudiant "+ ";");
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM profil "+ ";");
 			while(resultat.next()){
 				personne.setPrenom(resultat.getString("prenom"));
 				personne.setNom(resultat.getString("nom"));
