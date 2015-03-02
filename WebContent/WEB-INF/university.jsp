@@ -7,14 +7,15 @@
 <link type="text/css" rel="stylesheet" href="CSS/style.css" />
 </head>
 	<body>
-	<div>
+	<!-- <div id="bandeau">
 		<a href="http://www.telecomnancy.eu/" id="logoTN" class="logo-img"><img src="images/logoTN.png" alt= "Logo TELECOM Nancy" width="180" height="100"/></a>
 		<h1 class="titre_page" style="position:absolute; top: 2%; left:33%">RELATIONS INTERNATIONALES</h1>
 		<p id="connexion">
 			Prénom Nom <br/>
 			<a href="">Déconnection</a>
 		</p>
-	</div>
+	</div> -->
+	<%@ include file="header.jsp" %>
 	<div id="cote_gauche">
 		<div id="infos_univ" class="infos">
 			<p class="text_paragraph">
@@ -42,11 +43,19 @@
 				<a href="https://www.linkedin.com/company/telecom-nancy" id="logo_ln"><img src="images/linkedin.png" width="30" height="30"/></a>
 		</div>
 	</div>
-	<p class="titre_section">Université du Québec à Chicoutimi <img src="images/etoileNotation.jpg" width="25px" height="25px" /><img src="images/etoileNotation.jpg" width="25px" height="25px" /><img src="images/etoileNotation.jpg" width="25px" height="25px" /><img src="images/etoileVide.png" width="25px" height="25px" /><img src="images/etoileVide.png" width="25px" height="25px" /> <span style="color: #6C2466">3.7/5</span></p>
+	
 	<div>
 		<p id="options_admin"><span class="options_admin">Suprrimer la fiche</span>   <span class="options_admin">Modifier</span></p>
 	</div>
 	<div id="corps">
+		<p class="titre_section">Université du Québec à Chicoutimi 
+			<img src="images/etoileNotation.jpg" width="25px" height="25px">
+			<img src="images/etoileNotation.jpg" width="25px" height="25px">
+			<img src="images/etoileNotation.jpg" width="25px" height="25px">
+			<img src="images/etoileVide.png" width="25px" height="25px">
+			<img src="images/etoileVide.png" width="25px" height="25px"> 
+			<span style="color: #6C2466">3.7/5</span>
+		</p>
 		<p>
 			L'Université du Québec à Chicoutimi (UQAC) est une université francophone située au cœur de Chicoutimi, un arrondissement de la ville de Saguenay, dans la province de Québec, au Canada. Elle est affiliée à l'Université du Québec (UQ).
 Fondée en 1969, elle figure parmi les plus modernes au Québec. Outre son campus principal, l'université dispose de centres d'études à La Malbaie, Saint-Félicien, Alma et Sept-Îles. En 2004, 6 648 étudiants y étaient inscrits, ce qui en fait la troisième des neuf institutions membres de l'UQ, après l'UQAM et l'UQTR. Ses chercheurs en technologies de l'aluminium, en foresterie, en études sur le givrage, en géologie et en histoire des populations sont particulièrement bien reconnus.
