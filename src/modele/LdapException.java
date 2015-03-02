@@ -13,7 +13,12 @@ import java.lang.Exception;
 
 public class LdapException extends Exception {
 
-    public LdapException(String message) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public LdapException(String message) {
         super(message);
     }
 

@@ -21,86 +21,106 @@ import javax.servlet.http.HttpSession;
  */
 public class PersonServlet extends HttpServlet {
 
-    /** 
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
-        String unlog = request.getParameter("unlog");
-        if (unlog != null && unlog.compareTo("1") == 0) {
-                    session.removeAttribute("userId");
-                    session.removeAttribute("userGroup");
-            session.setAttribute("message", "Logout réussi.");
-            response.sendRedirect("index.jsp");
-        } else if (request.getMethod().equals("POST") && (request.getParameter("action").compareTo("login") == 0)) {
-//            Person user = new Person();
-//            user.setLogin(request.getParameter("text_login"));
-//            try {
-//                if (user.login(request.getParameter("text_pass"))) {
-//                    session.setAttribute("userId", user.getId());
-//                    session.setAttribute("userGroup", user.getIdGroup());
-//                    session.setAttribute("message", "Login réussi.");
-//                    //redirige vers profile si premiere connection
-//                    if (user.getFirstName().compareTo("null")==0 || user.getFirstName()== null) {
-//                        session.setAttribute("message", "Premier login réussi. Veuillez mettre à jour votre profil.");
-//                        response.sendRedirect("editPerson.jsp?id="+user.getId());
-//                } else {
-//                    response.sendRedirect(request.getParameter("goback"));
-//                }
-//                } else {
-//                    session.setAttribute("message", "Login raté.");
-//                    response.sendRedirect(request.getParameter("goback"));
-//                }
-//            } catch (UnsupportedEncodingException ex) {
-//                Logger.getLogger(PersonServlet.class.getName()).log(Level.SEVERE, null, ex);
-//            } catch (LdapException ex) {
-//                Logger.getLogger(PersonServlet.class.getName()).log(Level.SEVERE, null, ex);
-//            }
+	/**
+	 * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+	 * methods.
+	 * 
+	 * @param request
+	 *            servlet request
+	 * @param response
+	 *            servlet response
+	 * @throws ServletException
+	 *             if a servlet-specific error occurs
+	 * @throws IOException
+	 *             if an I/O error occurs
+	 */
+	protected void processRequest(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+		String unlog = request.getParameter("unlog");
+		if (unlog != null && unlog.compareTo("1") == 0) {
+			session.removeAttribute("userId");
+			session.removeAttribute("userGroup");
+			session.setAttribute("message", "Logout rï¿½ussi.");
+			response.sendRedirect("index.jsp");
+		} else if (request.getMethod().equals("POST")
+				&& (request.getParameter("action").compareTo("login") == 0)) {
+			// Person user = new Person();
+			// user.setLogin(request.getParameter("text_login"));
+			// try {
+			// if (user.login(request.getParameter("text_pass"))) {
+			// session.setAttribute("userId", user.getId());
+			// session.setAttribute("userGroup", user.getIdGroup());
+			// session.setAttribute("message", "Login rï¿½ussi.");
+			// //redirige vers profile si premiere connection
+			// if (user.getFirstName().compareTo("null")==0 ||
+			// user.getFirstName()== null) {
+			// session.setAttribute("message",
+			// "Premier login rï¿½ussi. Veuillez mettre ï¿½ jour votre profil.");
+			// response.sendRedirect("editPerson.jsp?id="+user.getId());
+			// } else {
+			// response.sendRedirect(request.getParameter("goback"));
+			// }
+			// } else {
+			// session.setAttribute("message", "Login ratï¿½.");
+			// response.sendRedirect(request.getParameter("goback"));
+			// }
+			// } catch (UnsupportedEncodingException ex) {
+			// Logger.getLogger(PersonServlet.class.getName()).log(Level.SEVERE,
+			// null, ex);
+			// } catch (LdapException ex) {
+			// Logger.getLogger(PersonServlet.class.getName()).log(Level.SEVERE,
+			// null, ex);
+			// }
 
-        }
-    }
+		}
+	}
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /** 
-     * Handles the HTTP <code>GET</code> method.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
+	// <editor-fold defaultstate="collapsed"
+	// desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+	/**
+	 * Handles the HTTP <code>GET</code> method.
+	 * 
+	 * @param request
+	 *            servlet request
+	 * @param response
+	 *            servlet response
+	 * @throws ServletException
+	 *             if a servlet-specific error occurs
+	 * @throws IOException
+	 *             if an I/O error occurs
+	 */
+	@Override
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request, response);
+	}
 
-    /** 
-     * Handles the HTTP <code>POST</code> method.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
+	/**
+	 * Handles the HTTP <code>POST</code> method.
+	 * 
+	 * @param request
+	 *            servlet request
+	 * @param response
+	 *            servlet response
+	 * @throws ServletException
+	 *             if a servlet-specific error occurs
+	 * @throws IOException
+	 *             if an I/O error occurs
+	 */
+	@Override
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request, response);
+	}
 
-    /** 
-     * Returns a short description of the servlet.
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+	/**
+	 * Returns a short description of the servlet.
+	 * 
+	 * @return a String containing servlet description
+	 */
+	@Override
+	public String getServletInfo() {
+		return "Short description";
+	}// </editor-fold>
 }
-
-
-
