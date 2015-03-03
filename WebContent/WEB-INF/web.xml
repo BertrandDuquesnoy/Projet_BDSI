@@ -16,6 +16,14 @@
 	<servlet-name>DoubleDiplome</servlet-name>
 	<servlet-class>servlets.DoubleDiplome</servlet-class>
 </servlet>
+<servlet>
+	<servlet-name>Modalite</servlet-name>
+	<servlet-class>servlets.Modalite</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>Presentation</servlet-name>
+	<servlet-class>servlets.Presentation</servlet-class>
+</servlet>
 
 <servlet-mapping>
 	<servlet-name>Login</servlet-name>
@@ -28,5 +36,13 @@
 <servlet-mapping>
 	<servlet-name>DoubleDiplome</servlet-name>
 	<url-pattern>/doubleDiplome</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>Modalite</servlet-name>
+	<url-pattern>/modalite</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>Presentation</servlet-name>
+	<url-pattern>/presentation</url-pattern>
 </servlet-mapping>
 </web-app>
