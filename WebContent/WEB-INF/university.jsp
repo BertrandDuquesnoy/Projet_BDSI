@@ -60,7 +60,9 @@
 		</p>
 		<p><span class="nb_etudiants_partis">Nombre d'étudiants de TELECOM Nancy, partis dans cette université : ${university.nbEtudiants}</span></p>
 		<p><span class="nb_etudiants_partis">Liste des étudiants :  </span></p>
-		<p>Alexandre Adam - Promo 2015 - Marketing <span class="voir_plus">(voir plus) </span> <hr class="separateur"/> </p>
+		<c:forEach items="${ university.personnes }" varStatus="boucle">
+			<p>${university.personnes[boucle.index].prenom} ${university.personnes[boucle.index].nom} - ${university.personnes[boucle.index].promo} - ${university.personnes[boucle.index].departement} <span class="voir_plus">(voir plus) </span> <hr class="separateur"/> </p>
+		</c:forEach>
 	</div>
 	</body>
 </html>

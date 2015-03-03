@@ -1,6 +1,10 @@
 package beans;
 
+import java.awt.List;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.ListIterator;
 
 public class UniversityBean {
 
@@ -12,7 +16,7 @@ public class UniversityBean {
 	private String linkedin_path, facebook_link, twitter_link, linkedin_link;
 	private String description;
 	private int note, nbEtudiants;
-//	private ArrayList<Personne> ;
+	private ArrayList<EtudiantBean> personnes ;
 	
 	public UniversityBean(){
 		id = 0;
@@ -30,7 +34,12 @@ public class UniversityBean {
 		twitter_link = "null";
 		linkedin_link = "null";
 		note = 5;
+		personnes = new ArrayList<EtudiantBean>();
+		personnes.add(new EtudiantBean());
+		personnes.add(new EtudiantBean());
 	}
+	
+	
 
 	public int getId() {
 		return id;
@@ -166,6 +175,18 @@ public class UniversityBean {
 
 	public void setLinkedin_link(String linkedin_link) {
 		this.linkedin_link = linkedin_link;
+	}
+
+
+
+	public ArrayList<EtudiantBean> getPersonnes() {
+		return personnes;
+	}
+
+
+
+	public void setPersonnes(ArrayList<EtudiantBean> personnes) {
+		this.personnes = personnes;
 	}
 	
 	

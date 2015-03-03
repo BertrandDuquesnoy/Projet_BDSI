@@ -79,7 +79,6 @@ public class University extends HttpServlet{
 		infos_univ.setInfo(univModif);
 		request.setAttribute("university", univModif);
 		
-		this.getServletContext().getRequestDispatcher("/WEB-INF/university.jsp").forward( request, response );
-		
+		this.getServletContext().getRequestDispatcher("/WEB-INF/university.jsp").forward( request, response );	
 	}
 }
