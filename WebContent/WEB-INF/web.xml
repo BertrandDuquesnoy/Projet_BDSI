@@ -12,6 +12,10 @@
 	<servlet-name>University</servlet-name>
 	<servlet-class>servlets.University</servlet-class>
 </servlet>
+<servlet>
+	<servlet-name>DoubleDiplome</servlet-name>
+	<servlet-class>servlets.DoubleDiplome</servlet-class>
+</servlet>
 
 <servlet-mapping>
 	<servlet-name>Login</servlet-name>
@@ -20,5 +24,9 @@
 <servlet-mapping>
 	<servlet-name>University</servlet-name>
 	<url-pattern>/university</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>DoubleDiplome</servlet-name>
+	<url-pattern>/doubleDiplome</url-pattern>
 </servlet-mapping>
 </web-app>
