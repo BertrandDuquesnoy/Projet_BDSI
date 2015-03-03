@@ -18,6 +18,8 @@ public class InfosPersonne{
 		personne = new PersonBean();
 	}
 
+	int id_personne = 0; 
+	
 	public PersonBean infoPersonne(HttpServletRequest request){
 		try{
 			Class.forName(pilote);
@@ -26,12 +28,23 @@ public class InfosPersonne{
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM profil "+ ";");
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM profil "+ "WHERE id_profil = "+id_personne+";");
+			
 			while(resultat.next()){
 				personne.setPrenom(resultat.getString("prenom"));
 				personne.setNom(resultat.getString("nom"));
 				personne.setAnnee(resultat.getString("promo"));
 			}
+			
+			ResultSet resultat2 = instruction.executeQuery("SELECT coloration " +"FROM etudiant "+ "WHERE id_etud = "+id_personne+";");
+			while(resultat2.next()){
+				personne.setColoration(resultat2.getString("coloration"));
+				
+			}
+			
+			
+			
+			
 		}
 		catch (Exception e){
 

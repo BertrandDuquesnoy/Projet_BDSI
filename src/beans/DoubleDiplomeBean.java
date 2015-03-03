@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class DoubleDiplomeBean {
 
 	private String pays, ville, url, adresse, tel, logo_path, facebook_link, twitter_link, linkedin_link;
-	private int note, nbEtudiants;
+	private int note, nb_etudiant;
 	private ArrayList<EtudiantBean> etudiants;
 	
 	public DoubleDiplomeBean() {
@@ -19,7 +19,7 @@ public class DoubleDiplomeBean {
 		twitter_link = "null";
 		linkedin_link = "null";
 		note = 0;
-		nbEtudiants = 0;
+		nb_etudiant = 0;
 		etudiants = new ArrayList<EtudiantBean>();
 	}
 	
@@ -83,11 +83,11 @@ public class DoubleDiplomeBean {
 	public void setNote(int note) {
 		this.note = note;
 	}
-	public int getNbEtudiants() {
-		return nbEtudiants;
+	public int getNbEtudiant() {
+		return nb_etudiant;
 	}
-	public void setNbEtudiants(int nbEtudiants) {
-		this.nbEtudiants = nbEtudiants;
+	public void setNbEtudiant(int nb_etudiant) {
+		this.nb_etudiant = nb_etudiant;
 	}
 	public ArrayList<EtudiantBean> getEtudiants() {
 		return etudiants;
