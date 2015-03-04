@@ -24,6 +24,14 @@
 	<servlet-name>Presentation</servlet-name>
 	<servlet-class>servlets.Presentation</servlet-class>
 </servlet>
+<servlet>
+	<servlet-name>Blog</servlet-name>
+	<servlet-class>servlets.Blog</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>BlogPage</servlet-name>
+	<servlet-class>servlets.BlogPage</servlet-class>
+</servlet>
 
 <servlet-mapping>
 	<servlet-name>Login</servlet-name>
@@ -44,5 +52,13 @@
 <servlet-mapping>
 	<servlet-name>Presentation</servlet-name>
 	<url-pattern>/presentation</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>Blog</servlet-name>
+	<url-pattern>/blog</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>BlogPage</servlet-name>
+	<url-pattern>/blog/page</url-pattern>
 </servlet-mapping>
 </web-app>

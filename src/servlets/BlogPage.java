@@ -7,28 +7,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bdd.InfosDoubleDiplomes;
+import bdd.blog.InfosPageBlog;
 
-public class DoubleDiplome extends HttpServlet{
+public class BlogPage extends HttpServlet{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	InfosDoubleDiplomes infos_dd;
+	InfosPageBlog infos_pageBlog;
 	
-	public DoubleDiplome(){
-		infos_dd = new InfosDoubleDiplomes();
+	public BlogPage() {
+		infos_pageBlog = new InfosPageBlog();
 	}
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		request.setAttribute("dd", infos_dd.getInfos(request));
 		
-		
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/doubleDiplome.jsp" ).forward( request, response );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/pageBlog.jsp" ).forward( request, response );
 	}
-	
-	
 
 }
