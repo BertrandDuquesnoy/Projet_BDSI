@@ -11,28 +11,25 @@
 		<div id="options_admin">
 			<p>
 				<span class="options_admin">Supprimer une catégorie</span>  
-				<a href="" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier une catégorie</span></a>
+				<a href="blog?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier une catégorie</span></a>
 				<span class="options_admin">Ajouter une catégorie</span>
 			</p>
 		</div>
 		<div id="accueil" style="width:20%"><p>Menu Accueil</p></div>
 		<div id="corps">
 			<form>
-				<div id="ligne">
-					<input type="submit" class="categorie"  value="Tous les articles">
-					<input type="submit" class="categorie"  value="Les articles d'Asie">
-					<input type="submit" class="categorie"  value="Les articles d'Afrique">
-				</div>
-				<div id="ligne">
-					<input type="submit" class="categorie" value="Tous les articles">
-					<input type="submit" class="categorie" value="Les articles d'Asie">
-					<input type="submit" class="categorie" value="Les articles d'Afrique">
-				</div>
-				<div id="ligne">
-					<input type="submit" class="categorie" value="Tous les articles">
-					<input type="submit" class="categorie" value="Les articles d'Asie">
-					<input type="submit" class="categorie" value="Les articles d'Afrique">
-				</div>
+				<c:forEach var="i" begin="0" end="8">
+					<c:choose>
+						<c:when test="${(i%3)==0 }">
+						<div id="ligne">
+							<input type="submit" class="categorie" name="${i}" value="${bb.list[i]}">
+						</div>
+					</c:when>
+					<c:otherwise>
+						<input type="submit" class="categorie" name="${i}" value="${bb.list[i]}">
+					</c:otherwise>
+					</c:choose>
+				</c:forEach>
 			</form>
 		</div>
 	</body>

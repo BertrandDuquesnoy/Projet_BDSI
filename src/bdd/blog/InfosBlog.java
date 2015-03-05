@@ -17,5 +17,9 @@ public class InfosBlog {
 		//TODO: Requêtes qui renvoient les différentes catégories et leurs id
 		return bb;
 	}
+	
+	public void setInfos(BlogBean bb){
+		//TODO: Requêtes de mises à jour de la BDD à partir du bean bb
+	}
 
 }
