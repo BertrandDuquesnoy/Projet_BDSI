@@ -12,7 +12,7 @@
 		<div id="options_admin">
 			<p>
 				<span class="options_admin">Supprimer l'article</span>  
-				<a href="" style="text-decoration:none; color: #6C2466"> <span class="options_admin"> Modifier</span></a>
+				<a href="page?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin"> Modifier</span></a>
 			</p>
 		</div>
 		<div id="cote_gauche">

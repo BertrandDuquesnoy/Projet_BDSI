@@ -23,8 +23,21 @@ public class BlogPage extends HttpServlet{
 	}
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("page", infos_pageBlog.getInfos(request));
 		
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/pageBlog.jsp" ).forward( request, response );
+		try {
+			if (request.getParameter("modif").equals("1")) {
+				this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog_modif.jsp").forward(request, response);
+			}else 
+				this.getServletContext().getRequestDispatcher( "/WEB-INF/pageBlog.jsp" ).forward( request, response );
+		} catch (NullPointerException e) {
+			this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog.jsp").forward(request, response);
+		}
+		
+	}
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		
 	}
 
 }

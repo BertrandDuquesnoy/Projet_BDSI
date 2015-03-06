@@ -35,6 +35,10 @@ html {font: 10px #000000; font-family: 'Trebuchet MS';}
 .voir_plus {color: #6C2466;float:right}
 .commentaire {background-color: #6C2466; color: white; padding: 5px; width: 40%; border-radius: 10px;}
 
+/* BOUTONS */
+
+.ok_button {background-color: #6C2466; padding: 3px; color:white;}
+
 /* SEPARATEUR */
 .separateur {background: #6C2466; height: 2px;}
 
