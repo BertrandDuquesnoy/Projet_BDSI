@@ -10,6 +10,5 @@ class Main{
 	public static void main(String[] args) throws UnsupportedEncodingException, LdapException{
 		LdapConnect co = new LdapConnect();
 		co.testConnect("duquesno7u","mdp");
-	}
-	
+	}	
 }
