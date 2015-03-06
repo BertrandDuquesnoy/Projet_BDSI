@@ -32,6 +32,14 @@
 	<servlet-name>BlogPage</servlet-name>
 	<servlet-class>servlets.BlogPage</servlet-class>
 </servlet>
+<servlet>
+	<servlet-name>Accueil</servlet-name>
+	<servlet-class>servlets.Accueil</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>Presentation</servlet-name>
+	<servlet-class>servlets.Presentation</servlet-class>
+</servlet>
 
 <servlet-mapping>
 	<servlet-name>Login</servlet-name>
@@ -60,5 +68,14 @@
 <servlet-mapping>
 	<servlet-name>BlogPage</servlet-name>
 	<url-pattern>/blog/page</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>Accueil</servlet-name>
+	<url-pattern>/</url-pattern>
+	<url-pattern>/accueil</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>Presentation</servlet-name>
+	<url-pattern>/partirEtranger/presentation</url-pattern>
 </servlet-mapping>
 </web-app>

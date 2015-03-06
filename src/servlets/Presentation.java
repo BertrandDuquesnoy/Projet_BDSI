@@ -23,7 +23,7 @@ public class Presentation extends HttpServlet{
 	}
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/login.jsp" ).forward( request, response );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/presentation.jsp" ).forward( request, response );
 	}
 
 }
