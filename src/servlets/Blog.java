@@ -1,8 +1,10 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,19 +31,37 @@ public class Blog extends HttpServlet{
 		try{
 			if (request.getParameter("modif").equals("1")) {
 				this.getServletContext().getRequestDispatcher( "/WEB-INF/blog_modif.jsp" ).forward( request, response );
+			}else if(request.getParameter("modif").equals("2")){
+				String nom = null;
+				nom = request.getParameter("name");
+				if (nom != null) {
+					System.out.println("Suppression de la catégorie : "+nom);
+					this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
+				}
 			}else
 				this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
 		}catch(NullPointerException e){
+			System.out.println("nullPointerException");
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
 		}
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		BlogBean bb = new BlogBean();
+		BlogBean bb = infos_blog.getInfos(request);
+	
+		ArrayList<String> list = new ArrayList<String>();
+		String tmp ="";
+		int i = 0;
+		while((tmp = (String) request.getParameter(String.valueOf(i))) != null){
+			list.add(tmp);
+			i++;
+		}
 		
-		//TODO: setters
+		bb.setList(list);
+		bb.setNbCategories(list.size());
 		
 		infos_blog.setInfos(bb);
+		request.setAttribute("bb", infos_blog.getInfos(request));
 		
 		this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
 	}

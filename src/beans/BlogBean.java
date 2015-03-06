@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class BlogBean {
 	
 	private ArrayList<String> list;
+	private int nbCategories;
 	
 	public BlogBean() {
 		list = new ArrayList<String>();
@@ -17,6 +18,7 @@ public class BlogBean {
 		list.add("categorie7");
 		list.add("categorie8");
 		list.add("categorie9");
+		nbCategories = list.size();
 	}
 
 	public ArrayList<String> getList() {
@@ -25,6 +27,14 @@ public class BlogBean {
 
 	public void setList(ArrayList<String> list) {
 		this.list = list;
+	}
+
+	public int getNbCategories() {
+		return list.size();
+	}
+
+	public void setNbCategories(int nbCategories) {
+		this.nbCategories = nbCategories;
 	}
 
 }

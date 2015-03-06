@@ -15,21 +15,19 @@
 			<div id="options_admin">
 				<input class="options_admin" type="submit" value="enregistrer"/>
 			</div>
-				<div id="ligne">
-					<input type="text" class="categorie"  value="Tous les articles">
-					<input type="text" class="categorie"  value="Les articles d'Asie">
-					<input type="text" class="categorie"  value="Les articles d'Afrique">
-				</div>
-				<div id="ligne">
-					<input type="text" class="categorie" value="Tous les articles">
-					<input type="text" class="categorie" value="Les articles d'Asie">
-					<input type="text" class="categorie" value="Les articles d'Afrique">
-				</div>
-				<div id="ligne">
-					<input type="text" class="categorie" value="Tous les articles">
-					<input type="text" class="categorie" value="Les articles d'Asie">
-					<input type="text" class="categorie" value="Les articles d'Afrique">
-				</div>
+				<c:forEach var="i" begin="0" end="${bb.nbCategories-1}">
+					<c:choose>
+						<c:when test="${(i%3)==0 }">
+						<div id="ligne">
+							<input type="text" class="categorie" name="${i}" value="${bb.list[i]}">
+						</div>
+					</c:when>
+					<c:otherwise>
+						<input type="text" class="categorie" name="${i}" value="${bb.list[i]}">
+					</c:otherwise>
+					</c:choose>
+					<c:set var="i" value="${i}" scope="request" />
+				</c:forEach>
 			</form>
 		</div>
 	</body>
