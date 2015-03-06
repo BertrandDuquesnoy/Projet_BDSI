@@ -37,7 +37,7 @@ public class Login {
      */
     public boolean testParam() {
         if (username.compareTo("") == 0 || password.compareTo("") == 0) {
-            System.err.println("paramètres invalides");
+            System.err.println("paramï¿½tres invalides");
             return false;
         } else {
             if (username.compareTo("toto") != 0) {
