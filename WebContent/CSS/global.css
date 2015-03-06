@@ -1,0 +1,523 @@
+/* TELECOM NANCY */
+
+/***********Ligne à ne pas supprimer pour hériter du thème parent***********/
+@import url("../../drupalstart_3/css/global.css");
+/***********Mettre ici les règles à ajouter ou surcharger***********/
+
+/*
+A- REGLES DE BASE
+B- Section HEADER
+1° ZONE USER
+2° ZONE BRANDING
+3° ZONE MENU
+4° ZONE HEADER
+C- Section CONTENT
+1° ZONE PREFACE
+2° ZONE CONTENT
+3° REGION SIDEBAR FIRST
+4° REGION CONTENT
+5° REGION SIDEBAR SECOND
+6° ZONE POSTSCRIPT
+D- Section FOOTER
+1° ZONE FOOTER
+E- REGLES VUES (indépendantes des zones)
+*/
+
+/************ BASE ************/
+html {background:#efebeb;}
+html, 
+body,
+h1, h2, h3, h4, h5, h6,
+.zone-postscript-wrapper * a {font-family:'Trebuchet MS'!important; letter-spacing:normal;}
+body {font-size:.85em;}
+
+/* supprimer le fond jaune au survol des cellules */
+tr:hover td, tr.even:hover td.active, tr.odd:hover td.active {background:none;}
+table.equipe tr:hover td, tr.even:hover td.active, tr.odd:hover td.active {background:#e6e6fa;}
+table tr:hover {background:none;}
+/*****/
+/************ FIN BASE ************/
+
+
+/************ ZONE USER ************/
+#zone-user-wrapper {background:white;}
+
+#zone-user .block {float:none; padding: 0;}
+#zone-user ul.menu > li {display: block;}
+#zone-user ul.menu li {margin-top:70px;}
+#zone-user ul.menu li a,
+#zone-user ul.menu li.fil-rss a,
+#zone-user ul.menu li.facebook a,
+#zone-user ul.menu li.twitter a {display:block; height:auto; width:auto; vertical-align: top; background:#f2f2e7;}
+#zone-user-wrapper a,
+#zone-user-wrapper a:link,
+#zone-user-wrapper a:visited {color:#666;}
+
+#zone-user ul.menu li a:hover {background:rgb(240,135,30); color:#fff;}
+
+
+/** moteur recherche  .block-search-form {margin:3px 0 0 0; }***/
+#block-search-form {display:none;}
+#zone-user div#block-search-form {text-align:center; background:#f2f2e7; padding:10px 0;}
+form #search-block-form {margin:0 auto; display:inline-block;}
+
+
+/*** reseaux sociaux ***/
+#block-menu-block-3 {display:none}
+#zone-user #block-menu-block-3 ul.menu {margin:0;}
+#zone-user #block-menu-block-3 ul.menu li {display:block; height:31px; line-height:31px; border-bottom:1px solid #aaa; margin:0;}
+#zone-user #block-menu-block-3 ul.menu li a {font-size:1em; display:block; height:auto; width:auto; background-image:none;}
+#zone-user #block-menu-block-3 ul.menu li  a:before {
+  content:'';
+  display:inline-block;
+  height:19px;
+  margin-right:5px;
+  padding:0;
+  position:relative;top:5px
+  width:18px;
+}
+#zone-user ul.menu li.fil-rss a:before {
+  background:url("../images/icones-rs-nb.jpg") no-repeat scroll 0px 0 #eee;}
+#zone-user ul.menu li.facebook a:before {
+  background:url("../images/icones-rs-nb.jpg") no-repeat scroll -30px 0 #eee;}
+#zone-user ul.menu li.google- a:before{
+  background:url("../images/icones-rs-nb.jpg") no-repeat scroll -53px 0 #eee;}
+#zone-user ul.menu li.twitter a:before{
+  background:url("../images/icones-rs-nb.jpg") no-repeat scroll -75px 0 #eee;}
+#zone-user ul.menu li.youtube a:before{
+  background:url("../images/icones-rs-nb.jpg") no-repeat scroll -96px 0 #eee;}
+#zone-user ul.menu li.linkedin a:before {
+  background:url("../images/icones-rs-nb.jpg") no-repeat scroll -118px 0 transparent;}
+
+
+/***acces rapide fr=1, en=3***/
+#block-nice-menus-1, #block-nice-menus-3 {display: none;}
+
+
+/*** menu mobile y compris acces rapide ***/
+#block-menu-block-8  {display:none}
+#block-menu-block-8 ul.menu li.contact:before {border-bottom:1px solid rgb(240, 135, 30); color:rgb(240, 135, 30); display:block; content:'ACCES RAPIDE'; height:22px; }
+
+#zone-user #block-menu-block-8 ul.menu li,
+#zone-user #block-menu-block-8 ul.menu li.contact {
+  border-bottom: 1px solid rgb(170, 170, 170);
+  display: block;
+  height: 31px;
+  line-height: 31px;
+  margin: 0;}
+
+#zone-user #block-menu-block-8 ul.menu li.contact {height:55px; margin: 10px  0 0 0;}
+#zone-user #block-menu-block-8 ul.menu li a {display:block; padding:0 .5em;}
+#zone-user #block-menu-block-8 ul.menu li.accueil {display:none;}
+#zone-user #block-nice-menus-3 ul.nice-menu li a {font-size:12px;}
+
+/*** bloc des icones mobile pour developper menu, moteur de recherche, etc **/
+#zone-user #block-block-38 {background:#6C2466; padding:0px 5px 0 5px;/***rgb(240, 135, 30);**/}
+#zone-user #block-block-38 ul {margin-bottom:0px; padding:10px 0 0 0;}
+#zone-user-wrapper #block-block-38 a:link,
+#zone-user-wrapper #block-block-38 a:visited {color:#fff;}
+#zone-user #block-block-38 ul#navMobile a {display:inline-block; margin:0 5px 0 5px; padding:0 5px 10px 5px;}
+#zone-user #block-block-38 ul#navMobile a:hover {background:#fff}
+#zone-user-wrapper #block-block-38 ul#navMobile a:hover i:before {color:#6C2466;}
+#zone-user-wrapper #block-block-38 i {color:#fff; font-size:0; margin:0; padding:0}
+#zone-user-wrapper #block-block-38 i:before {font-size:25px}
+
+/************ FIN ZONE USER ************/
+
+
+
+
+/************ ZONE BRANDING ************/
+#zone-branding-wrapper {background:#fff; margin-bottom:0;}
+#zone-branding .block {display: block;}
+
+/***bloc du label UL****/
+#block-block-3 p, #block-block-33 p {display:none}
+#block-block-3 a, #block-block-33 a, #zone-branding .logo-img a {display:block;text-align:center}
+#block-block-3 a img, #block-block-33 a img {max-width:40%!important; margin:0 auto;}
+#block-block-3 #logoul {text-align:center;}
+/***bloc du logo telecom****/
+#zone-branding .logo-img img {margin:0 auto;}
+#zone-branding .logo-img {margin-right:0;margin-top:15px}
+
+/* affichage du slogan */
+#zone-branding .block#block-block-37 IMG {margin:0 auto}
+#zone-branding .block#block-block-37 {text-align:center}
+/************ FIN ZONE BRANDING ************/
+
+
+
+
+
+
+
+/************ ZONE MENU ************/
+/* on cache le menu principal */
+.block-nice-menus-2 {display:none;}
+
+#zone-menu ul.nice-menu > li {border-top:none;}
+#zone-menu ul.nice-menu > li a {color:#8c6f68; font-size:1.2em!important; font-weight:bold; text-transform:none;}
+#zone-menu ul.nice-menu > li a.active {color:#fff;}
+#zone-menu ul.nice-menu > li ul {margin:0 auto; width:100%;}
+#zone-menu ul.nice-menu > li ul li a {font-size:1.0em!important; font-weight:normal;}
+#zone-menu ul.nice-menu > li ul li a.active {border-bottom:none; color:#fff;}
+#zone-menu ul.nice-menu > li ul li a:hover {background:#333; color:#fa0;}
+
+/*** menu langues ***/
+#zone-user .block-menu-langues {/*background:#78d; */max-height:30px; position:absolute; z-index:99; right:10px; margin-top:-105px;}
+.block-menu-langues ul.menu li {display:inline-block; float:left;}
+#zone-user .block-menu-langues ul.menu li a {background:transparent; margin-right:5px;}
+#block-menu-menu-langues a:link, #block-menu-menu-langues a:visited {color:#fff; font-size:1.7em;}
+#zone-user .block-menu-langues ul.menu li a:hover {background:#fff; color:#6C2466;}
+
+/************ FIN ZONE MENU ************/
+
+
+/************ ZONE HEADER ************/
+/* bandeau formulaire */
+.block-35 h2,.block-36 h2 {color:#fff; font-size:1.7em; line-height:1.3em; padding:10px; position:absolute; z-index:3;}
+/************ FIN ZONE HEADER ************/
+
+
+
+/************ ZONE CONTENT ************/
+/* TABLEAUX */
+#zone-content table td {
+  border-right:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+/*#zone-content table td:last-child {
+  border-right:0px;
+  border-bottom:0px;
+}*/
+
+
+/***** CARROUSEL
+le bandeau suit la largeur en version mobile****/
+
+.jcarousel-skin-default .jcarousel-container-horizontal {
+    height:auto;
+    padding:0 0px;
+    width:100%;
+}
+.jcarousel-skin-default .jcarousel-clip-horizontal {width: 100%}
+.jcarousel-skin-default .jcarousel-item {border:0px solid rgb(204, 204, 204); position:relative; /* height:100px; width:100px;*/ width:100%; height:auto;}
+.jcarousel-skin-default .jcarousel-item .views-field-field-accoche {
+  background:rgba(255,255,255,.8); margin:0 0 .3em 0; padding:5px; position:absolute; top:5px; left:5px;}
+
+/*.jcarousel-item-horizontal .title*/
+.view-id-carousel_anglais .title {color:#ee8936; font-size:1.3em;}
+
+#region-content .jcarousel-item-horizontal .title a:link,
+#region-content .jcarousel-item-horizontal .title a:visited {color:#ee8936;}
+#region-content .jcarousel-item-horizontal .title a:hover {color:#666; text-decoration:none;}
+
+/* on cache le bloc accoche en version mobile */
+.jcarousel-skin-default .jcarousel-item .field-accoche {display:none;}
+
+
+/***NAVIGATION CARROUSEL****/
+.front #zone-content .jcarousel-skin-default .jcarousel-navigation li {display: inline;}
+.front #zone-content .jcarousel-skin-default .jcarousel-navigation li a {
+  display:inline-block; 
+  background:rgb(125, 53, 119) !important; 
+  margin-right:5px;
+  color:#fff;
+  border-radius:50%;
+  width:25px;
+  height:25px;
+  line-height:25px;
+  text-align:center;
+}
+.front #zone-content .jcarousel-skin-default .jcarousel-navigation li.active a {
+  background:transparent !important;
+  border:1px solid rgb(125, 53, 119);
+  color:#666;
+}
+.front #zone-content .jcarousel-skin-default .jcarousel-navigation li a span {display:inline-block;}
+
+.jcarousel-skin-default .jcarousel-next,
+.jcarousel-skin-default .jcarousel-prev {display:none;}
+.jcarousel-skin-default .jcarousel-item {border:none;}
+/******************/
+
+/************ Actus page d'accueil  fait partie du carrousel ****/
+#block-views-actualites-block {/*margin-top:140px; **/width:100%}
+#block-views-actualites-block:before {/*border-bottom:1px solid #ccc; */color:#8c6f68; display:block; font-size:1.3em; margin:8px 0 -9px 3px;}
+.i18n-de #block-views-actualites-block:before {content:'Nachrichten';}
+.i18n-en #block-views-actualites-block:before {content:"What's new?";}
+.i18n-es #block-views-actualites-block:before {content:'Noticias';}
+.i18n-fr #block-views-actualites-block:before {content:'Actualités';}
+
+.front .view-actualites {margin-top:1em; /*padding-bottom:10px;*/ text-align:center}
+
+.front .region-postscript-first .view-actualites ul {display:block; padding:0; margin:0;}
+
+#block-views-actualites-block .view-actualites li.views-row {
+  padding:0px;margin:0 0 1em 0;
+  display:table;
+  clear:both;
+  position:relative;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;   /*margin-left-7px;????*/
+}
+
+#block-views-actualites-block li.views-row > div {
+  display: table-cell;
+  position: relative;
+  vertical-align:top;
+}
+#block-views-actualites-block li.views-row div.actu {margin-left:1em;}
+
+/*view field image**/
+#block-views-actualites-block li.views-row .views-field-field-image {
+  position:relative;
+  overflow:hidden; 
+  padding-right:15px;
+  -webkit-box-sizing:border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing:border-box;    /* Firefox, other Gecko */
+  box-sizing:border-box;   
+  width:100px;
+}
+
+#block-views-actualites-block li.views-row .views-field-field-image img {
+  clip: rect(0px, 100px, 150px, 0px); 
+  position:absolute; top: 0;
+  max-width: none !important; 
+  width: 150px !important;}
+
+
+/*view field title**/
+.view-actualites .views-field-title {margin-top:0px; margin-left:0px; color:#666;}
+
+/*******paragraphe de texte****/
+#block-views-actualites-block li.views-row p {float:none; width:100%; color:#999;/* margin-left:10px;*/}
+
+
+/**h3****/
+#block-views-actualites-block h3 {
+  color:#766!important; /**color: #666!important;margin-top:105px;**/
+  font-size:1.1em; 
+  background:transparent !important;/*margin:0 0 0 7px;*/}
+
+#block-views-actualites-block h3 a:hover {text-decoration:underline;}
+
+#block-views-actualites-block a:link,
+#block-views-actualites-block a:visited {
+  background:transparent!important; color:#766!important; font-size:1.1em; text-decoration:none; display:block; /*margin-top:105px;  */}
+
+/*******date****/
+#block-views-actualites-block li.views-row .date-display-single {
+ display:none;
+/* background:rgba(255, 255, 255,.85);
+ color:#ff8936;  
+ font-size:1.2em;
+ font-weight:bold;text-align:center;
+ height:32px;
+ line-height:.85em;
+ margin:5px 0 0 5px;padding:5px 0;
+ position:absolute;z-index:10;  
+ text-transform:uppercase;  
+ top:0;
+ width:40px;*/
+}
+
+
+/* ***************formulaires de contact *******************/
+.webform-confirmation p {border:1px solid #ee8936; font-size:1.1em; max-width:360px; padding:10px; text-align:left;}
+.webform-confirmation, .webform-confirmation h5 {border:none!important;}
+
+/*****************bandeaux interieurs**********************/
+#zone-content #transparence {
+  background:rgba(255,255,255,.8);
+  margin:10px 0 0 10px; 
+  max-width:50%; 
+  width:auto; 
+  height:auto;
+  position:absolute;
+  display:block;
+  padding:.5em;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#transparence .field-name-field-accoche {display:none;}
+
+#zone-content #transparence h2 {
+text-transform:normal!important;color: #ee8936;font-size:1.2em ;line-height:110%
+}
+.field-name-body img{display:none;}
+
+.content p,.content ul li {font-size:1em;}
+.content ul.menu li {font-size:.95em;}
+h1, h3, h5, h6 {color:#ee8936!important;}
+h2 {color:#6c2466; font-size:19px;}
+#region-content h3 {background-color:transparent;}
+#region-content h4 {color:#8c6f68; font-size:16px;}
+#region-content h3 {font-size:18px; padding-left:0; white-space:normal;}
+p, li {color:#6f6666; text-align:left;}
+#region-content a {color:#7d3577; text-decoration:none;}
+#region-content a:hover {color:#655; text-decoration:underline;}
+#region-content h2 a,.content h2 a:visited {color:#655!important;}
+
+
+#zone-content a[href^="mailto"]:after {content:url("../images/email_link.png"); padding:0 0 0 3px;}
+#zone-content a[href^="http://"]:after {content:url("../images/external.png"); padding:0 0 0 3px;}
+#zone-content a[href$=".pdf"]:after {content: url('../images/doc_pdf.png'); padding:0 0 0 3px;}
+#zone-content .field-name-field-galerie a[href^="http://"]:after {content:none!important; padding:0;}
+ 
+#zone-content-wrapper{background-color:#fff;}
+
+/************ REGION SIDEBAR FIRST ************/
+/*.region-sidebar-first ul.menu {display:none;}*/
+#block-menu-block-1  {display:none;}
+/************ FIN REGION SIDEBAR FIRST ************/
+
+/************ REGION CONTENT ************/
+/*.field-type-taxonomy-term-reference .field-label,*/
+.page-node .field-name-field-rubrique .field-label,
+.page-node .field-name-field-rubrique .field-item a {display:none;}
+.front #breadcrumb {display:none;}
+#breadcrumb {margin-bottom:18px;}
+
+
+/* Contenu des pages "têtes de rubrique" */
+#region-content .menu-block-7 {border-bottom:1px solid #ccc; float:left; margin-bottom:16px;}
+#region-content .menu-block-7 ul.menu {color:#ee8936; font-size:.9em;}
+#region-content .menu-block-7 ul.menu:before {content:"Modalités d'admission "}
+#region-content .menu-block-7 ul.menu li {display:inline; font-size:1.0em; list-style-type:none;}
+#region-content .menu-block-7 ul.menu li a,
+#region-content .menu-block-7 ul.menu li a:visited {color:#ee8936!important;}
+#region-content .menu-block-7 ul.menu li a:before {content:'> '}
+
+
+
+/************ FIN REGION CONTENT ************/
+/************ REGION SIDEBAR SECOND ************/
+/************ FIN REGION SIDEBAR SECOND ************/
+
+
+
+/************ ZONE POSTSCRIPT ************/
+#zone-postscript {background:#fff; padding-top:0px; margin-top:0px;}
+
+/***********Block de titre "toutes les actus" ************/
+.block-block-30,
+.block-block-32 {background:#fff; float:right; height:28px;}
+.block-block-30 h4,
+.block-block-32 h4 {clear:both; margin-top:-15px;}
+.block-block-30 h4 a, .block-block-30 h4 a:visited,
+.block-block-32 h4 a, .block-block-32 h4 a:visited {color:#8c6f68!important; font-size:.85em; font-weight:normal!important; text-align:right;}
+.block-block-30 h4 a:hover, .block-block-32 h4 a:hover {background:#f00; text-decoration:underline;}
+
+/********      
+
+
+/* gestion de l'affichage des actus sur les pages actus */
+
+/**** Page générale des actus ****/
+h2.node-title {font-size:18px}
+.front h2.node-title a {color:#fff; margin:10px; position:absolute; z-index:3;}
+.view-id-actualites article
+{border-bottom:1px dotted #bbc; /*margin-top:38px;*/margin-bottom:1em}
+ #region-content .view-id-actualites  h4 {margin-bottom:0}
+
+.view-id-actualites img {/*float:right; margin-left:12px;*/}
+#region-content .view-id-actualites li {list-style-type:none}
+.view-id-actualites .node-links {/*display:none;*/}
+.page-actualites .item-list .pager {
+    border: 0 solid rgb(204, 204, 204);
+ }
+
+/**** Page des actus individuelles ****/
+.node-type-article h1.title:before {content:"Actu : "}
+.node-type-article h1.title {display:block!important; font-size:1.5em;}
+.node-type-article .field-name-field-date-article {color:#6c2466; font-size:1em; margin:10px 0;}
+.node-type-article .field-name-body {margin-top:10px;font-size:1.1em;}
+
+
+
+
+
+/************ Zone Twitter ************/
+.block-twitter-block,.block-twitter-block-1 {
+  border-top:1px solid #ee8936; border-bottom:1px solid #ee8936; margin-top:30px;
+
+}
+.block-twitter-block {/*margin-top:-10px;*/}
+.i18n-fr .block-twitter-block-1 {/*margin-top:170px;*/}
+.i18n-en .block-twitter-block-1 {/*margin-top:225px;*/}
+.twitter-timeline {font-size:.85em!important;
+/*margin-top:-30px;*/ width: 100% !important;}
+
+
+/******* LOGOS PAGE D'ACCUEIL **********/
+
+.block-28 {border:1px solid #ee8936; margin-top:30px;
+  height:auto; padding:0px 20px 5px;}
+
+.block-28 .logospagedaccueil ul {border:0px solid #ee8936;
+  display:inline;display:flex; list-style-type:none;}
+.block-28 ul li
+{display:inline; text-align:center;margin:0 10px; padding:0 }
+
+
+
+
+
+
+/************ FIN ZONE POSTSCRIPT ************/
+
+/************ ZONE FOOTER ************/
+#zone-footer-wrapper {display:none; background-color:transparent; height:auto;padding:0;}
+#region-footer-first {margin-left: 0px;margin-right: 0px;}
+
+
+.zone-footer {background:#f2f2e7!important; }
+
+
+
+/***block 5***/
+.menu-block-5 {padding:5px 0;}
+.menu-block-5 ul {padding:0 7px;}
+#zone-footer .menu-block-5 ul.menu li {border-bottom:1px dotted #666; display:block;  margin-bottom:1em}
+#zone-footer .menu-block-5 ul.menu li.contact,
+#zone-footer .menu-block-5 ul.menu li.annuaire,
+#zone-footer .menu-block-5 ul.menu li.intranet {display:none}
+#zone-footer .menu-block-5 ul.menu li ul {margin-left:20px;}
+#zone-footer .menu-block-5 ul.menu li ul li {border-bottom:0px; margin-top:0 !important;} 
+
+/**ne pas afficher l'item accueil****/
+#zone-footer  .menu-block-5>ul.menu>li.first {display:none;}
+
+/**couleur et font-size des liens****/
+#zone-footer .menu-block-5 ul.menu li a:link,
+#zone-footer .menu-block-5 ul.menu li a:visited {font-size:15px;color:#666}
+#zone-footer .menu-block-5 > ul.menu >li> a:link,
+#zone-footer .menu-block-5 > ul.menu >li> a:visited {font-size:18px; color:#6C2466}
+#zone-footer .menu-block-5 ul.menu li a.active-trail {background:#ee8936; color:#000!important; padding:0 2px;}
+#zone-footer .menu-block-5 ul.menu li a:hover {color:#ee8936;}
+
+
+
+/***block 4***/
+#zone-footer .menu-block-4 {margin:10px -10px 0 -10px; background:#8c6f68; }
+
+#zone-footer .menu-block-4 ul.menu {}
+#zone-footer .menu-block-4 ul.menu>li {display:block;min-height:25px;border-bottom:1px solid #fff}
+
+#zone-footer .menu-block-4  ul.menu li a:link,
+#zone-footer .menu-block-4  ul.menu li a:visited {color:#fff; font-size:1.1em;}
+
+#zone-footer ul.menu li a:after {content:"" }
+/************ FIN ZONE FOOTER ************/
+
+
+/************ REGLES VUES (indépendantes des zones)************/
+
+.front .views-field-view-node {display:none;}
+
+
+
