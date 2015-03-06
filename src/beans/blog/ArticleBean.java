@@ -1,14 +1,14 @@
-package beans;
+package beans.blog;
 
 import java.util.ArrayList;
 
-public class PageBlogBean {
+public class ArticleBean {
 	
 	private ArrayList<String> liensIntitule, liens, commentaires;
 	private String entreprise, urlEntreprise, ville, pays, langue, titre, premiereImpression, commentImpression, villeImpression, conseil;
 	private int noteEntreprise, noteVille, nbLiens;
 	
-	public PageBlogBean() {
+	public ArticleBean() {
 		liens = new ArrayList<String>();
 		liens.add("1er lien");
 		liens.add("2eme lien");

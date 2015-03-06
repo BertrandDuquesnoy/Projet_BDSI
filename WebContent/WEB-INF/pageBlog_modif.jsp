@@ -7,8 +7,8 @@
 <link type="text/css" rel="stylesheet" href="CSS/style.css" />
 </head>
 	<script type="text/javascript">
-		function ajouterLien(){
-			window.open('../WEB-INF/ajoutLien.html','ajoutLien','menubar=no, scrollbars=no, top=50, left=50, width=50, height=50');
+		function ajouterLien(id){
+			window.open('page?modif=&ajout=1&id='+id+'','ajoutLien','menubar=no, scrollbars=no, top=50, left=50, width=200, height=200');
 		}
 	</script>
 	<body>
@@ -74,10 +74,7 @@
 							<input type="text" name="lien${i}" value="${page.liensIntitule[i]}"/> <input type="text" value="${page.liens[i]}"/> <br/>
 						</c:forEach>
 					</c:if>
-					<input type="button" value="Ajouter un lien" class="ok_button" onclick="ajouterLien()"/>
-				</p>
-				<p>
-					<span class="nb_etudiants_partis">Vos commentaires : </span>
+					<input type="button" value="Ajouter un lien" class="ok_button" onclick="ajouterLien(${id})"/>
 				</p>
 			</div>
 		</div>

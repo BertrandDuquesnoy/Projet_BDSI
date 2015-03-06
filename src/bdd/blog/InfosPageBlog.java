@@ -2,20 +2,25 @@ package bdd.blog;
 
 import javax.servlet.http.HttpServletRequest;
 
-import beans.PageBlogBean;
+import beans.blog.PageBean;
 
 public class InfosPageBlog {
 
-	PageBlogBean pbb;
-	int id;
+	PageBean pb;
 	
 	public InfosPageBlog() {
-		pbb = new PageBlogBean();
-		id = 0; //Par exemple, cette info sera récupérée dans la request
+		pb = new PageBean();
 	}
 	
-	public PageBlogBean getInfos(HttpServletRequest request){
-		//TODO: Récupérer toutes les infos de tous les articles concernant une catégorie
-		return pbb;
+	public PageBean getInfos(HttpServletRequest request){
+		return pb;
+	}
+	
+	public void setInfos(PageBean pb){
+		
+	}
+	
+	public void deleteArticle(int id){
+		
 	}
 }

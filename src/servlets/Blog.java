@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bdd.blog.InfosBlog;
-import beans.BlogBean;
+import beans.blog.BlogBean;
 import beans.GeneralBeans;
 
 public class Blog extends HttpServlet{
