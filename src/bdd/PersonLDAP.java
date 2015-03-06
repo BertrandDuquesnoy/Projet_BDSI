@@ -19,25 +19,12 @@ import org.ietf.ldap.*;
 
 public class PersonLDAP {
 
-	//-------------------
-	// Attributes
-	//-------------------
-	//protected Connection con;
-	//private int id;
 	private String login;
 	private String year;
 	private String mail;
 	private String firstName;
 	private String lastName;
 	private String affectation;
-	private String coloration;
-	//private String password;
-	//private int id_group;
-	//private String text;
-
-	//-------------------
-	// Constructors
-	//-------------------
 
 	public PersonLDAP() {
 		login="";
@@ -46,7 +33,6 @@ public class PersonLDAP {
 		firstName="";
 		lastName="";
 		affectation="";
-		coloration="";
 	}
 
 	public PersonLDAP(String login, String year, String mail, String firstName,
@@ -58,17 +44,8 @@ public class PersonLDAP {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.affectation = affectation;
-		//this.coloration = coloration;
 	}
 
-	public String getColoration(){
-		return coloration;
-	}
-
-	public void setColoration(String coloration){
-		this.coloration = coloration;
-	}
-	
 	public String getYear() {
 		return year;
 	}
@@ -184,18 +161,7 @@ public class PersonLDAP {
 			} else {
 				return false;
 			}
-			
-			if (loginDN.contains("ETUDIANTS")) {
-				String groupe="";
-				groupe = "ETUDIANTS";
-				System.out.println("Groupe : " + groupe);
-			}
-			if (loginDN.contains("PERSONNELS")) {
-				String groupe="";
-				groupe = "PERSONNELS";
-				System.out.println("Groupe : " + groupe);
-			}
-			
+
 			// authentification
 			try {
 				lc.bind( ldapVersion, loginDN, passwd.getBytes("UTF8") );
@@ -242,28 +208,7 @@ public class PersonLDAP {
      * @param entry The entry that contains the attributes
      * @param attrs An array of attribute names to display
      */
-    @SuppressWarnings("rawtypes")
-	public static void printEntry(LDAPEntry entry, String[] attrs) {
-        for (int i=0; i < attrs.length; i++) {
-            LDAPAttribute attr = entry.getAttribute(attrs[i]);
-            if (attr == null) {
-                System.out.println("    [" + attrs[i] + ": not present]");
-                continue;
-            }
 
-            Enumeration enumVals = attr.getStringValues();
-            boolean hasVals = false;
-            while ( (enumVals != null) && (enumVals.hasMoreElements()) ) {
-                String val = (String) enumVals.nextElement();
-                System.out.println("    [" + attrs[i] + ": " + val + "]");
-                hasVals = true;
-            }
-            if (!hasVals) {
-                System.out.println("    [" + attrs[i] + ": has no values]");
-            }
-        }
-        System.out.println("---------------------------------------------");
-    }
     @SuppressWarnings({ "unused", "rawtypes" })
 	public static PersonLDAP getEntry(LDAPEntry entry, String[] attrs) {
     	PersonLDAP p;
@@ -295,7 +240,7 @@ public class PersonLDAP {
 
 
 
-	@Override
+	
 	public String toString() {
 		return "Person [login=" + login + ", year=" + year + ", mail=" + mail
 				+ ", firstName=" + firstName + ", lastName=" + lastName
@@ -333,6 +278,12 @@ public class PersonLDAP {
 			update_user.close();
 	}
 	
+    
+    
+    
+    
+    
+    
 	/*
 	public static Profil getProfil(java.sql.Connection tunnel, String user_name) throws SQLException{
 			System.out.println("Get profil : deb");
