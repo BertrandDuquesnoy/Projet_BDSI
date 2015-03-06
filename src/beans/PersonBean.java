@@ -2,13 +2,13 @@ package beans;
 
 public class PersonBean {
 
-	private String nom, prenom, annee, coloration;
+	private String nom, prenom, annee, mail;
 	
 	public PersonBean() {
 		nom = "nom";
 		prenom = "prenom";
 		annee = "null";
-		coloration = "null";
+		mail = "null";
 	}
 
 	public String getNom() {
@@ -35,11 +35,11 @@ public class PersonBean {
 		this.annee = annee;
 	}
 
-	public String getColoration() {
-		return coloration;
+	public String getMail() {
+		return mail;
 	}
 
-	public void setColoration(String coloration) {
-		this.coloration = coloration;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 }
