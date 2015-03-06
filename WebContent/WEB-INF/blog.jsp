@@ -7,6 +7,13 @@
 <link type="text/css" rel="stylesheet" href="CSS/style.css" />
 </head>
 	<script type="text/javascript">
+	
+		var value;
+		
+		function updateComboBox(){
+			value = cb.options[cb.selectedIndex].value;
+		}
+	
 		function supprimerCategorie(){
 			width = 400;
             height = 300;
@@ -20,7 +27,9 @@
             popup = window.open('','SuppC','menubar=no, scrollbars=no, top='+top+', left='+left+', width='+width+', height='+height+'');
             popup.document.writeln("Catégorie à supprimer : ");
             popup.document.writeln('<select id="comboBox"><c:forEach var="i" begin="0" end="${bb.nbCategories-1}"><option>${bb.list[i]}</option></c:forEach></select>');
-            popup.document.write('<p><a href="blog?modif=2&name='+popup.document.getElementById("comboBox").value+'" onMouseUp="window.close()">Supprimer</a> <a href="" onclick=window.close();>Annuler</a>');
+            var cb = popup.document.getElementById("comboBox");
+            var value;
+            popup.document.write('<p><a href="blog?modif=2&name='+value+'" onmouseover="value=cb.options[cb.selectedIndex].value" onMouseUp="window.close()">Supprimer</a> <a href="" onclick=window.close();>Annuler</a>');
             
 		}
 	</script>

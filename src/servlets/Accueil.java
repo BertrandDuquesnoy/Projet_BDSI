@@ -19,7 +19,7 @@ public class Accueil extends HttpServlet{
 	}
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil.jsp" ).forward( request, response );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/AccueilEtuConnecte.jsp" ).forward( request, response );
 	}
 
 }
