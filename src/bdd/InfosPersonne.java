@@ -38,7 +38,7 @@ public class InfosPersonne{
 			
 			ResultSet resultat2 = instruction.executeQuery("SELECT coloration " +"FROM etudiant "+ "WHERE id_etud = "+id_personne+";");
 			while(resultat2.next()){
-				personne.setColoration(resultat2.getString("coloration"));
+				personne.setMail(resultat2.getString("coloration"));
 				
 			}
 			
