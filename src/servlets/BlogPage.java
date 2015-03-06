@@ -65,6 +65,8 @@ public class BlogPage extends HttpServlet{
 			//TODO: Gérer l'ajout de lien via la classe InfosArticleBlog
 			
 //			infos_pageBlog.addLink(item, link);
+			
+			infos_pageBlog.addLink(item, link);
 		} catch (Exception e) {
 			
 		}finally{

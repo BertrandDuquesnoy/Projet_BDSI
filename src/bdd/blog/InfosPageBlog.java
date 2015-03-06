@@ -23,4 +23,12 @@ public class InfosPageBlog {
 	public void deleteArticle(int id){
 		
 	}
+	
+	public void setInfos(HttpServletRequest request){
+		
+	}
+	
+	public void addLink(String item, String link){
+		//TODO: Ajouter le lien et l'item dans la liste des liens utiles de l'article
+	}
 }
