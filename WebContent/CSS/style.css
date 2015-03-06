@@ -37,3 +37,81 @@ html {font: 10px #000000; font-family: 'Trebuchet MS';}
 
 /* SEPARATEUR */
 .separateur {background: #6C2466; height: 2px;}
+
+#Onglets{
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+  width: 180px;
+}
+#Onglets ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+}
+#Onglets li {
+   background-color:#c0c0c0;
+   background-image:-webkit-linear-gradient(top, #c0c0c0 0%, #c0c0c0 100%);
+   background-image: linear-gradient(to bottom, #c0c0c0 0%, #c0c0c0 100%);
+   border-radius: 6px;
+   margin-bottom:2px;
+   box-shadow: 3px 3px 3px #999;
+   border:solid 1px #c0c0c0
+}
+#Onglets li li {
+   max-height:0;
+   overflow: hidden;
+   transition: all .5s;
+   border-radius:0;
+   background: #c0c0c0;
+   box-shadow: none;
+   border:none;
+   margin:0
+}
+#Onglets a {
+  display:block;
+  text-decoration: none;
+  color: #800080;
+  padding: 8px 0;
+  font-family: verdana;
+  font-size:1.2em
+}
+#Onglets ul li a, #Onglets li:hover li a {
+  font-size:1em
+}
+#Onglets li:hover {
+   background: #D3D3D3;
+}
+#Onglets li li:hover {
+   background: #D3D3D3;
+}
+#Onglets ul li:last-child {
+   border-radius: 0 0 6px 6px;
+   border:none;
+}
+#Onglets li:hover li {
+  max-height: 15em;
+}
+
+
+#Onglets ul li a {
+
+color : #ffffff
+}
+
+
+
+#cote_gauche{
+
+
+margin-top : 40px 
+}
+
+
+#lien_res_sociaux{
+
+margin-top : 15px;
+margin-left :  11px 
+}
