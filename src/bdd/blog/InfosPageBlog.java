@@ -18,4 +18,12 @@ public class InfosPageBlog {
 		//TODO: Récupérer toutes les infos de tous les articles concernant une catégorie
 		return pbb;
 	}
+	
+	public void setInfos(HttpServletRequest request){
+		
+	}
+	
+	public void addLink(String item, String link){
+		//TODO: Ajouter le lien et l'item dans la liste des liens utiles de l'article
+	}
 }

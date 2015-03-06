@@ -28,8 +28,13 @@ public class BlogPage extends HttpServlet{
 		try {
 			if (request.getParameter("modif").equals("1")) {
 				this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog_modif.jsp").forward(request, response);
-			}else 
+			}
+			else if(request.getParameter("ajout").equals("1")){
+				this.getServletContext().getRequestDispatcher("/WEB-INF/ajoutLien.jsp").forward(request, response);
+			}
+			else{
 				this.getServletContext().getRequestDispatcher( "/WEB-INF/pageBlog.jsp" ).forward( request, response );
+			}
 		} catch (NullPointerException e) {
 			this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog.jsp").forward(request, response);
 		}
@@ -37,7 +42,20 @@ public class BlogPage extends HttpServlet{
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		String item = "";
+		String link = "";
 		
+		try {
+			item = request.getParameter("nouveauIntitule");
+			link = request.getParameter("nouveauLien");
+			
+			infos_pageBlog.addLink(item, link);
+		} catch (Exception e) {
+			
+		}finally{
+			request.setAttribute("page", infos_pageBlog.getInfos(request));
+			this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog_modif.jsp").forward(request, response);
+		}		
 	}
 
 }

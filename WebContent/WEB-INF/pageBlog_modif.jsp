@@ -8,7 +8,7 @@
 </head>
 	<script type="text/javascript">
 		function ajouterLien(){
-			window.open('../WEB-INF/ajoutLien.html','ajoutLien','menubar=no, scrollbars=no, top=50, left=50, width=50, height=50');
+			window.open('page?modif=&ajout=1','ajoutLien','menubar=no, scrollbars=no, top=50, left=50, width=200, height=200');
 		}
 	</script>
 	<body>
@@ -75,9 +75,6 @@
 						</c:forEach>
 					</c:if>
 					<input type="button" value="Ajouter un lien" class="ok_button" onclick="ajouterLien()"/>
-				</p>
-				<p>
-					<span class="nb_etudiants_partis">Vos commentaires : </span>
 				</p>
 			</div>
 		</div>
