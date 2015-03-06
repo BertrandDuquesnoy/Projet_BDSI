@@ -1,0 +1,117 @@
+html {font: 10px #000000; font-family: 'Trebuchet MS';}
+
+/* IMAGES */
+.logo-img{margin:0 auto;padding: 10px 10px 10px;}
+
+/* BLOCK */
+.block-28 {border:1px solid #ee8936; margin-top:30px; height:auto; padding:0px 20px 5px;}
+.infos {border: 2px solid #6C2466; padding: 10px 10px 10px; margin: 10px;}
+
+.categorie{background-color: #6C2466; width: 250px; height: 100px; color: white; font-size: 14px; margin: 10px; text-align:center; color:white; font-size:25px; border: solid;}
+
+/* LIENS */
+.lien_default {padding:5px 0; text-decoration: none; color: #000000;}
+
+#lien_res_sociaux {padding: 0; margin:0;}
+#lien_res_sociaux li {display: inline; list-style-type: none;}
+#lien_res_sociaux a {display: inline; margin: 0 10px;}
+
+/* POSITION */
+#cote_gauche {float: left; width: 20%}
+#connexion {position: absolute; right: 2%; top: 2%;}
+#corps {float: right; width: 75%}
+#options_admin {color: #6C2466; text-align: center}
+#ligne {display: inline;}
+
+/* CONTENU */
+.text_paragraph {}
+
+.titre_page {color: #6C2466; text-align: center;}
+.titre_section {color: #6C2466; text-align: center; font-size: 2em;}
+.nb_etudiants_partis {color: #FFFFFF; background-color: #6C2466; padding: 3px;}
+
+.options_admin {border: 2px solid #6C2466; border-radius: 5px; margin: 10px; padding: 5px;}
+
+.voir_plus {color: #6C2466;float:right}
+.commentaire {background-color: #6C2466; color: white; padding: 5px; width: 40%; border-radius: 10px;}
+
+/* SEPARATEUR */
+.separateur {background: #6C2466; height: 2px;}
+
+#Onglets{
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+  width: 180px;
+}
+#Onglets ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+}
+#Onglets li {
+   background-color:#c0c0c0;
+   background-image:-webkit-linear-gradient(top, #c0c0c0 0%, #c0c0c0 100%);
+   background-image: linear-gradient(to bottom, #c0c0c0 0%, #c0c0c0 100%);
+   border-radius: 6px;
+   margin-bottom:2px;
+   box-shadow: 3px 3px 3px #999;
+   border:solid 1px #c0c0c0
+}
+#Onglets li li {
+   max-height:0;
+   overflow: hidden;
+   transition: all .5s;
+   border-radius:0;
+   background: #c0c0c0;
+   box-shadow: none;
+   border:none;
+   margin:0
+}
+#Onglets a {
+  display:block;
+  text-decoration: none;
+  color: #800080;
+  padding: 8px 0;
+  font-family: verdana;
+  font-size:1.2em
+}
+#Onglets ul li a, #Onglets li:hover li a {
+  font-size:1em
+}
+#Onglets li:hover {
+   background: #D3D3D3;
+}
+#Onglets li li:hover {
+   background: #D3D3D3;
+}
+#Onglets ul li:last-child {
+   border-radius: 0 0 6px 6px;
+   border:none;
+}
+#Onglets li:hover li {
+  max-height: 15em;
+}
+
+
+#Onglets ul li a {
+
+color : #ffffff
+}
+
+
+
+#cote_gauche{
+
+
+margin-top : 40px 
+}
+
+
+#lien_res_sociaux{
+
+margin-top : 15px;
+margin-left :  11px 
+}
