@@ -15,6 +15,7 @@
 	}
 </script>
 <body>
+	<p>id : ${id}</p>
 	<form action="page" method="post" id="f">
 		<p>Intitulé : <input type="text" name="nouveauIntitule"/></p>
 		<p>Lien : <input type="text" name="nouveauLien"/></p>

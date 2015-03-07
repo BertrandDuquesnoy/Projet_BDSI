@@ -21,6 +21,6 @@ public class InfosPageBlog {
 	}
 	
 	public void deleteArticle(int id){
-		
+		System.out.println("suppression de l'article d'id = "+id);
 	}
 }

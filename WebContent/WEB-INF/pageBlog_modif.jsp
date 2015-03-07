@@ -10,6 +10,10 @@
 		function ajouterLien(id){
 			window.open('page?modif=&ajout=1&id='+id+'','ajoutLien','menubar=no, scrollbars=no, top=50, left=50, width=200, height=200');
 		}
+		
+		function supprimerLien(id, id_lien){
+			window.open('page?modif=&ajout=3&id='+id+'&id_lien='+id_lien+'','supprLien','menubar=no, scrollbars=no, top=50, left=50, width=200, height=200');
+		}
 	</script>
 	<body>
 	<%@ include file="header.jsp" %>
@@ -33,7 +37,7 @@
 					</p>
 					<p class="text_paragraph">
 						Entreprise : <input type="text" value="Dassault Aviation" /> <br/>
-						Site de l'entreprise : <input type="text"d value="dassault.com" /> <br/>
+						Site de l'entreprise : <input type="text" value="dassault.com" /> <br/>
 						Ville : <input type="text" value="Moscou" /> <br/>
 						Pays : <img src="images/pays/canada.png"> <input type="text" value="Russie" /> <br/>
 						Langue : <input type="text" value="Anglais" /> <br/>
@@ -71,10 +75,11 @@
 				<p>
 					<c:if test="${page.nbLiens > 1}">
 						<c:forEach var="i" begin="0" end="${page.nbLiens-1}">
-							<input type="text" name="lien${i}" value="${page.liensIntitule[i]}"/> <input type="text" value="${page.liens[i]}"/> <br/>
+							<input type="text" name="lien${i}" value="${page.liensIntitule[i]}"/> <input type="text" value="${page.liens[i]}"/>
+							<input type="button" value="Supprimer ce lien" onclick="supprimerLien(${page.id},${i})" /> <br/>
 						</c:forEach>
 					</c:if>
-					<input type="button" value="Ajouter un lien" class="ok_button" onclick="ajouterLien(${id})"/>
+					<input type="button" value="Ajouter un lien" class="ok_button" onclick="ajouterLien(${page.id})"/>
 				</p>
 			</div>
 		</div>

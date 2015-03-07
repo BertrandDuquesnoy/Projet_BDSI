@@ -23,8 +23,13 @@ public class InfosArticleBlog {
 		
 	}
 	
-	public void addLink(String item, String link){
+	public void addLink(int id, String item, String link){
+		System.out.println("ajout de "+item+", à : "+link+"; id="+id);
 		//TODO: Ajouter le lien et l'item dans la liste des liens utiles de l'article
+	}
+	
+	public void deleteLink(int id, int id_lien){
+		System.out.println("suppression du lien "+id_lien+", de l'article d'id : "+id);
 	}
 
 	public int getId() {

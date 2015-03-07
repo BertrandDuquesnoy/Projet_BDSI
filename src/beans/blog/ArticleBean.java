@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class ArticleBean {
 	
 	private ArrayList<String> liensIntitule, liens, commentaires;
-	private String entreprise, urlEntreprise, ville, pays, langue, titre, premiereImpression, commentImpression, villeImpression, conseil;
-	private int noteEntreprise, noteVille, nbLiens;
+	private String auteur, promotionAuteur, entreprise, urlEntreprise, ville, pays, langue, titre, premiereImpression, commentImpression, villeImpression, conseil;
+	private int noteEntreprise, noteVille, nbLiens, nbCommentaires, id;
 	
 	public ArticleBean() {
 		liens = new ArrayList<String>();
@@ -16,9 +16,15 @@ public class ArticleBean {
 		liensIntitule.add("erasmus");
 		liensIntitule.add("bourse au mérite");
 		commentaires = new ArrayList<String>();
+		commentaires.add("commentaire 1");
+		commentaires.add("commentaire 2");
+		nbCommentaires = 2;
 		nbLiens = 2;
 		noteEntreprise = 4;
-		noteVille = 5;
+		noteVille = 3;
+		id = 5;
+		auteur = "Paul Cottin";
+		promotionAuteur = "2016";
 		entreprise = "null";
 		urlEntreprise = "null";
 		ville = "null";
@@ -157,6 +163,38 @@ public class ArticleBean {
 
 	public void setNbLiens(int nbLiens) {
 		this.nbLiens = nbLiens;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getAuteur() {
+		return auteur;
+	}
+
+	public void setAuteur(String auteur) {
+		this.auteur = auteur;
+	}
+
+	public String getPromotionAuteur() {
+		return promotionAuteur;
+	}
+
+	public void setPromotionAuteur(String promotionAuteur) {
+		this.promotionAuteur = promotionAuteur;
+	}
+
+	public int getNbCommentaires() {
+		return commentaires.size();
+	}
+
+	public void setNbCommentaires(int nbCommentaires) {
+		this.nbCommentaires = nbCommentaires;
 	}
 
 }
