@@ -18,9 +18,11 @@ public class BlogPage extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
 	InfosPageBlog infos_pageBlog;
+	InfosArticleBlog infos_articleBlog;
 	
 	public BlogPage() {
 		infos_pageBlog = new InfosPageBlog();
+		infos_articleBlog = new InfosArticleBlog();
 	}
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -66,7 +68,6 @@ public class BlogPage extends HttpServlet{
 			
 //			infos_pageBlog.addLink(item, link);
 			
-			infos_pageBlog.addLink(item, link);
 		} catch (Exception e) {
 			
 		}finally{
