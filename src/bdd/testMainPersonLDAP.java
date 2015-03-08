@@ -9,7 +9,7 @@ class testMainPersonLDAP{
 	public static void main(String[] args) throws UnsupportedEncodingException, LdapException{
 		PersonLDAP personne = new PersonLDAP();
 		LdapConnect co = new LdapConnect();
-		co.Connect("duquesno7u","");
-		personne.ldapRecup();
+		co.Connect("panetto5","");
+		//personne.ldapRecup();
 	}
 }

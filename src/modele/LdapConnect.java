@@ -61,15 +61,23 @@ public class LdapConnect {
 				return false;
 			}
 			if (loginDN.contains("ETUDIANTS")) {
-				groupe = "ETUDIANTS";
+				groupe = "Etudiant";
 				System.out.println("Groupe : " + groupe);
 			}
 			if (loginDN.contains("EqTech")) {
-				groupe = "EqTech";
+				groupe = "Administrateur";
+				System.out.println("Groupe : " + groupe);
+			}
+			if (loginDN.contains("EqPedag") && !loginDN.contains("panetto5")) {
+				groupe = "Professeur";
+				System.out.println("Groupe : " + groupe);
+			}
+			if (loginDN.contains("EqAdmin")) {
+				groupe = "Pôle Relations Internationales";
 				System.out.println("Groupe : " + groupe);
 			}
 			if (loginDN.contains("panetto5")) {
-				groupe = "Respo";
+				groupe = "Responsable Relations Internationales";
 				System.out.println("Groupe : " + groupe);
 			}
 

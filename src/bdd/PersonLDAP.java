@@ -57,70 +57,42 @@ public class PersonLDAP extends LdapConnect {
 		this.year = year;
 	}
 
-
-
 	public String getMail() {
 		return mail;
 	}
-
-
 
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
 
-
-
 	public String getAffectation() {
 		return affectation;
 	}
-
-
 
 	public void setAffectation(String affectation) {
 		this.affectation = affectation;
 	}
 
-
-
-	/**
-	 * @return the firstName
-	 */
 	public String getFirstName() {
 		return firstName;
 	}
 
-	/**
-	 * @param firstName : the firstName to set
-	 */
 	public void setFirstName(String _firstName) {
 		this.firstName = _firstName;
 	}
 
-	/**
-	 * @return the lastName
-	 */
 	public String getLastName() {
 		return lastName;
 	}
 
-	/**
-	 * @param lastName : the lastName to set
-	 */
 	public void setLastName(String _lastName) {
 		this.lastName = _lastName;
 	}
 
-	/**
-	 * @return the login
-	 */
 	public String getLogin() {
 		return login;
 	}
 
-	/**
-	 * @param login : the login to set
-	 */
 	public void setLogin(String _login) {
 		this.login = _login;
 	}
@@ -140,7 +112,6 @@ public class PersonLDAP extends LdapConnect {
 		}
 	}*/
 
-	
 	public static ArrayList<PersonLDAP> ldapRecup() throws java.io.UnsupportedEncodingException, LdapException{
 		ArrayList<PersonLDAP> lp = new ArrayList<PersonLDAP>();
 		try {
@@ -167,13 +138,6 @@ public class PersonLDAP extends LdapConnect {
 		}
 		return lp;
 	}
-
-    /**
-     * Method used to print the names and values of attributes of an entry.
-     * 
-     * @param entry The entry that contains the attributes
-     * @param attrs An array of attribute names to display
-     */
 
     @SuppressWarnings({ "unused", "rawtypes" })
 	public static PersonLDAP getEntry(LDAPEntry entry, String[] attrs) {
@@ -204,9 +168,6 @@ public class PersonLDAP extends LdapConnect {
         return p = new PersonLDAP(als.get(0),als.get(1),als.get(2),als.get(3),als.get(4),als.get(5));
     }
 
-
-
-	
 	public String toString() {
 		return "Person [login=" + login + ", year=" + year + ", mail=" + mail
 				+ ", firstName=" + firstName + ", lastName=" + lastName
@@ -243,12 +204,6 @@ public class PersonLDAP extends LdapConnect {
 			update_user.execute();
 			update_user.close();
 	}
-	
-    
-    
-    
-    
-    
     
 	/*
 	public static Profil getProfil(java.sql.Connection tunnel, String user_name) throws SQLException{
