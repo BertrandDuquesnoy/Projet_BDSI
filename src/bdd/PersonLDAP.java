@@ -25,7 +25,7 @@ public class PersonLDAP extends LdapConnect {
 	private String mail;
 	private String firstName;
 	private String lastName;
-	private String affectation;
+
 
 	public PersonLDAP() {
 		login="";
@@ -33,18 +33,18 @@ public class PersonLDAP extends LdapConnect {
 		mail="";
 		firstName="";
 		lastName="";
-		affectation="";
+
 	}
 
 	public PersonLDAP(String login, String year, String mail, String firstName,
-			String lastName, String affectation) {
+			String lastName) {
 		super();
 		this.login = login;
 		this.year = year;
 		this.mail = mail;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.affectation = affectation;
+
 	}
 
 	public String getYear() {
@@ -63,14 +63,6 @@ public class PersonLDAP extends LdapConnect {
 
 	public void setMail(String mail) {
 		this.mail = mail;
-	}
-
-	public String getAffectation() {
-		return affectation;
-	}
-
-	public void setAffectation(String affectation) {
-		this.affectation = affectation;
 	}
 
 	public String getFirstName() {
@@ -124,7 +116,7 @@ public class PersonLDAP extends LdapConnect {
 			lc.connect(ldapHost, ldapPort);
 			System.out.println("Recup apres co/Avant recherche");
 			String searchFilterExpand = "(&(objectclass=*)(uid=*))";
-			String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn","eduPersonAffiliation"};
+			String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn"};
 			LDAPSearchResults searchResults = lc.search(searchBase, LDAPConnection.SCOPE_SUB, searchFilterExpand, attr, false);
 			System.out.println("Recup apres recherche");
 			while ( searchResults.hasMore() ) {
@@ -165,18 +157,17 @@ public class PersonLDAP extends LdapConnect {
             }
         }
         System.out.println("---------------------------------------------");
-        return p = new PersonLDAP(als.get(0),als.get(1),als.get(2),als.get(3),als.get(4),als.get(5));
+        System.out.println("Récap de l'utilisateur : " + als); // ordre : uid, annéeEtude, mail, prénom, nom
+        return p = new PersonLDAP(als.get(0),als.get(1),als.get(2),als.get(3),als.get(4));
     }
 
 	public String toString() {
 		return "Person [login=" + login + ", year=" + year + ", mail=" + mail
 				+ ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", affectation=" + affectation + "]";
+				+ ", affectation=" +  "]";
 	}	
 	public String toStringDataBase() {
 		String res ="\n[";
-		if(affectation.equals("student")) res+="etudiant,";
-		else res+=affectation+';';
 		res+=login+';'+mail+";gender;date_of_birth;"+firstName+';'+lastName+";speciality;"+year+']';
 		return res;
 	}
@@ -185,8 +176,6 @@ public class PersonLDAP extends LdapConnect {
 		String label="";
 			CallableStatement update_user = tunnel.prepareCall("{call update_user(?,?,?,?,?,?,?,?,?)}");
 			//label,user_name,email,gender,date_of_birth,first_name,last_name,speciality,level_user
-			if(this.affectation.equals("student")) label+="etudiant";
-			else label+="enseignant";
 			String tempMail=null;
 			if(this.getMail().equals("") | this.getMail()==null) tempMail=null;
 			else tempMail=this.getMail();

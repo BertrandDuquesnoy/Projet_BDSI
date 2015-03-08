@@ -10,6 +10,6 @@ class testMainPersonLDAP{
 		PersonLDAP personne = new PersonLDAP();
 		LdapConnect co = new LdapConnect();
 		co.Connect("panetto5","");
-		//personne.ldapRecup();
+		personne.ldapRecup();
 	}
 }

@@ -80,6 +80,8 @@ public class LdapConnect {
 				groupe = "Responsable Relations Internationales";
 				System.out.println("Groupe : " + groupe);
 			}
+			
+			//Pour les élèves partis à l'étranger, rentrer les uid à la main :/ ??
 
 			// authentification
 			try {
