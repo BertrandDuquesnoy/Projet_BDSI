@@ -2,13 +2,16 @@ package beans;
 
 public class PersonBean {
 
-	private String nom, prenom, annee, mail;
+	private String nom, prenom, annee, mail, categorie;
+	private int id;
 	
 	public PersonBean() {
+		id=0;
 		nom = "nom";
 		prenom = "prenom";
 		annee = "null";
 		mail = "null";
+		categorie="eleve";
 	}
 
 	public String getNom() {
@@ -41,5 +44,21 @@ public class PersonBean {
 
 	public void setMail(String mail) {
 		this.mail = mail;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(String categorie) {
+		this.categorie = categorie;
 	}
 }
