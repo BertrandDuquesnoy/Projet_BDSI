@@ -25,6 +25,7 @@ public class Accueil extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		try {
 			if (request.getParameter("carte").equals("1")) {
+				request.setAttribute("string", infos_carte.getInfosSerialized());
 				request.setAttribute("carte", infos_carte.getInfos());
 				this.getServletContext().getRequestDispatcher( "/WEB-INF/googleMap.jsp" ).forward( request, response );
 			}else{

@@ -25,13 +25,36 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script>
-var geocoder;
-var map;
+/* var geocoder;*/
+var map; 
 
-var nbUniv = parseInt("${carte.nbUniv}", 0);
-var nbStage = parseInt("${carte.nbStage}", 0);
-var nbDD = parseInt("${carte.nbDD}", 0);
-var univAdresses = new Array();
+var univ = {
+		id: Array(),
+		titre: Array(), 
+		description: Array(),
+		item: Array(),
+		lien: Array(),
+		adresse: Array()
+};
+var stage = {
+		id: Array(),
+		titre: Array(), 
+		description: Array(),
+		item: Array(),
+		lien: Array(),
+		adresse: Array()
+};
+var dd = {
+		id: Array(),
+		titre: Array(), 
+		description: Array(),
+		item: Array(),
+		lien: Array(),
+		adresse: Array()
+};
+
+
+constructArray("${string}");
 
 function initialize() {
   geocoder = new google.maps.Geocoder();
@@ -44,79 +67,66 @@ function initialize() {
 
 }
 
-
-function displayUniversities() {
-  //adresses qui seront géolocalisées par l'API
-	  var address1 = "Poitiers";
-	  var address2 = "Dunkerque";
-	  var address3 = "Guéret";
-	
-
-//université 1
-  geocoder.geocode( { 'address': address1}, function(results, status) {
-      var marker1 = new google.maps.Marker({
-          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-          map: map,
-          position: results[0].geometry.location,
-          title : "Université Polytechnique du Poitou"
-      });
-    var text1 = '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">Université du Poitou</h1>'+
-    '<div id="bodyContent">'+
-    '<p>L\'université du Poitou est super hypra cool, venez vite étudiez là-bas !!!!!!!'+
-    '<p>En savoir plus :<a href="http://fr.wikipedia.org/wiki/Poitou">'+
-          'http://fr.wikipedia.org/wiki/Poitou</a> '+    //je sais pas pourquoi si on enlève un des 2 liens ça marche plus...  A creuser si on veut faire plus propre...
-          '</div>'+
-          '</div>';
-    var window1 = new google.maps.InfoWindow({
-      content: text1
-    });
-      google.maps.event.addListener(marker1, 'click', function() {
-        window1.open(map,marker1);
-      });
-    });
-
-//université 2
-  geocoder.geocode( { 'address': address2}, function(results, status) {
-      var marker2 = new google.maps.Marker({
-          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-          map: map,
-          position: results[0].geometry.location,
-          title : "Ecole supérieure du charbon et des matériaux combustibles"
-      });
-    var text2 = "Longue vie au charbon, aidez nous à en extraire encore un peu !";
-    var window2 = new google.maps.InfoWindow({
-      content: text2
-    });
-      google.maps.event.addListener(marker2, 'click', function() {
-        window2.open(map,marker2);
-      });
-    });
-
-//université 3
-  geocoder.geocode( { 'address': address3}, function(results, status) {
-      var marker3 = new google.maps.Marker({
-          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-          map: map,
-          position: results[0].geometry.location,
-          title : "Université Polytechnique de Guéret"
-      });
-    var text3 = "You gonna enjoy the way of life in Guéret, for sure !";
-    var window3 = new google.maps.InfoWindow({
-      content: text3
-    });
-      google.maps.event.addListener(marker3, 'click', function() {
-        window3.open(map,marker3);
-      });
-    });
+function constructArray(s){
+	tab = s.split('&_&');
+	c = tab.length-1;
+	for(var i=0; i<c; i++){
+		temp = tab[i].split('$£$');
+		if(temp[temp.length-1] == "univ"){
+			/* alert(temp[0]+', '+temp[1]+', '+temp[2]+', '+temp[3]+', '+temp[4]+', '+temp[5]); */
+			(univ.id).push(temp[0]);
+			(univ.titre).push(temp[1]);
+			(univ.description).push(temp[2]);
+			(univ.item).push(temp[3]);
+			(univ.lien).push(temp[4]);
+			(univ.adresse).push(temp[5]);
+		}
+		else if(temp[temp.length-1] == "stage"){
+			(stage.id).push(temp[0]);
+			(stage.titre).push(temp[1]);
+			(stage.description).push(temp[2]);
+			(stage.item).push(temp[3]);
+			(stage.lien).push(temp[4]);
+			(stage.adresse).push(temp[5]);
+		}
+		else if(temp[temp.length-1] == "dd"){
+			(dd.id).push(temp[0]);
+			(dd.titre).push(temp[1]);
+			(dd.description).push(temp[2]);
+			(dd.item).push(temp[3]);
+			(dd.lien).push(temp[4]);
+			(dd.adresse).push(temp[5]);
+		}
+	}
 }
 
+function callBack(titre, description, item, lien, couleur){
+	return function(results, status){
+		var marker = new google.maps.Marker({
+	          icon: 'http://maps.google.com/mapfiles/ms/icons/'+couleur+'-dot.png',
+	          map: map,
+	          position: results[0].geometry.location,
+	          title : "Nano technos Inc."
+	      });
+	    var text = "titre : "+titre+", description : "+description+", item : "+item+", lien : "+lien;
+	    var win = new google.maps.InfoWindow({
+	      content: text
+	    });
+	      google.maps.event.addListener(marker, 'click', function() {
+	        win.open(map,marker);
+	      });
+	};
+}
 
-
-
-
+function displayUniversities() {
+	n = univ.titre.length;
+	for(var i = 0; i < n; i++){
+		var geocoder = new google.maps.Geocoder();
+		geoOptions = {'address':univ.adresse[i]};
+		geocoder.geocode(geoOptions, callBack(univ.titre[i], univ.description[i], univ.item[i], univ.lien[i], "green"));
+	}
+}
+	
 
 
 
@@ -239,12 +249,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
 	</head>
 	<body>
-	<div></div>
- 	<c:if test="${carte.nbUniv>0}">
-		<c:forEach var="i" begin="0" end="${carte.nbUniv-1}">
-	  		<!-- Il faut sérialiser le bean pour ensuite, par un split récupérer le tableau dans le js -->
-		</c:forEach>
-	</c:if>
     <div id="panel">
       <input type="button" value="Exécuter la fonction displayUniversities" onclick="displayUniversities()">
       <input type="button" value="Exécuter la fonction displayInternships" onclick="displayInternships()">
