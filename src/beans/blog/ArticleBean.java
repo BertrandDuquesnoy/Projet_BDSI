@@ -20,7 +20,7 @@ public class ArticleBean {
 		commentaires.add("commentaire 2");
 		nbCommentaires = 2;
 		nbLiens = 2;
-		noteEntreprise = 4;
+		noteEntreprise = 2;
 		noteVille = 3;
 		id = 5;
 		auteur = "Paul Cottin";
@@ -158,7 +158,7 @@ public class ArticleBean {
 	}
 
 	public int getNbLiens() {
-		return liens.size();
+		return nbLiens;
 	}
 
 	public void setNbLiens(int nbLiens) {
@@ -190,7 +190,8 @@ public class ArticleBean {
 	}
 
 	public int getNbCommentaires() {
-		return commentaires.size();
+		nbCommentaires = commentaires.size();
+		return nbCommentaires;
 	}
 
 	public void setNbCommentaires(int nbCommentaires) {

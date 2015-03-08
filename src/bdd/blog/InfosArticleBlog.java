@@ -19,8 +19,8 @@ public class InfosArticleBlog {
 		return ab;
 	}
 	
-	public void setInfos(HttpServletRequest request){
-		
+	public void setInfos(ArticleBean ab){
+		System.out.println("informations d'article enregistré ("+ab.getId()+")");
 	}
 	
 	public void addLink(int id, String item, String link){

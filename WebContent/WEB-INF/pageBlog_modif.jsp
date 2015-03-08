@@ -16,8 +16,9 @@
 		}
 	</script>
 	<body>
+	<c:set var="art" value="${page}"/>
 	<%@ include file="header.jsp" %>
-	<form >
+	<form method="post" action="page?id=${art.id}&modif=4&ajout=">
 		<div style="float:left">
 			<div id="options_admin">
 				<p>
@@ -36,50 +37,66 @@
 						<span class="nb_etudiants_partis" style="text-align:center">O� suis-je partis</span>
 					</p>
 					<p class="text_paragraph">
-						Entreprise : <input type="text" value="Dassault Aviation" /> <br/>
-						Site de l'entreprise : <input type="text" value="dassault.com" /> <br/>
-						Ville : <input type="text" value="Moscou" /> <br/>
-						Pays : <img src="images/pays/canada.png"> <input type="text" value="Russie" /> <br/>
-						Langue : <input type="text" value="Anglais" /> <br/>
+						Entreprise : <input type="text" name ="entreprise" value="${art.entreprise}" /> <br/>
+						Site de l'entreprise : <input type="text" name="urlEntreprise" value="${art.urlEntreprise}" /> <br/>
+						Ville : <input type="text" name="ville" value="${art.ville}" /> <br/>
+						Pays : <input type="text" name="pays" value="${art.pays}" /> <br/>
+						Langue : <input type="text" name="langue" value="${art.langue}" /> <br/>
 					</p>
 				</div>
 			</div>
 			<div id="corps">
-				<input type="text" value="Mon stage chez Dassault Aviation" class="titre_section">
+				<input type="text" name="titre" value="${art.titre}" class="titre_section">
 				<p>
-					<span class="nb_etudiants_partis">Ma première impression : </span>
+					<span class="nb_etudiants_partis">Ma premi�re impression : </span>
 				</p>
-				<textarea name="premiereImpression" cols="100" rows="10">Mon voyage s'est déroulé super bien, c'est vraiment une entreprise formidable</textarea>
+				<textarea name="premiereImpression" cols="100" rows="10">${art.premiereImpression}</textarea>
 				<p>
-					<span class="nb_etudiants_partis">Comment était l'entreprise ? </span>
+					<span class="nb_etudiants_partis">Comment �tait l'entreprise ? </span>
 				</p>
-				<textarea name="commentImpression" cols="100" rows="10">Clairement, un vrai bonheur, je repars bosser là-bas dès que je peux !</textarea>
+				<textarea name="commentImpression" cols="100" rows="10">${art.commentImpression}</textarea>
 				<p>
 					<span class="nb_etudiants_partis">Et la ville ? </span>
 				</p>
-				<textarea name="villeImpression" cols="100" rows="10">Moscou ? Mais c'était juste génial, le Kremlin je recommande vivement, le métro également est une vraie pièce de musée</textarea>
+				<textarea name="villeImpression" cols="100" rows="10">${art.villeImpression}</textarea>
 				<p>
 					<span class="nb_etudiants_partis">Un conseil ?</span>
 				</p>
-				<textarea name="conseil" cols="100" rows="10">Vas-y, la Russie c'est génial ! :)</textarea>
+				<textarea name="conseil" cols="100" rows="10">${art.conseil}</textarea>
 				<p>
 					<span class="nb_etudiants_partis">Mes notes : </span>
 				</p>
 				<p>
-					L'entreprise : <select name="noteEntreprise"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select> / 5<br/>
-					La ville :  <select name="noteVille"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select> / 5<br/>
+					L'entreprise : <select name="noteEntreprise">
+									<option <c:if test="${art.noteEntreprise == 1}">selected="selected"</c:if>>1</option>
+									<option <c:if test="${art.noteEntreprise == 2}">selected="selected"</c:if>>2</option>
+									<option <c:if test="${art.noteEntreprise == 3}">selected="selected"</c:if>>3</option>
+									<option <c:if test="${art.noteEntreprise == 4}">selected="selected"</c:if>>4</option>
+									<option <c:if test="${art.noteEntreprise == 5}">selected="selected"</c:if>>5</option>
+								</select> / 5
+								<br/>
+					La ville :  <select name="noteVille">
+									<option <c:if test="${art.noteVille == 1}">selected="selected"</c:if>>1</option>
+									<option <c:if test="${art.noteVille == 2}">selected="selected"</c:if>>2</option>
+									<option <c:if test="${art.noteVille == 3}">selected="selected"</c:if>>3</option>
+									<option <c:if test="${art.noteVille == 4}">selected="selected"</c:if>>4</option>
+									<option <c:if test="${art.noteVille == 5}">selected="selected"</c:if>>5</option>
+								</select> / 5
+								<br/>
 				</p>
 				<p>
-					<span class="nb_etudiants_partis">Les liens qui m'ont aidé : </span>
+					<span class="nb_etudiants_partis">Les liens qui m'ont aid� : </span>
 				</p>
 				<p>
-					<c:if test="${page.nbLiens > 1}">
-						<c:forEach var="i" begin="0" end="${page.nbLiens-1}">
-							<input type="text" name="lien${i}" value="${page.liensIntitule[i]}"/> <input type="text" value="${page.liens[i]}"/>
-							<input type="button" value="Supprimer ce lien" onclick="supprimerLien(${page.id},${i})" /> <br/>
+					<c:if test="${art.nbLiens > 0}">
+						<c:forEach var="i" begin="0" end="${art.nbLiens-1}">
+							<input type="text" name="item${i}" value="${art.liensIntitule[i]}"/> <input type="text" name="lien${i}" value="${art.liens[i]}"/>
+							<input type="button" value="Supprimer ce lien" onclick="supprimerLien(${art.id},${i})" /> <br/>
 						</c:forEach>
 					</c:if>
-					<input type="button" value="Ajouter un lien" class="ok_button" onclick="ajouterLien(${page.id})"/>
+					<input type="button" value="Ajouter un lien" class="ok_button" onclick="ajouterLien(${art.id})"/>
+					<input type="hidden" name="nbLiens" value="${art.nbLiens}"/>
+					<input type="hidden" name="id" value="${art.id}"/>
 				</p>
 			</div>
 		</div>

@@ -17,7 +17,7 @@ public class InfosPageBlog {
 	}
 	
 	public void setInfos(PageBean pb){
-		
+		System.out.println("Article modifié");
 	}
 	
 	public void deleteArticle(int id){

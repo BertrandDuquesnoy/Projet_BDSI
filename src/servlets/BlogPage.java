@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bdd.blog.InfosArticleBlog;
 import bdd.blog.InfosPageBlog;
+import beans.blog.ArticleBean;
 
 public class BlogPage extends HttpServlet{
 
@@ -27,7 +29,7 @@ public class BlogPage extends HttpServlet{
 	
 	/**
 	 * Explication paramètres : 
-	 * modif=1 -> Modification d'un article
+	 * modif=1 -> Page de modification d'un article
 	 * modif=2 -> Suppression d'un article
 	 * modif=3 -> Suppression d'un "lien utile"
 	 * ajout=1 -> Ajout d'un "lien utile" pour un article
@@ -84,17 +86,63 @@ public class BlogPage extends HttpServlet{
 		int id = 0;
 		
 		try {
-			item = request.getParameter("nouveauIntitule");
-			link = request.getParameter("nouveauLien");
-			id = Integer.valueOf(request.getParameter("id"));
-			
-			infos_articleBlog.addLink(id, item, link);
+			if (request.getParameter("nouveauIntitule") != null) {
+				item = request.getParameter("nouveauIntitule");
+				link = request.getParameter("nouveauLien");
+				id = Integer.valueOf(request.getParameter("id"));
+				
+				infos_articleBlog.addLink(id, item, link);
+				request.setAttribute("page", infos_articleBlog.getInfos(request));
+				this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog_modif.jsp").forward(request, response);
+			}
+		}catch (NullPointerException e) {
+			System.out.println("null pointer - BlogPage doPost");
+			this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog.jsp").forward(request, response);
+		}
+		try{
+			if (request.getParameter("ville") != null) {
+				infos_articleBlog.setInfos(constructArticleBean(request));
+				
+				request.setAttribute("page", infos_pageBlog.getInfos(request));
+				this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog.jsp").forward(request, response);
+			}
+				
 		} catch (NullPointerException e) {
-			
-		}finally{
-			request.setAttribute("page", infos_articleBlog.getInfos(request));
-			this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog_modif.jsp").forward(request, response);
-		}		
+			System.out.println("null pointer - BlogPage doPost");
+			this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog.jsp").forward(request, response);
+		}
+	}
+	
+	private ArticleBean constructArticleBean(HttpServletRequest request){
+		ArticleBean a = new ArticleBean();
+		a.setAuteur(request.getParameter("auteur"));
+		a.setPromotionAuteur(request.getParameter("promotionAuteur"));
+		a.setEntreprise(request.getParameter("entreprise"));
+		a.setUrlEntreprise(request.getParameter("urlEntreprise"));
+		a.setVille(request.getParameter("ville"));
+		a.setPays(request.getParameter("pays"));
+		a.setLangue(request.getParameter("langue"));
+		a.setTitre(request.getParameter("titre"));
+		a.setPremiereImpression(request.getParameter("premiereImpression"));
+		a.setCommentImpression(request.getParameter("commentImpression"));
+		a.setVilleImpression(request.getParameter("villeImpression"));
+		a.setConseil(request.getParameter("conseil"));
+		a.setNoteEntreprise(Integer.parseInt(request.getParameter("noteEntreprise")));
+		a.setNoteVille(Integer.parseInt(request.getParameter("noteVille")));
+		a.setNbLiens(Integer.parseInt(request.getParameter("nbLiens")));
+		a.setId(Integer.parseInt(request.getParameter("id")));
+		
+		ArrayList<String> liens = new ArrayList<String>();
+		ArrayList<String> items = new ArrayList<String>();
+		for (int i = 0; i < Integer.parseInt(request.getParameter("nbLiens")); i++) {
+			liens.add(request.getParameter("lien"+i+""));
+			items.add(request.getParameter("item"+i+""));
+		}
+		
+		a.setLiensIntitule(items);
+		a.setLiens(liens);
+		
+		return a;
 	}
 
 }
