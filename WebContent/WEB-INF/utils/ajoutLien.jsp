@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>TN International</title>
-<link type="text/css" rel="stylesheet" href="CSS/style.css" />
+<link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
 <script type="text/javascript">
 	function _submit(){
@@ -15,7 +15,6 @@
 	}
 </script>
 <body>
-	<p>id : ${id}</p>
 	<form action="page" method="post" id="f">
 		<p>Intitulé : <input type="text" name="nouveauIntitule"/></p>
 		<p>Lien : <input type="text" name="nouveauLien"/></p>

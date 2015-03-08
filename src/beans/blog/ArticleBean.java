@@ -21,7 +21,7 @@ public class ArticleBean {
 		nbCommentaires = 2;
 		nbLiens = 2;
 		noteEntreprise = 2;
-		noteVille = 3;
+		noteVille = 4;
 		id = 5;
 		auteur = "Paul Cottin";
 		promotionAuteur = "2016";

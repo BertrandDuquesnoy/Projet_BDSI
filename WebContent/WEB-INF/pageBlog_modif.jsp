@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>TN International</title>
-<link type="text/css" rel="stylesheet" href="CSS/style.css" />
+<link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
 	<script type="text/javascript">
 		function ajouterLien(id){
@@ -12,7 +12,7 @@
 		}
 		
 		function supprimerLien(id, id_lien){
-			window.open('page?modif=&ajout=3&id='+id+'&id_lien='+id_lien+'','supprLien','menubar=no, scrollbars=no, top=50, left=50, width=200, height=200');
+			window.open('page?modif=&ajout=3&id='+id+'&id_lien='+id_lien+'','supprLien','menubar=no, scrollbars=no, top=50, left=50, width=400, height=50');
 		}
 	</script>
 	<body>
@@ -22,7 +22,7 @@
 		<div style="float:left">
 			<div id="options_admin">
 				<p>
-					<input type="submit" value="Enregistrer"/>
+					<input type="submit" class="ok_button" value="Enregistrer"/>
 				</p>
 			</div>
 			<div id="cote_gauche">
@@ -91,7 +91,7 @@
 					<c:if test="${art.nbLiens > 0}">
 						<c:forEach var="i" begin="0" end="${art.nbLiens-1}">
 							<input type="text" name="item${i}" value="${art.liensIntitule[i]}"/> <input type="text" name="lien${i}" value="${art.liens[i]}"/>
-							<input type="button" value="Supprimer ce lien" onclick="supprimerLien(${art.id},${i})" /> <br/>
+							<input type="button" value="Supprimer ce lien" class="ok_button" onclick="supprimerLien(${art.id},${i})" /> <br/>
 						</c:forEach>
 					</c:if>
 					<input type="button" value="Ajouter un lien" class="ok_button" onclick="ajouterLien(${art.id})"/>

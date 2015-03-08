@@ -7,7 +7,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	   <title>Page d'accueil </title>
-	   <link type="text/css" rel="stylesheet" href="CSS/style.css" />
+	   <link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
 
 <header>

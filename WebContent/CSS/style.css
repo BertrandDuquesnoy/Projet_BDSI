@@ -37,7 +37,8 @@ html {font: 10px #000000; font-family: 'Trebuchet MS';}
 
 /* BOUTONS */
 
-.ok_button {background-color: #6C2466; padding: 3px; color:white;}
+.ok_button {background-color: #6C2466; padding: 3px; color:white; border: solid 2px;}
+.ok_button:hover {background-color: #6C2466; padding: 3px; color:white; border: solid 2px black;}
 
 /* SEPARATEUR */
 .separateur {background: #6C2466; height: 2px;}

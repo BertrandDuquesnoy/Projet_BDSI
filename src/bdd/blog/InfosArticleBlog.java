@@ -28,6 +28,10 @@ public class InfosArticleBlog {
 		//TODO: Ajouter le lien et l'item dans la liste des liens utiles de l'article
 	}
 	
+	public void addCom(int id, String com){
+		System.out.println("ajout du commentaire\n"+com+"\narticle d'id = "+id);
+	}
+	
 	public void deleteLink(int id, int id_lien){
 		System.out.println("suppression du lien "+id_lien+", de l'article d'id : "+id);
 	}

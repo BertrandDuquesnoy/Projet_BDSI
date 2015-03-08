@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login in</title>
-<link rel="stylesheet" type="text/css" href="CSS/global.css">
+<link href='<%=request.getContextPath() %>/CSS/global.css' rel='stylesheet' type='text/css' />
 </head>
 <body>
 <%-- Copyright 2010 ESIAL SIE. All rights reserved.  --%>

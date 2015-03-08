@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>TN International</title>
-<link type="text/css" rel="stylesheet" href="../CSS/style.css" />
+<link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 <script type="text/javascript">
 function supprimerArticle(id){
 	fen = window.open('page?modif=&ajout=2&id='+id+'','suppArt','menubar=no, scrollbars=no, top=50, left=50, width=400, height=100');
@@ -81,26 +81,26 @@ function supprimerArticle(id){
 										<c:if test="${n_entreprise > 1}">
 											<c:forEach var="i" begin="0" end="${n_entreprise-1}">	
 												<c:set var="cpt" value="${cpt+1}"></c:set>
-												<img src="images/etoileNotation.jpg" width="25px" height="25px">
+												<img src="<%=request.getContextPath() %>/images/etoileNotation.jpg" width="25px" height="25px">
 											</c:forEach>
 										</c:if>
 										<c:if test="${cpt < 5}">
 											<c:forEach var="i" begin="0" end="${5-cpt-1}">
-												<img src="images/etoileVide.png" width="25px" height="25px"/>
+												<img src="<%=request.getContextPath() %>/images/etoileVide.png" width="25px" height="25px"/>
 											</c:forEach>
 										</c:if>
 										<span style="color: #6C2466">${n_entreprise}/5</span> 
 						 <br/>
-						La ville : <c:set var="cpt" value="0" scope="request"></c:set>
+						La ville : <c:set var="cpt2" value="0" scope="request"></c:set>
 									<c:if test="${n_ville > 1}">
 										<c:forEach var="i" begin="0" end="${n_ville-1}">	
-											<c:set var="cpt" value="${cpt+1}"></c:set>
-											<img src="images/etoileNotation.jpg" width="25px" height="25px">
+											<c:set var="cpt2" value="${cpt2+1}"></c:set>
+											<img src="<%=request.getContextPath() %>/images/etoileNotation.jpg" width="25px" height="25px">
 										</c:forEach>
 									</c:if>
-									<c:if test="${cpt < 5}">
-										<c:forEach var="i" begin="0" end="${5-cpt-1}">
-											<img src="images/etoileVide.png" width="25px" height="25px"/>
+									<c:if test="${cpt2 < 5}">
+										<c:forEach var="i" begin="0" end="${5-cpt2-1}">
+											<img src="<%=request.getContextPath() %>/images/etoileVide.png" width="25px" height="25px"/>
 										</c:forEach>
 									</c:if>
 									<span style="color: #6C2466">${n_ville} /5</span> 
@@ -119,7 +119,7 @@ function supprimerArticle(id){
 						<p>
 							<span class="nb_etudiants_partis">Vos commentaires : </span>
 						</p>
-					<form>
+					<form action="page" method="post">
 						<c:if test="${nb_com > 0}">
 							<c:forEach var="j" begin="0" end="${nb_com-1}">
 								<p class="commentaire">${art.commentaires[j]}</p>
@@ -128,7 +128,8 @@ function supprimerArticle(id){
 						<p>Ajouter un commentaire : <br/>
 							<textarea id="comArea" name="com" cols="50" rows="10"></textarea>
 						</p>
-						<input type="submit" id="comSubmit" class="" value="Envoyer"/>
+						<input type="submit" id="comSubmit" class="ok_button" value="Envoyer"/>
+						<input type="hidden" name="id" value="${art.id}"/>
 					</form>
 				</div>
 			</div>
@@ -137,7 +138,7 @@ function supprimerArticle(id){
 	</c:if>
 	<c:if test="${page.nbArticles == 0}">
 		<p>Aucun article n'est présent dans cette catégorie</p>
-		<a href="../accueil" class="lien_default">Revenir à l'accueil</a>
+		<a href="<%=request.getContextPath() %>/accueil" class="lien_default">Revenir à l'accueil</a>
 	</c:if>
 	</body>
 </html>

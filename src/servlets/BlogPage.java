@@ -111,6 +111,17 @@ public class BlogPage extends HttpServlet{
 			System.out.println("null pointer - BlogPage doPost");
 			this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog.jsp").forward(request, response);
 		}
+		try {
+			if (request.getParameter("com") != null) {
+				infos_articleBlog.addCom(Integer.parseInt(request.getParameter("id")), request.getParameter("com"));
+				
+				request.setAttribute("page", infos_pageBlog.getInfos(request));
+				this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog.jsp").forward(request, response);
+			}
+		} catch (NullPointerException e) {
+			System.out.println("null pointer - BlogPage doPost");
+			this.getServletContext().getRequestDispatcher("/WEB-INF/pageBlog.jsp").forward(request, response);
+		}
 	}
 	
 	private ArticleBean constructArticleBean(HttpServletRequest request){

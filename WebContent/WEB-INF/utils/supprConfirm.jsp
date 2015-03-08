@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 <title>Insert title here</title>
 </head>
 <script type="text/javascript"> 
@@ -14,9 +15,9 @@
 	} 
 </script>
 <body>
-	<p align="center">Êtes vous sûr de vouloir supprimer ${text} ?, modif=${modif}, id=${id}</p>
+	<p align="center">Êtes vous sûr de vouloir supprimer ${text} ?</p>
 	<div id="${id}" align="center">
-		<input type="button" value="Oui" onclick="_submit()"/> <input type="button" value="Non" onclick="window.close()"/>
+		<input type="button" value="Oui" class="ok_button" onclick="_submit()"/> <input type="button" value="Non" class="ok_button" onclick="window.close()"/>
 	</div>
 	<div id="${modif}"></div>
 	<div id="${id_lien}"></div>
