@@ -12,12 +12,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import modele.LdapException;
+import modele.LdapConnect;
 
 import org.ietf.ldap.*;
 
 //import eu.telecomnancy.bdsi.dao.DaoFactory;
 
-public class PersonLDAP {
+public class PersonLDAP extends LdapConnect {
 
 	private String login;
 	private String year;
@@ -124,10 +125,10 @@ public class PersonLDAP {
 		this.login = _login;
 	}
 
-	public boolean login(String passwd) throws java.io.UnsupportedEncodingException, LdapException
+	/*public boolean login() throws java.io.UnsupportedEncodingException, LdapException
 	{
 		try {
-			if (ldapLogin(passwd)) {
+			if (Connect(LdapConnect.getLogin(),LdapConnect.getPasswd())) { //faux
 				return true;
 			} else return false;
 		} catch (UnsupportedEncodingException ex) {
@@ -137,44 +138,9 @@ public class PersonLDAP {
 			Logger.getLogger(PersonLDAP.class.getName()).log(Level.SEVERE, null, ex);
 			return false;
 		}
-	}
+	}*/
 
-	public boolean ldapLogin(String passwd) throws java.io.UnsupportedEncodingException, LdapException{
-		try {
-			//variables de configuration de ldap
-			String ldapHost = "ldap.telecomnancy.univ-lorraine.fr";
-			String searchBase = "dc=telecomnancy,dc=univ-lorraine,dc=fr";
-			String searchFilter = "(objectclass=*)";
-			int ldapPort = LDAPConnection.DEFAULT_PORT;
-			int ldapVersion = 3;
-			LDAPConnection lc = new LDAPConnection();
-			lc.connect(ldapHost, ldapPort);
-			if (!lc.isConnected()) {
-				return false;
-			}
-			String searchFilterExpand = "(&" + searchFilter + "(uid=" + this.login + "))";
-			//String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn","eduPersonAffiliation"};
-			LDAPSearchResults searchResults = lc.search( searchBase, LDAPConnection.SCOPE_SUB, searchFilterExpand, null, false);
-			String loginDN = "";
-			if ( searchResults.hasMore() ) {
-				loginDN = searchResults.next().getDN();
-			} else {
-				return false;
-			}
-
-			// authentification
-			try {
-				lc.bind( ldapVersion, loginDN, passwd.getBytes("UTF8") );
-				System.out.println("ça marche");
-			} catch (LDAPException e1) {
-				return false;
-			}
-			lc.disconnect();
-			return true;
-		} catch (LDAPException e1) {
-			return false;
-		}
-	}
+	
 	public static ArrayList<PersonLDAP> ldapRecup() throws java.io.UnsupportedEncodingException, LdapException{
 		ArrayList<PersonLDAP> lp = new ArrayList<PersonLDAP>();
 		try {
@@ -188,7 +154,7 @@ public class PersonLDAP {
 			System.out.println("Recup apres co/Avant recherche");
 			String searchFilterExpand = "(&(objectclass=*)(uid=*))";
 			String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn","eduPersonAffiliation"};
-			LDAPSearchResults searchResults = lc.search( searchBase, LDAPConnection.SCOPE_SUB, searchFilterExpand, attr, false);
+			LDAPSearchResults searchResults = lc.search(searchBase, LDAPConnection.SCOPE_SUB, searchFilterExpand, attr, false);
 			System.out.println("Recup apres recherche");
 			while ( searchResults.hasMore() ) {
                 LDAPEntry entry = searchResults.next();
