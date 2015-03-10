@@ -26,7 +26,11 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script>
 
-var map; 
+var map;
+
+var univMarkers = Array();
+var stageMarkers = Array();
+var ddMarkers = Array();
 
 var univ = {
 		id: Array(),
@@ -107,6 +111,20 @@ function callBack(titre, description, item, lien, couleur){
 	          position: results[0].geometry.location,
 	          title : titre
 	      });
+		switch(couleur){
+		case "green":
+			univMarkers.push(marker);
+			break;
+		case("blue"):
+			stageMarkers.push(marker);
+			break;
+		case("red"):
+			ddMarkers.push(marker);
+			break;
+		default:
+			alert("erreur de couleur de points");
+			break;
+		}
 	    var text = '<h1>'+titre+'</h1><p>'+description+'</p><p>'+item+' : <a href="'+lien+'">'+lien+'</a>';
 	    var win = new google.maps.InfoWindow({
 	      content: text
@@ -136,53 +154,100 @@ function displayInternships(){
 	}
 }
 
-
-function displayDoubleDiploma() {
-  var address1 = "Paris";
-
-//Double diplôme 1
-  geocoder.geocode( { 'address': address1}, function(results, status) {
-      var marker1 = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location,
-          title : "Telecom Management"
-      });
-    var text1 = "Pour ceux qui aiment le management";
-    var window1 = new google.maps.InfoWindow({
-      content: text1
-    });
-      google.maps.event.addListener(marker1, 'click', function() {
-        window1.open(map,marker1);
-      });
-    });
+function displayDoubleDiploma(){
+	n = dd.titre.length;
+	for(var i = 0; i < n; i++){
+		var geocoder = new google.maps.Geocoder();
+		geoOptions = {'address':dd.adresse[i]};
+		geocoder.geocode(geoOptions, callBack(dd.titre[i], dd.description[i], dd.item[i], dd.lien[i], "red"));
+	}
 }
 
+function removeUniversity(){
+	n = univMarkers.length;
+	for(var i = 0; i < n; i++){
+		univMarkers[i].setMap(null);
+	}
+}
 
+function addUniversity(){
+	n = univMarkers.length;
+	for(var i = 0; i < n; i++){
+		univMarkers[i].setMap(map);
+	}
+}
 
+function removeStage(){
+	n = stageMarkers.length;
+	for(var i = 0; i < n; i++){
+		stageMarkers[i].setMap(null);
+	}
+}
 
+function addStage(){
+	n = stageMarkers.length;
+	for(var i = 0; i < n; i++){
+		stageMarkers[i].setMap(map);
+	}
+}
 
+function removeDD(){
+	n = ddMarkers.length;
+	for(var i = 0; i < n; i++){
+		ddMarkers[i].setMap(null);
+	}
+}
 
+function addDD(){
+	n = ddMarkers.length;
+	for(var i = 0; i < n; i++){
+		ddMarkers[i].setMap(map);
+	}
+}
 
+function manageUniversity(){
+	if(document.getElementById("universityCheck").checked){
+		addUniversity();
+	}else{
+		removeUniversity();
+	}	
+}
 
+function manageStage(){
+	if(document.getElementById("stageCheck").checked){
+		addStage();
+	}else{
+		removeStage();
+	}	
+}
 
-
-
-
-
+function manageDD(){
+	if(document.getElementById("ddCheck").checked){
+		addDD();
+	}else{
+		removeDD();
+	}	
+}
 
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+function init(){
+	displayUniversities();
+	displayInternships();
+	displayDoubleDiploma();
+}
+
 	</script>
 	</head>
-	<body>
+	<body onload="init()">
+	<div id="map-canvas"></div>
     <div id="panel">
-      <input type="button" value="Exécuter la fonction displayUniversities" onclick="displayUniversities()">
-      <input type="button" value="Exécuter la fonction displayInternships" onclick="displayInternships()">
-      <input type="button" value="Exécuter la fonction displayDoubleDiploma" onclick="displayDoubleDiploma()">
+      <input type="checkbox" id="universityCheck" onclick="manageUniversity()" checked>Universités</input>
+      <input type="checkbox" id="stageCheck" onclick="manageStage()" checked>Stages</input>
+      <input type="checkbox" id="ddCheck" onclick="manageDD()" checked>Doubles diplômes</input>
 
     </div>
-    <div id="map-canvas"></div>
   </body>
 </html>
 
