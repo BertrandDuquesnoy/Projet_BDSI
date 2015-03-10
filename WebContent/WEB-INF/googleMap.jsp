@@ -25,7 +25,7 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script>
-/* var geocoder;*/
+
 var map; 
 
 var univ = {
@@ -73,7 +73,6 @@ function constructArray(s){
 	for(var i=0; i<c; i++){
 		temp = tab[i].split('$£$');
 		if(temp[temp.length-1] == "univ"){
-			/* alert(temp[0]+', '+temp[1]+', '+temp[2]+', '+temp[3]+', '+temp[4]+', '+temp[5]); */
 			(univ.id).push(temp[0]);
 			(univ.titre).push(temp[1]);
 			(univ.description).push(temp[2]);
@@ -106,9 +105,9 @@ function callBack(titre, description, item, lien, couleur){
 	          icon: 'http://maps.google.com/mapfiles/ms/icons/'+couleur+'-dot.png',
 	          map: map,
 	          position: results[0].geometry.location,
-	          title : "Nano technos Inc."
+	          title : titre
 	      });
-	    var text = "titre : "+titre+", description : "+description+", item : "+item+", lien : "+lien;
+	    var text = '<h1>'+titre+'</h1><p>'+description+'</p><p>'+item+' : <a href="'+lien+'">'+lien+'</a>';
 	    var win = new google.maps.InfoWindow({
 	      content: text
 	    });
@@ -128,86 +127,14 @@ function displayUniversities() {
 }
 	
 
-
-
-function displayInternships() {
-  var address1 = "Marseille";
-  var address2 = "Grenoble";
-  var address3 = "Strasbourg";
-  var address4 = "Brest";
-
-//stage 1
-  geocoder.geocode( { 'address': address1}, function(results, status) {
-      var marker1 = new google.maps.Marker({
-          icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-          map: map,
-          position: results[0].geometry.location,
-          title : "poissonnerie des belles eaux"
-      });
-    var text1 = "il est frais mon poisson !";
-    var window1 = new google.maps.InfoWindow({
-      content: text1
-    });
-      google.maps.event.addListener(marker1, 'click', function() {
-        window1.open(map,marker1);
-      });
-    });
-
-//stage 2
-  geocoder.geocode( { 'address': address2}, function(results, status) {
-      var marker2 = new google.maps.Marker({
-          icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-          map: map,
-          position: results[0].geometry.location,
-          title : "Nano technos Inc."
-      });
-    var text2 = "For the very good ones";
-    var window2 = new google.maps.InfoWindow({
-      content: text2
-    });
-      google.maps.event.addListener(marker2, 'click', function() {
-        window2.open(map,marker2);
-      });
-    });
-
-//stage 3
-  geocoder.geocode( { 'address': address3}, function(results, status) {
-      var marker3 = new google.maps.Marker({
-          icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-          map: map,
-          position: results[0].geometry.location,
-          title : "Big Company"
-      });
-    var text3 = "We are big, help us to be bigger !";
-    var window3 = new google.maps.InfoWindow({
-      content: text3
-    });
-      google.maps.event.addListener(marker3, 'click', function() {
-        window3.open(map,marker3);
-      });
-    });
-//stage 4
-  geocoder.geocode( { 'address': address4}, function(results, status) {
-      var marker4 = new google.maps.Marker({
-          icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-          map: map,
-          position: results[0].geometry.location,
-          title : "Confiserie des bons bonbons"
-      });
-    var text4 = "On fait des bons bonbons, c'est sympa non ?  =)";
-    var window4 = new google.maps.InfoWindow({
-      content: text4
-    });
-      google.maps.event.addListener(marker4, 'click', function() {
-        window4.open(map,marker4);
-      });
-    });
+function displayInternships(){
+	n = stage.titre.length;
+	for(var i = 0; i < n; i++){
+		var geocoder = new google.maps.Geocoder();
+		geoOptions = {'address':stage.adresse[i]};
+		geocoder.geocode(geoOptions, callBack(stage.titre[i], stage.description[i], stage.item[i], stage.lien[i], "blue"));
+	}
 }
-
-
-
-
-
 
 
 function displayDoubleDiploma() {
