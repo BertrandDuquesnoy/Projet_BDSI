@@ -9,17 +9,6 @@
 	   <title>Page d'accueil </title>
 	   <link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
-
-<header>
-	  <div id="bandeau">
-		<a href="http://www.telecomnancy.eu/" id="logoTN" class="logo-img"><img src="images/logoTN.png" alt= "Logo TELECOM Nancy" width="180" height="100"/></a>
-		<h1 class="titre_page" style="position:absolute; top: 2%; left:33%">RELATIONS INTERNATIONALES</h1>
-		<p id="connexion">
-			Nom Prénom / Déconnexion </p>
-		
-			
-	</header>
-
 <body>
 
  <div id="cote_gauche">
@@ -60,11 +49,5 @@
 				<a href="${university.linkedin_link }" id="logo_ln"><img src="<%=request.getContextPath() %>/images/linkedin.png" width="30" height="30"/></a>
 		</div>
 	</div>
-	 
-	 <div id="corps">
-	 	<iframe src="accueil?carte=1" class="carte" width="100%" height="500px"></iframe>
-	 </div>
-       
-    </body>
-
+</body>
 </html>
