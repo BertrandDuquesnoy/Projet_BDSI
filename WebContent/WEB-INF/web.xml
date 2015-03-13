@@ -46,11 +46,6 @@
 	<servlet-name>Stage</servlet-name>
 	<servlet-class>servlets.Stage</servlet-class>
 </servlet>
-<servlet>
-	<servlet-name>Modalite</servlet-name>
-	<servlet-class>servlets.Modalite</servlet-class>
-</servlet>
-
 <servlet-mapping>
 	<servlet-name>Login</servlet-name>
 	<url-pattern>/login</url-pattern>
