@@ -12,7 +12,7 @@ public class UniversityBean {
 	private String nom;
 	private String url;
 	private String logo_path;
-	private String pays, ville, type, langue, dateFondation, convention_path;
+	private String pays, ville, type, langue, dateFondation, convention_path, adresse;
 	private String linkedin_path, facebook_link, twitter_link, linkedin_link;
 	private String description;
 	private int note, nbEtudiants;
@@ -25,6 +25,7 @@ public class UniversityBean {
 		logo_path = "null";
 		pays = "null";
 		ville = "null";
+		adresse="null";
 		type = "null";
 		langue = "null";
 		dateFondation = "null";
@@ -40,6 +41,18 @@ public class UniversityBean {
 	}
 	
 	
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+
 
 	public int getId() {
 		return id;

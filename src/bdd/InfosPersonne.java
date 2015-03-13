@@ -34,13 +34,13 @@ public class InfosPersonne{
 				personne.setPrenom(resultat.getString("prenom"));
 				personne.setNom(resultat.getString("nom"));
 				personne.setFonction(resultat.getString("fonction"));
-
+				personne.setMail(resultat.getString("mail"));
 			}
 			
+			//On ne peut pas avoir la coloration d'un étudiant avec LDAP :(
 			ResultSet resultat2 = instruction.executeQuery("SELECT coloration " +"FROM etudiant "+ "WHERE id_etud = "+id_personne+";");
 			while(resultat2.next()){
-				personne.setMail(resultat2.getString("coloration"));
-				
+				personne.setMail(resultat2.getString("coloration"));				
 			}
 			
 			

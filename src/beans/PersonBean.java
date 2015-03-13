@@ -69,4 +69,5 @@ public class PersonBean {
 	public void setFonction(String fonction) {
 		this.fonction = fonction;
 	}
+
 }

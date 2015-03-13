@@ -40,7 +40,7 @@ public class StageBean {
 		note = 5;
 		personnes = new ArrayList<EtudiantBean>();
 		personnes.add(new EtudiantBean());
-		personnes.add(new EtudiantBean());
+		personnes.add(new EtudiantBean()); //pourquoi deux fois cette ligne ?
 	}
 	
 	
