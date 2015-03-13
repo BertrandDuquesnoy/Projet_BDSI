@@ -13,6 +13,14 @@ public class PersonBean {
 		mail = "null";
 		categorie="eleve";
 	}
+	
+	public PersonBean(String nom, String prenom, String annee, String mail, String cat){
+		this.nom  = nom;
+		this.prenom = prenom;
+		this.annee = annee;
+		this.mail = mail;
+		this.categorie = cat;
+	}
 
 	public String getNom() {
 		return nom;
