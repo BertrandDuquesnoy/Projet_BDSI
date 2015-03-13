@@ -14,6 +14,8 @@ import java.util.logging.Logger;
 import modele.LdapException;
 import modele.LdapConnect;
 
+import beans.PersonBean;
+
 import org.ietf.ldap.*;
 
 //import eu.telecomnancy.bdsi.dao.DaoFactory;
@@ -25,7 +27,7 @@ public class PersonLDAP extends LdapConnect {
 	private String mail;
 	private String firstName;
 	private String lastName;
-
+	private String categorie;
 
 	public PersonLDAP() {
 		login="";
@@ -33,11 +35,11 @@ public class PersonLDAP extends LdapConnect {
 		mail="";
 		firstName="";
 		lastName="";
-
+		categorie="";
 	}
 
 	public PersonLDAP(String login, String year, String mail, String firstName,
-			String lastName) {
+			String lastName, String categorie) {
 		super();
 		this.login = login;
 		this.year = year;
@@ -116,12 +118,12 @@ public class PersonLDAP extends LdapConnect {
 			lc.connect(ldapHost, ldapPort);
 			System.out.println("Recup apres co/Avant recherche");
 			String searchFilterExpand = "(&(objectclass=*)(uid=*))";
-			String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn"};
+			String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn", "eduPersonAffiliation"};
 			LDAPSearchResults searchResults = lc.search(searchBase, LDAPConnection.SCOPE_SUB, searchFilterExpand, attr, false);
 			System.out.println("Recup apres recherche");
 			while ( searchResults.hasMore() ) {
-                LDAPEntry entry = searchResults.next();
-                lp.add(getEntry(entry, attr));
+				LDAPEntry entry = searchResults.next();
+				lp.add(getEntry(entry, attr));
 			}
 			lc.disconnect();
 			System.out.println("\nDéconnecté !");
@@ -131,35 +133,60 @@ public class PersonLDAP extends LdapConnect {
 		return lp;
 	}
 
-    @SuppressWarnings({ "unused", "rawtypes" })
+	@SuppressWarnings({ "unused", "rawtypes" })
 	public static PersonLDAP getEntry(LDAPEntry entry, String[] attrs) {
-    	PersonLDAP p;
-    	ArrayList<String> als = new ArrayList<String>();
-        for (int i=0; i < attrs.length; i++) {
-            LDAPAttribute attr = entry.getAttribute(attrs[i]);
-            if (attr == null) {
-                System.out.println("    [" + attrs[i] + ": not present]");
-                als.add("");
-                continue;
-            }
+		PersonLDAP p;
+		ArrayList<String> als = new ArrayList<String>();
+		ArrayList<PersonBean> pbList = new ArrayList<PersonBean>();
 
-            Enumeration enumVals = attr.getStringValues();
-            boolean hasVals = false;
-            while ( (enumVals != null) && (enumVals.hasMoreElements()) ) {
-                String val = (String) enumVals.nextElement();
-                System.out.println("    [" + attrs[i] + ": " + val + "]");
-                hasVals = true;
-                als.add(val);
-            }
-            if (!hasVals) {
-                System.out.println("    [" + attrs[i] + ": has no values]");
-                als.add("");
-            }
-        }
-        System.out.println("---------------------------------------------");
-        System.out.println("Récap de l'utilisateur : " + als); // ordre : uid, annéeEtude, mail, prénom, nom
-        return p = new PersonLDAP(als.get(0),als.get(1),als.get(2),als.get(3),als.get(4));
-    }
+		for (int i=0; i < attrs.length; i++) {
+			LDAPAttribute attr = entry.getAttribute(attrs[i]);
+			if (attr == null) {
+				System.out.println("    [" + attrs[i] + ": not present]");
+				als.add("");
+				continue;
+			}
+
+			Enumeration enumVals = attr.getStringValues();
+			boolean hasVals = false;
+			while ( (enumVals != null) && (enumVals.hasMoreElements()) ) {           	
+				String val = (String) enumVals.nextElement();
+				System.out.println("    [" + attrs[i] + ": " + val + "]");
+				//stocker ici les infos de chaque personne
+				PersonBean pb = new PersonBean();
+				switch(attrs[i]){
+				case "uid": 
+				break;
+
+				case "supannEtuCursusAnnee": pb.setAnnee(val);
+				break;
+
+				case "primarymail": pb.setMail(val);
+				break;
+
+				case "givenName": pb.setPrenom(val); System.out.println("prénom : "+pb.getPrenom());
+				break;
+
+				case "sn": pb.setNom(val);
+				break;
+
+				case "eduPersonAffiliation": pb.setCategorie(val);
+				break;
+				}
+				pbList.add(pb);
+				hasVals = true;
+				als.add(val);
+			}
+			if (!hasVals) {
+				System.out.println("    [" + attrs[i] + ": has no values]");                
+				als.add("");
+			}
+		}
+		System.out.println("---------------------------------------------");
+		//System.out.println("Récap de l'utilisateur : " + als); // ordre : uid, annéeEtude, mail, prénom, nom, catégorie
+		System.out.println("pbList : "+pbList);
+		return p = new PersonLDAP(als.get(0),als.get(1),als.get(2),als.get(3),als.get(4),als.get(5));
+	}
 
 	public String toString() {
 		return "Person [login=" + login + ", year=" + year + ", mail=" + mail
@@ -171,29 +198,29 @@ public class PersonLDAP extends LdapConnect {
 		res+=login+';'+mail+";gender;date_of_birth;"+firstName+';'+lastName+";speciality;"+year+']';
 		return res;
 	}
-	
+
 	public void updateUser(java.sql.Connection tunnel) throws SQLException{
 		String label="";
-			CallableStatement update_user = tunnel.prepareCall("{call update_user(?,?,?,?,?,?,?,?,?)}");
-			//label,user_name,email,gender,date_of_birth,first_name,last_name,speciality,level_user
-			String tempMail=null;
-			if(this.getMail().equals("") | this.getMail()==null) tempMail=null;
-			else tempMail=this.getMail();
-			update_user.setString(1, label);
-			update_user.setString(2, this.getLogin());
-			update_user.setString(3,tempMail);
-			update_user.setDate(4, null);			
-			update_user.setString(5, null);
-			update_user.setString(6, this.getFirstName());
-			update_user.setString(7,this.getLastName());
-			update_user.setString(8, null);
-			update_user.setString(9, this.getYear());
-			System.out.println(update_user.toString());
-			System.out.println(this.getMail().length());
-			update_user.execute();
-			update_user.close();
+		CallableStatement update_user = tunnel.prepareCall("{call update_user(?,?,?,?,?,?,?,?,?)}");
+		//label,user_name,email,gender,date_of_birth,first_name,last_name,speciality,level_user
+		String tempMail=null;
+		if(this.getMail().equals("") | this.getMail()==null) tempMail=null;
+		else tempMail=this.getMail();
+		update_user.setString(1, label);
+		update_user.setString(2, this.getLogin());
+		update_user.setString(3,tempMail);
+		update_user.setDate(4, null);			
+		update_user.setString(5, null);
+		update_user.setString(6, this.getFirstName());
+		update_user.setString(7,this.getLastName());
+		update_user.setString(8, null);
+		update_user.setString(9, this.getYear());
+		System.out.println(update_user.toString());
+		System.out.println(this.getMail().length());
+		update_user.execute();
+		update_user.close();
 	}
-    
+
 	/*
 	public static Profil getProfil(java.sql.Connection tunnel, String user_name) throws SQLException{
 			System.out.println("Get profil : deb");
@@ -228,10 +255,10 @@ public class PersonLDAP extends LdapConnect {
 			          level_user = res.getString("level_user");
 			          if(level_user==null)level_user="";
 		          }catch(Exception e){
-		        	  
+
 		          }
 		    System.out.println(label+' '+user_id+' '+email+' '+gender+' '+firstName+' '+lastName+' '+birth+' '+speciality+' '+level_user);
-		    
+
 			//System.out.println("Label : " + get_profil.getString("label"));
 		    res.close();
 			get_profil.close();
