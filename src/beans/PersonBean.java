@@ -2,7 +2,7 @@ package beans;
 
 public class PersonBean {
 
-	private String nom, prenom, annee, mail, categorie;
+	private String nom, prenom, annee, mail, fonction;
 	private int id;
 	
 	public PersonBean() {
@@ -11,15 +11,15 @@ public class PersonBean {
 		prenom = "prenom";
 		annee = "null";
 		mail = "null";
-		categorie="eleve";
+		fonction="null";
 	}
 	
-	public PersonBean(String nom, String prenom, String annee, String mail, String cat){
+	public PersonBean(String nom, String prenom, String annee, String mail, String fonc){
 		this.nom  = nom;
 		this.prenom = prenom;
 		this.annee = annee;
 		this.mail = mail;
-		this.categorie = cat;
+		this.fonction = fonc;
 	}
 
 	public String getNom() {
@@ -62,11 +62,11 @@ public class PersonBean {
 		this.id = id;
 	}
 
-	public String getCategorie() {
-		return categorie;
+	public String getFonction() {
+		return fonction;
 	}
 
-	public void setCategorie(String categorie) {
-		this.categorie = categorie;
+	public void setFonction(String fonction) {
+		this.fonction = fonction;
 	}
 }

@@ -33,7 +33,8 @@ public class InfosPersonne{
 			while(resultat.next()){
 				personne.setPrenom(resultat.getString("prenom"));
 				personne.setNom(resultat.getString("nom"));
-				personne.setAnnee(resultat.getString("promo"));
+				personne.setFonction(resultat.getString("fonction"));
+
 			}
 			
 			ResultSet resultat2 = instruction.executeQuery("SELECT coloration " +"FROM etudiant "+ "WHERE id_etud = "+id_personne+";");
