@@ -4,21 +4,29 @@ import java.util.ArrayList;
 
 public class DoubleDiplomeBean {
 
-	private String nom, pays, ville, url, adresse, tel, logo_path, facebook_link, twitter_link, linkedin_link;
-	private int note, nb_etudiant;
+	private String nom, pays, ville, l_web, adresse, tel, logo_path, l_fb, l_tweet, l_linkedin, type, langue, nomContact, mail, prenomContact, fonction;
+	private int note, nb_etudiant, date_creation;
 	private ArrayList<EtudiantBean> etudiants;
 	
 	public DoubleDiplomeBean() {
 		nom = "null";
 		pays = "null";
 		ville = "null";
-		url = "null";
+		l_web = "null";
 		adresse = "null";
 		tel = "null";
 		logo_path = "null";
-		facebook_link = "null";
-		twitter_link = "null";
-		linkedin_link = "null";
+		l_fb = "null";
+		l_tweet = "null";
+		l_linkedin = "null";
+		type = "null";
+		langue = "null";
+		nomContact="null";
+		prenomContact="null";
+		mail="null";
+		fonction="null";
+
+		date_creation = 0;
 		note = 0;
 		nb_etudiant = 0;
 		etudiants = new ArrayList<EtudiantBean>();
@@ -37,10 +45,10 @@ public class DoubleDiplomeBean {
 		this.ville = ville;
 	}
 	public String getUrl() {
-		return url;
+		return l_web;
 	}
-	public void setUrl(String url) {
-		this.url = url;
+	public void setUrl(String l_web) {
+		this.l_web = l_web;
 	}
 	public String getAdresse() {
 		return adresse;
@@ -61,22 +69,22 @@ public class DoubleDiplomeBean {
 		this.logo_path = logo_path;
 	}
 	public String getFacebook_link() {
-		return facebook_link;
+		return l_fb;
 	}
-	public void setFacebook_link(String facebook_link) {
-		this.facebook_link = facebook_link;
+	public void setFacebook_link(String l_fb) {
+		this.l_fb = l_fb;
 	}
 	public String getTwitter_link() {
-		return twitter_link;
+		return l_tweet;
 	}
-	public void setTwitter_link(String twitter_link) {
-		this.twitter_link = twitter_link;
+	public void setTwitter_link(String l_tweet) {
+		this.l_tweet = l_tweet;
 	}
 	public String getLinkedin_link() {
-		return linkedin_link;
+		return l_linkedin;
 	}
-	public void setLinkedin_link(String linkedin_link) {
-		this.linkedin_link = linkedin_link;
+	public void setLinkedin_link(String l_linkedin) {
+		this.l_linkedin = l_linkedin;
 	}
 	public int getNote() {
 		return note;
@@ -84,12 +92,7 @@ public class DoubleDiplomeBean {
 	public void setNote(int note) {
 		this.note = note;
 	}
-	public int getNbEtudiant() {
-		return nb_etudiant;
-	}
-	public void setNbEtudiant(int nb_etudiant) {
-		this.nb_etudiant = nb_etudiant;
-	}
+
 	public ArrayList<EtudiantBean> getEtudiants() {
 		return etudiants;
 	}
@@ -111,5 +114,61 @@ public class DoubleDiplomeBean {
 
 	public void setNb_etudiant(int nb_etudiant) {
 		this.nb_etudiant = nb_etudiant;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getLangue() {
+		return langue;
+	}
+
+	public void setLangue(String langue) {
+		this.langue = langue;
+	}
+
+	public int getDate_creation() {
+		return date_creation;
+	}
+
+	public void setDate_creation(int date_creation) {
+		this.date_creation = date_creation;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public String getFonction() {
+		return fonction;
+	}
+
+	public void setFonction(String fonction) {
+		this.fonction = fonction;
+	}
+
+	public String getPrenomContact() {
+		return prenomContact;
+	}
+
+	public void setPrenomContact(String prenomContact) {
+		this.prenomContact = prenomContact;
+	}
+
+	public String getNomContact() {
+		return nomContact;
+	}
+
+	public void setNomContact(String nomContact) {
+		this.nomContact = nomContact;
 	} 
 }
