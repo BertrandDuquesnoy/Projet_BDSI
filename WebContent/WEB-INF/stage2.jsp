@@ -40,16 +40,9 @@
 		<p><span class="Entreprise où a été effectué le stage" style="color: #6C2466">Entreprise où a été effectué le stage : ${st.nom}</span></p>
 		
 		<p style="color: #6C2466"> Liens utiles : </p>
-		
 		<p style="color: #6C2466"> Adresse : </p>
-	
 		<p style="color: #6C2466"> Numéro de téléphone : </p>
-
-		
 		<p style="color: #6C2466"> Liens utils : </p>
-				<p style="color: #6C2466"> </p>
-				<p style="color: #6C2466"> </p>
-		
 		
 		<p><span class="Descriptif du stage" style="color: #6C2466">Descriptif du stage :  </span></p>
 	</div>

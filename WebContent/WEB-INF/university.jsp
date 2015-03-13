@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>TN International</title>
-<link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />s" />
+<link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
 	<body>
 	<%@ include file="header.jsp" %>
@@ -19,7 +19,7 @@
 		<div id="infos_univ_details" class="infos">
 			<p class="text_paragraph">
 				Ville : ${university.ville} <br/>
-				Pays : <img src="images/pays/canada.png"> ${university.pays} <br/>
+				Pays : ${university.pays} <br/>
 				Type : ${university.type} <br/>
 				Langue : ${university.langue} <br/>
 				Date de fondation : ${university.dateFondation} <br/>
@@ -61,7 +61,10 @@
 		<p><span class="nb_etudiants_partis">Nombre d'étudiants de TELECOM Nancy, partis dans cette université : ${university.nbEtudiants}</span></p>
 		<p><span class="nb_etudiants_partis">Liste des étudiants :  </span></p>
 		<c:forEach items="${ university.personnes }" varStatus="boucle">
-			<p>${university.personnes[boucle.index].prenom} ${university.personnes[boucle.index].nom} - ${university.personnes[boucle.index].promo} - ${university.personnes[boucle.index].departement} <span class="voir_plus">(voir plus) </span> <hr class="separateur"/> </p>
+			<p>
+				${university.personnes[boucle.index].prenom} ${university.personnes[boucle.index].nom} - ${university.personnes[boucle.index].promo} - ${university.personnes[boucle.index].departement} - ${university.personnes[boucle.index].email}
+				<hr class="separateur"/> 
+			</p>
 		</c:forEach>
 	</div>
 	</body>
