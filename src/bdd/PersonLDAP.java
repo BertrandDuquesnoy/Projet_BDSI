@@ -12,32 +12,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import modele.LdapException;
+import modele.LdapConnect;
 
 import org.ietf.ldap.*;
 
 //import eu.telecomnancy.bdsi.dao.DaoFactory;
 
-public class PersonLDAP {
+public class PersonLDAP extends LdapConnect {
 
-	//-------------------
-	// Attributes
-	//-------------------
-	//protected Connection con;
-	//private int id;
 	private String login;
 	private String year;
 	private String mail;
 	private String firstName;
 	private String lastName;
-	private String affectation;
-	private String coloration;
-	//private String password;
-	//private int id_group;
-	//private String text;
 
-	//-------------------
-	// Constructors
-	//-------------------
 
 	public PersonLDAP() {
 		login="";
@@ -45,30 +33,20 @@ public class PersonLDAP {
 		mail="";
 		firstName="";
 		lastName="";
-		affectation="";
-		coloration="";
+
 	}
 
 	public PersonLDAP(String login, String year, String mail, String firstName,
-			String lastName, String affectation) {
+			String lastName) {
 		super();
 		this.login = login;
 		this.year = year;
 		this.mail = mail;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.affectation = affectation;
-		//this.coloration = coloration;
+
 	}
 
-	public String getColoration(){
-		return coloration;
-	}
-
-	public void setColoration(String coloration){
-		this.coloration = coloration;
-	}
-	
 	public String getYear() {
 		return year;
 	}
@@ -79,78 +57,42 @@ public class PersonLDAP {
 		this.year = year;
 	}
 
-
-
 	public String getMail() {
 		return mail;
 	}
-
-
 
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
 
-
-
-	public String getAffectation() {
-		return affectation;
-	}
-
-
-
-	public void setAffectation(String affectation) {
-		this.affectation = affectation;
-	}
-
-
-
-	/**
-	 * @return the firstName
-	 */
 	public String getFirstName() {
 		return firstName;
 	}
 
-	/**
-	 * @param firstName : the firstName to set
-	 */
 	public void setFirstName(String _firstName) {
 		this.firstName = _firstName;
 	}
 
-	/**
-	 * @return the lastName
-	 */
 	public String getLastName() {
 		return lastName;
 	}
 
-	/**
-	 * @param lastName : the lastName to set
-	 */
 	public void setLastName(String _lastName) {
 		this.lastName = _lastName;
 	}
 
-	/**
-	 * @return the login
-	 */
 	public String getLogin() {
 		return login;
 	}
 
-	/**
-	 * @param login : the login to set
-	 */
 	public void setLogin(String _login) {
 		this.login = _login;
 	}
 
-	public boolean login(String passwd) throws java.io.UnsupportedEncodingException, LdapException
+	/*public boolean login() throws java.io.UnsupportedEncodingException, LdapException
 	{
 		try {
-			if (ldapLogin(passwd)) {
+			if (Connect(LdapConnect.getLogin(),LdapConnect.getPasswd())) { //faux
 				return true;
 			} else return false;
 		} catch (UnsupportedEncodingException ex) {
@@ -160,55 +102,8 @@ public class PersonLDAP {
 			Logger.getLogger(PersonLDAP.class.getName()).log(Level.SEVERE, null, ex);
 			return false;
 		}
-	}
+	}*/
 
-	public boolean ldapLogin(String passwd) throws java.io.UnsupportedEncodingException, LdapException{
-		try {
-			//variables de configuration de ldap
-			String ldapHost = "ldap.telecomnancy.univ-lorraine.fr";
-			String searchBase = "dc=telecomnancy,dc=univ-lorraine,dc=fr";
-			String searchFilter = "(objectclass=*)";
-			int ldapPort = LDAPConnection.DEFAULT_PORT;
-			int ldapVersion = 3;
-			LDAPConnection lc = new LDAPConnection();
-			lc.connect(ldapHost, ldapPort);
-			if (!lc.isConnected()) {
-				return false;
-			}
-			String searchFilterExpand = "(&" + searchFilter + "(uid=" + this.login + "))";
-			//String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn","eduPersonAffiliation"};
-			LDAPSearchResults searchResults = lc.search( searchBase, LDAPConnection.SCOPE_SUB, searchFilterExpand, null, false);
-			String loginDN = "";
-			if ( searchResults.hasMore() ) {
-				loginDN = searchResults.next().getDN();
-			} else {
-				return false;
-			}
-			
-			if (loginDN.contains("ETUDIANTS")) {
-				String groupe="";
-				groupe = "ETUDIANTS";
-				System.out.println("Groupe : " + groupe);
-			}
-			if (loginDN.contains("PERSONNELS")) {
-				String groupe="";
-				groupe = "PERSONNELS";
-				System.out.println("Groupe : " + groupe);
-			}
-			
-			// authentification
-			try {
-				lc.bind( ldapVersion, loginDN, passwd.getBytes("UTF8") );
-				System.out.println("ça marche");
-			} catch (LDAPException e1) {
-				return false;
-			}
-			lc.disconnect();
-			return true;
-		} catch (LDAPException e1) {
-			return false;
-		}
-	}
 	public static ArrayList<PersonLDAP> ldapRecup() throws java.io.UnsupportedEncodingException, LdapException{
 		ArrayList<PersonLDAP> lp = new ArrayList<PersonLDAP>();
 		try {
@@ -221,8 +116,8 @@ public class PersonLDAP {
 			lc.connect(ldapHost, ldapPort);
 			System.out.println("Recup apres co/Avant recherche");
 			String searchFilterExpand = "(&(objectclass=*)(uid=*))";
-			String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn","eduPersonAffiliation"};
-			LDAPSearchResults searchResults = lc.search( searchBase, LDAPConnection.SCOPE_SUB, searchFilterExpand, attr, false);
+			String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn"};
+			LDAPSearchResults searchResults = lc.search(searchBase, LDAPConnection.SCOPE_SUB, searchFilterExpand, attr, false);
 			System.out.println("Recup apres recherche");
 			while ( searchResults.hasMore() ) {
                 LDAPEntry entry = searchResults.next();
@@ -236,34 +131,6 @@ public class PersonLDAP {
 		return lp;
 	}
 
-    /**
-     * Method used to print the names and values of attributes of an entry.
-     * 
-     * @param entry The entry that contains the attributes
-     * @param attrs An array of attribute names to display
-     */
-    @SuppressWarnings("rawtypes")
-	public static void printEntry(LDAPEntry entry, String[] attrs) {
-        for (int i=0; i < attrs.length; i++) {
-            LDAPAttribute attr = entry.getAttribute(attrs[i]);
-            if (attr == null) {
-                System.out.println("    [" + attrs[i] + ": not present]");
-                continue;
-            }
-
-            Enumeration enumVals = attr.getStringValues();
-            boolean hasVals = false;
-            while ( (enumVals != null) && (enumVals.hasMoreElements()) ) {
-                String val = (String) enumVals.nextElement();
-                System.out.println("    [" + attrs[i] + ": " + val + "]");
-                hasVals = true;
-            }
-            if (!hasVals) {
-                System.out.println("    [" + attrs[i] + ": has no values]");
-            }
-        }
-        System.out.println("---------------------------------------------");
-    }
     @SuppressWarnings({ "unused", "rawtypes" })
 	public static PersonLDAP getEntry(LDAPEntry entry, String[] attrs) {
     	PersonLDAP p;
@@ -290,21 +157,17 @@ public class PersonLDAP {
             }
         }
         System.out.println("---------------------------------------------");
-        return p = new PersonLDAP(als.get(0),als.get(1),als.get(2),als.get(3),als.get(4),als.get(5));
+        System.out.println("Récap de l'utilisateur : " + als); // ordre : uid, annéeEtude, mail, prénom, nom
+        return p = new PersonLDAP(als.get(0),als.get(1),als.get(2),als.get(3),als.get(4));
     }
 
-
-
-	@Override
 	public String toString() {
 		return "Person [login=" + login + ", year=" + year + ", mail=" + mail
 				+ ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", affectation=" + affectation + "]";
+				+ ", affectation=" +  "]";
 	}	
 	public String toStringDataBase() {
 		String res ="\n[";
-		if(affectation.equals("student")) res+="etudiant,";
-		else res+=affectation+';';
 		res+=login+';'+mail+";gender;date_of_birth;"+firstName+';'+lastName+";speciality;"+year+']';
 		return res;
 	}
@@ -313,8 +176,6 @@ public class PersonLDAP {
 		String label="";
 			CallableStatement update_user = tunnel.prepareCall("{call update_user(?,?,?,?,?,?,?,?,?)}");
 			//label,user_name,email,gender,date_of_birth,first_name,last_name,speciality,level_user
-			if(this.affectation.equals("student")) label+="etudiant";
-			else label+="enseignant";
 			String tempMail=null;
 			if(this.getMail().equals("") | this.getMail()==null) tempMail=null;
 			else tempMail=this.getMail();
@@ -332,7 +193,7 @@ public class PersonLDAP {
 			update_user.execute();
 			update_user.close();
 	}
-	
+    
 	/*
 	public static Profil getProfil(java.sql.Connection tunnel, String user_name) throws SQLException{
 			System.out.println("Get profil : deb");

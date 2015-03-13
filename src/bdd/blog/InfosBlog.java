@@ -1,9 +1,8 @@
 package bdd.blog;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
-import beans.BlogBean;
+import beans.blog.BlogBean;
 
 public class InfosBlog {
 	

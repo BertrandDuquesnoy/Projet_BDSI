@@ -4,12 +4,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>TN International</title>
-<link type="text/css" rel="stylesheet" href="CSS/style.css" />
+<link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
 	<body>
 	<div id="bandeau">
-		<a href="http://www.telecomnancy.eu/" id="logoTN" class="logo-img"><img src="images/logoTN.png" alt= "Logo TELECOM Nancy" width="180" height="100"/></a>
-		<h1 class="titre_page" style="position:absolute; top: 2%; left:33%">RELATIONS INTERNATIONALES</h1>
+		<a href="http://www.telecomnancy.eu/" id="logoTN" class="logo-img"><img src="<%=request.getContextPath() %>/images/logoTN.png" alt= "Logo TELECOM Nancy" width="180" height="100"/></a>
+		<h1 class="titre_page" style="position:absolute; top: 2%; left:33%">${global.titre}</h1>
 		<p id="connexion">
 			${personne.prenom} ${personne.nom}<br/>
 			<a href="">Déconnection</a>

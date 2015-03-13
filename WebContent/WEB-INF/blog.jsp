@@ -4,15 +4,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>TN International</title>
-<link type="text/css" rel="stylesheet" href="CSS/style.css" />
+<link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
 	<script type="text/javascript">
 	
-		var value;
+		var value = "test";
 		
 		function updateComboBox(){
-			value = cb.options[cb.selectedIndex].value;
+			/* value = cb.options[cb.selectedIndex].value; */
+			alert("coucou");
 		}
+	</script>
+	<script>
 	
 		function supprimerCategorie(){
 			width = 400;
@@ -28,13 +31,12 @@
             popup.document.writeln("Catégorie à supprimer : ");
             popup.document.writeln('<select id="comboBox"><c:forEach var="i" begin="0" end="${bb.nbCategories-1}"><option>${bb.list[i]}</option></c:forEach></select>');
             var cb = popup.document.getElementById("comboBox");
-            var value;
-            popup.document.write('<p><a href="blog?modif=2&name='+value+'" onmouseover="value=cb.options[cb.selectedIndex].value" onMouseUp="window.close()">Supprimer</a> <a href="" onclick=window.close();>Annuler</a>');
+            popup.document.write('<p><a href="blog?modif=2&name='+value+'" onmouseover="updateComboBox()" onMouseUp="window.close()">Supprimer</a> <a href="" onclick=window.close();>Annuler</a>');
             
 		}
 	</script>
 	<body>
-		<%@ include file="header.jsp" %>
+		<%@ include file="header.jsp"%>
 		<div id="options_admin">
 			<p>
 				<span class="options_admin" onclick="supprimerCategorie()">Supprimer une catégorie</span>  
@@ -42,7 +44,7 @@
 				<span class="options_admin">Ajouter une catégorie</span>
 			</p>
 		</div>
-		<div id="accueil" style="width:20%"><p>Menu Accueil</p></div>
+		<div id="accueil" style="width:20%"><%@ include file="menu.jsp" %></div>
 		<div id="corps">
 			<div>
 				<c:forEach var="i" begin="0" end="${bb.nbCategories-1}">

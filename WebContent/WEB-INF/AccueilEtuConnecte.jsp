@@ -7,7 +7,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	   <title>Page d'accueil </title>
-	   <link type="text/css" rel="stylesheet" href="CSS/style.css" />
+	   <link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
 
 <header>
@@ -55,13 +55,15 @@
 		
 		
 		<div id="lien_res_sociaux">
-				<a href="${university.facebook_link}" id="logo_fb"><img src="images/facebook.png" width="30" height="30"/></a>
-				<a href="${university.twitter_link }" id="logo_tw"><img src="images/twitter.png" width="30" height="30"/></a>
-				<a href="${university.linkedin_link }" id="logo_ln"><img src="images/linkedin.png" width="30" height="30"/></a>
+				<a href="${university.facebook_link}" id="logo_fb"><img src="<%=request.getContextPath() %>/images/facebook.png" width="30" height="30"/></a>
+				<a href="${university.twitter_link }" id="logo_tw"><img src="<%=request.getContextPath() %>/images/twitter.png" width="30" height="30"/></a>
+				<a href="${university.linkedin_link }" id="logo_ln"><img src="<%=request.getContextPath() %>/images/linkedin.png" width="30" height="30"/></a>
 		</div>
 	</div>
 	 
-	 
+	 <div id="corps">
+	 	<iframe src="accueil?carte=1" class="carte" width="100%" height="500px"></iframe>
+	 </div>
        
     </body>
 

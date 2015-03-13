@@ -15,20 +15,21 @@ public class LdapConnect {
 	private String ldapHost = "ldap.telecomnancy.univ-lorraine.fr";
 	private String searchBase = "dc=telecomnancy, dc=univ-lorraine, dc=fr";
 	private String searchFilter = "(objectclass=*)";
-	private String login;
+	private  String login;
 	private String groupe;
+	private  String passwd;
+
 	private int userID;
 
 	public LdapConnect() {
 	}
 
-	public boolean testConnect(String login, String passwd) throws java.io.UnsupportedEncodingException, LdapException {
+	public boolean Connect(String login, String passwd) throws java.io.UnsupportedEncodingException, LdapException {
 
 		try {
 			System.out.println("Je rentre dans testConnect !");
 			this.login = login;
 			int ldapPort = LDAPConnection.DEFAULT_PORT;
-			// int ldapVersion = LDAPConnection.LDAP_V3;
 			int ldapVersion = 3;
 
 			LDAPConnection lc = new LDAPConnection();
@@ -46,8 +47,7 @@ public class LdapConnect {
 			 * updateDataBase(login);
 			 */
 			System.out.println("Apres update");
-			String searchFilterExpand = "(&" + searchFilter + "(uid=" + login
-					+ "))";
+			String searchFilterExpand = "(&" + searchFilter + "(uid=" + login + "))";
 
 			LDAPSearchResults searchResults = lc.search(searchBase,LDAPConnection.SCOPE_SUB, searchFilterExpand, null, false);
 
@@ -61,13 +61,27 @@ public class LdapConnect {
 				return false;
 			}
 			if (loginDN.contains("ETUDIANTS")) {
-				groupe = "ETUDIANTS";
+				groupe = "Etudiant";
 				System.out.println("Groupe : " + groupe);
 			}
-			if (loginDN.contains("PERSONNELS")) {
-				groupe = "PERSONNELS";
+			if (loginDN.contains("EqTech")) {
+				groupe = "Administrateur";
 				System.out.println("Groupe : " + groupe);
 			}
+			if (loginDN.contains("EqPedag") && !loginDN.contains("panetto5")) {
+				groupe = "Professeur";
+				System.out.println("Groupe : " + groupe);
+			}
+			if (loginDN.contains("EqAdmin")) {
+				groupe = "Pôle Relations Internationales";
+				System.out.println("Groupe : " + groupe);
+			}
+			if (loginDN.contains("panetto5")) {
+				groupe = "Responsable Relations Internationales";
+				System.out.println("Groupe : " + groupe);
+			}
+			
+			//Pour les élèves partis à l'étranger, rentrer les uid à la main :/ ??
 
 			// authentification
 			try {
@@ -77,17 +91,10 @@ public class LdapConnect {
 				return false;
 			}
 
-			/*
-			 * LDAPAttribute attr = new LDAPAttribute( "userPassword", passwd );
-			 * if ( ! lc.compare( loginDN, attr )) { throw new
-			 * LdapException("mot de passe incorrect !!"); }
-			 */
-
 			// deconnexion
 			lc.disconnect();
 			return true;
 		} catch (LDAPException e1) {
-			// throw new
 			// LdapException("Erreur interne LDAP : "+e1.getMessage());
 			return false;
 		}
@@ -99,6 +106,10 @@ public class LdapConnect {
 
 	public String getGroup() {
 		return groupe;
+	}
+
+	public String getPasswd() {
+		return passwd;
 	}
 
 	public void raz() {

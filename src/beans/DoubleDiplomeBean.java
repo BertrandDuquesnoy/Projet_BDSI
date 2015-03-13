@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 public class DoubleDiplomeBean {
 
-	private String pays, ville, url, adresse, tel, logo_path, facebook_link, twitter_link, linkedin_link;
+	private String nom, pays, ville, url, adresse, tel, logo_path, facebook_link, twitter_link, linkedin_link;
 	private int note, nb_etudiant;
 	private ArrayList<EtudiantBean> etudiants;
 	
 	public DoubleDiplomeBean() {
+		nom = "null";
 		pays = "null";
 		ville = "null";
 		url = "null";
@@ -94,5 +95,21 @@ public class DoubleDiplomeBean {
 	}
 	public void setEtudiants(ArrayList<EtudiantBean> etudiants) {
 		this.etudiants = etudiants;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public int getNb_etudiant() {
+		return nb_etudiant;
+	}
+
+	public void setNb_etudiant(int nb_etudiant) {
+		this.nb_etudiant = nb_etudiant;
 	} 
 }

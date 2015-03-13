@@ -4,13 +4,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bdd.blog.InfosBlog;
-import beans.BlogBean;
+import beans.blog.BlogBean;
+import beans.GeneralBeans;
 
 public class Blog extends HttpServlet{
 
@@ -20,13 +20,19 @@ public class Blog extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
 	InfosBlog infos_blog;
+	GeneralBeans global;
 	
 	public Blog() {
 		infos_blog = new InfosBlog();
+		global = new GeneralBeans();
 	}
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("bb", infos_blog.getInfos(request));
+		
+		global.setTitre("RELATIONS INTERNATIONALES \n Blog");
+		
+		request.setAttribute("global", global);
 		
 		try{
 			if (request.getParameter("modif").equals("1")) {

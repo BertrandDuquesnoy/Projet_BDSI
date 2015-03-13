@@ -7,19 +7,8 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	   <title>Page d'accueil </title>
-	   <link type="text/css" rel="stylesheet" href="CSS/style.css" />
+	   <link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
-
-<header>
-	  <div id="bandeau">
-		<a href="http://www.telecomnancy.eu/" id="logoTN" class="logo-img"><img src="images/logoTN.png" alt= "Logo TELECOM Nancy" width="180" height="100"/></a>
-		<h1 class="titre_page" style="position:absolute; top: 2%; left:33%">RELATIONS INTERNATIONALES</h1>
-		<p id="connexion">
-			Nom Prénom / Déconnexion </p>
-		
-			
-	</header>
-
 <body>
 
  <div id="cote_gauche">
@@ -55,14 +44,10 @@
 		
 		
 		<div id="lien_res_sociaux">
-				<a href="${university.facebook_link}" id="logo_fb"><img src="images/facebook.png" width="30" height="30"/></a>
-				<a href="${university.twitter_link }" id="logo_tw"><img src="images/twitter.png" width="30" height="30"/></a>
-				<a href="${university.linkedin_link }" id="logo_ln"><img src="images/linkedin.png" width="30" height="30"/></a>
+				<a href="${university.facebook_link}" id="logo_fb"><img src="<%=request.getContextPath() %>/images/facebook.png" width="30" height="30"/></a>
+				<a href="${university.twitter_link }" id="logo_tw"><img src="<%=request.getContextPath() %>/images/twitter.png" width="30" height="30"/></a>
+				<a href="${university.linkedin_link }" id="logo_ln"><img src="<%=request.getContextPath() %>/images/linkedin.png" width="30" height="30"/></a>
 		</div>
 	</div>
-	 
-	 
-       
-    </body>
-
+</body>
 </html>
