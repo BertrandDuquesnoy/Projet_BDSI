@@ -12,19 +12,19 @@ import beans.DoubleDiplomeBean;
 
 
 public class InfosDoubleDiplomes {
-	
+
 	DoubleDiplomeBean ddBean;
 	String pilote = "com.mysql.jdbc.Driver";
 	String nomBase = "bdsi_sie1";
-	
-	
-	
+
+
+
 	public InfosDoubleDiplomes(){
 		ddBean = new DoubleDiplomeBean();
 	}
-	
+
 	int id_dd = 0;
-	
+
 	public DoubleDiplomeBean getInfos(HttpServletRequest request){
 		try{
 			Class.forName(pilote);
@@ -35,31 +35,39 @@ public class InfosDoubleDiplomes {
 
 			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite "+"WHERE id_univ = "+id_dd+";");
 			while(resultat.next()){
-				
+
 				ddBean.setPays(resultat.getString("pays"));
 				ddBean.setVille(resultat.getString("ville"));
 				ddBean.setAdresse(resultat.getString("adresse"));
 				ddBean.setLogo_path(resultat.getString("logo_path"));
-				ddBean.setFacebook_link(resultat.getString("facebook_link"));
-				ddBean.setTwitter_link(resultat.getString("twitter_link"));
-				ddBean.setLinkedin_link(resultat.getString("linkedin_link"));
+				ddBean.setNom(resultat.getString("nom"));
+				ddBean.setType(resultat.getString("type"));
+				ddBean.setLangue(resultat.getString("langue"));
+				ddBean.setDate_creation(resultat.getInt("date_creation"));
 				ddBean.setNote(resultat.getInt("note"));
-				ddBean.setNbEtudiant(resultat.getInt("nb_etudiant"));
-				
+				ddBean.setNb_etudiant(resultat.getInt("nb_etudiant"));
+
 			}
-			
-			ResultSet resultat2 = instruction.executeQuery("SELECT * " +"FROM liens "+ "WHERE id_lien = "+id_dd+";");
+
+			ResultSet resultat2 = instruction.executeQuery("SELECT * " +"FROM lien "+ "WHERE id_lien = "+id_dd+";");
 			while(resultat2.next()){
-				
-				ddBean.setUrl(resultat2.getString("url"));	
+
+				ddBean.setUrl(resultat2.getString("l_web"));
+				ddBean.setFacebook_link(resultat2.getString("l_fb"));
+				ddBean.setTwitter_link(resultat2.getString("l_tweet"));
+				ddBean.setLinkedin_link(resultat2.getString("l_linkedin"));
 			}
-			
+
 			ResultSet resultat3 = instruction.executeQuery("SELECT * " +"FROM contact "+ "WHERE id_contact = "+id_dd+";");
 			while(resultat3.next()){
-				
-				ddBean.setTel(resultat3.getString("tel"));	
+
+				ddBean.setTel(resultat3.getString("tel"));
+				ddBean.setNomContact(resultat3.getString("nom"));
+				ddBean.setPrenomContact(resultat3.getString("prenom"));
+				ddBean.setFonction(resultat3.getString("fonction"));
+				ddBean.setMail(resultat3.getString("mail"));
 			}
-			
+
 		}
 		catch (Exception e){
 
@@ -67,7 +75,7 @@ public class InfosDoubleDiplomes {
 		}
 		return ddBean;
 	}
-	
-	
-	
+
+
+
 }
