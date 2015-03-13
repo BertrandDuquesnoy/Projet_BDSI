@@ -31,7 +31,7 @@ function supprimerArticle(id){
 					</div>
 					<div id="infos_univ_details" class="infos">
 						<p>
-							<span class="nb_etudiants_partis" style="text-align:center">Où suis-je partis</span>
+							<span class="nb_etudiants_partis" style="text-align:center">Où suis-je parti</span>
 						</p>
 						<p class="text_paragraph">
 							Entreprise : ${page.articles[i].entreprise} <br/>

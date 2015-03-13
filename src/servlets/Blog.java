@@ -30,7 +30,7 @@ public class Blog extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("bb", infos_blog.getInfos(request));
 		
-		global.setTitre("RELATIONS INTERNATIONALES \n Blog");
+		global.setTitre("Relations Internationales");
 		
 		request.setAttribute("global", global);
 		
