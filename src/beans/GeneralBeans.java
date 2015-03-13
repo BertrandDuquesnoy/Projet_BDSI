@@ -5,7 +5,7 @@ public class GeneralBeans {
 	private String titre;
 	
 	public GeneralBeans() {
-		titre = "RELATIONS INTERNATIONALES";
+		titre = "Relations Internationales";
 	}
 
 	public String getTitre() {

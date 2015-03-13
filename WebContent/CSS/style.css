@@ -22,11 +22,12 @@ html {font: 10px #000000; font-family: 'Trebuchet MS';}
 #corps {float: right; width: 80%; height: 80%;}
 #options_admin {color: #6C2466; text-align: center}
 #ligne {display: inline;}
+#bandeau{background:-webkit-gradient(linear, left top, right bottom, color-stop(0.05,white), color-stop(0.95, #8E6F67)); margin-bottom:10px; margin-top:-10px;}
 
 /* CONTENU */
 .text_paragraph {}
 
-.titre_page {color: #6C2466; text-align: center;}
+.titre_page {color: #6C2466; text-shadow: 2px 2px 2px white; text-align: center;font-family:'arial'; font :20px;}
 .titre_section {color: #6C2466; text-align: center; font-size: 2em;}
 .nb_etudiants_partis {color: #FFFFFF; background-color: #6C2466; padding: 3px;}
 

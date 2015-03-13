@@ -39,6 +39,7 @@ public class University extends HttpServlet{
 				this.getServletContext().getRequestDispatcher( "/WEB-INF/university.jsp" ).forward( request, response );
 			}
 		}catch(NullPointerException e){
+			System.out.println("null pointer - University");
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/university.jsp" ).forward( request, response );
 		}
 	}
