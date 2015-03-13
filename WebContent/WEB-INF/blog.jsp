@@ -36,7 +36,7 @@
 		}
 	</script>
 	<body>
-		<%@ include file="header.jsp" %>
+		<%@ include file="header.jsp"%>
 		<div id="options_admin">
 			<p>
 				<span class="options_admin" onclick="supprimerCategorie()">Supprimer une catégorie</span>  
@@ -44,7 +44,7 @@
 				<span class="options_admin">Ajouter une catégorie</span>
 			</p>
 		</div>
-		<div id="accueil" style="width:20%"><p>Menu Accueil</p></div>
+		<div id="accueil" style="width:20%"><%@ include file="menu.jsp" %></div>
 		<div id="corps">
 			<div>
 				<c:forEach var="i" begin="0" end="${bb.nbCategories-1}">
