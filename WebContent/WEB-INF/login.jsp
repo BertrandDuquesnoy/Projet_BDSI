@@ -11,7 +11,7 @@
 <%
            if (session.getAttribute("userId") == null) {
 %>
-<li><form id="login" method="POST" action="PersonServlet" class="webform-confirmation">
+<li><form id="login" method="POST" action="login" class="webform-confirmation">
         <input type="text" name="text_login" value="Identifiant" size="15" onFocus="if(this.value=='Identifiant')javascript:this.value=''"/>
         <input type="password" name="text_pass" value="Password" size="15" onFocus="javascript:this.value=''"/>
         <input type="hidden" name="action" value="login"/>
