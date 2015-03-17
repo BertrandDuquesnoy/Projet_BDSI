@@ -2,7 +2,7 @@ package beans;
 
 public class EtudiantBean {
 
-	private String prenom, nom, promo, email, departement, majeur, mineur;
+	private String prenom, nom, promo, email, departement;
 	
 	public EtudiantBean(){
 		prenom = "null";
@@ -10,8 +10,6 @@ public class EtudiantBean {
 		promo = "null";
 		email = "null@null";
 		departement = "null";
-		majeur = "null";
-		mineur = "null";
 	}
 
 	public String getPrenom() {
@@ -52,21 +50,5 @@ public class EtudiantBean {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getMajeur() {
-		return majeur;
-	}
-
-	public void setMajeur(String majeur) {
-		this.majeur = majeur;
-	}
-
-	public String getMineur() {
-		return mineur;
-	}
-
-	public void setMineur(String mineur) {
-		this.mineur = mineur;
 	}
 }

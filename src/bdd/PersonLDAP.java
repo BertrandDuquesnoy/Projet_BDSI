@@ -1,22 +1,23 @@
 package bdd;
 
-import java.io.UnsupportedEncodingException;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.CallableStatement;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import modele.LdapException;
 import modele.LdapConnect;
+import modele.LdapException;
+
+import org.ietf.ldap.LDAPAttribute;
+import org.ietf.ldap.LDAPConnection;
+import org.ietf.ldap.LDAPEntry;
+import org.ietf.ldap.LDAPException;
+import org.ietf.ldap.LDAPSearchResults;
 
 import beans.PersonBean;
-
-import org.ietf.ldap.*;
 
 //import eu.telecomnancy.bdsi.dao.DaoFactory;
 
@@ -27,7 +28,8 @@ public class PersonLDAP extends LdapConnect {
 	private String mail;
 	private String firstName;
 	private String lastName;
-
+	
+	
 	public PersonLDAP() {
 		login="";
 		year="";
@@ -115,7 +117,7 @@ public class PersonLDAP extends LdapConnect {
 			lc.connect(ldapHost, ldapPort);
 			System.out.println("Recup apres co/Avant recherche");
 			String searchFilterExpand = "(&(objectclass=*)(uid=*))";
-			String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn"};
+			String[] attr = {"uid","sn","givenName","supannEtuCursusAnnee","primarymail"};
 			LDAPSearchResults searchResults = lc.search(searchBase, LDAPConnection.SCOPE_SUB, searchFilterExpand, attr, false);
 			System.out.println("Recup apres recherche");
 			while ( searchResults.hasMore() ) {
@@ -135,7 +137,7 @@ public class PersonLDAP extends LdapConnect {
 		PersonLDAP p;
 		ArrayList<String> als = new ArrayList<String>();
 		ArrayList<PersonBean> pbList = new ArrayList<PersonBean>();
-
+		File f = new File("./ldapRecup.txt");
 		for (int i=0; i < attrs.length; i++) {
 			LDAPAttribute attr = entry.getAttribute(attrs[i]);
 			if (attr == null) {
@@ -146,6 +148,12 @@ public class PersonLDAP extends LdapConnect {
 
 			Enumeration enumVals = attr.getStringValues();
 			boolean hasVals = false;
+			try {
+				f.createNewFile();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			while ( (enumVals != null) && (enumVals.hasMoreElements()) ) {           	
 				String val = (String) enumVals.nextElement();
 				System.out.println("    [" + attrs[i] + ": " + val + "]");
@@ -170,6 +178,15 @@ public class PersonLDAP extends LdapConnect {
 				pbList.add(pb);
 				hasVals = true;
 				als.add(val);
+				try {
+					FileWriter fw = new FileWriter(f,true);
+					if(als.size()==5){
+						fw.write(als.toString()+"\n");
+					}
+					fw.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 			if (!hasVals) {
 				System.out.println("    [" + attrs[i] + ": has no values]");                
