@@ -42,6 +42,10 @@ public class InfosUniversity {
 				univ.setType(res1.getString("type"));
 				univ.setLangue(res1.getString("langue"));
 				univ.setDateFondation(res1.getString("date_creation"));
+				
+				univ.setNote(res1.getInt("note"));
+				univ.setNbEtudiants(res1.getInt("nb_etudiant"));
+
 				//note et nbEt
 			}
 			
@@ -55,8 +59,10 @@ public class InfosUniversity {
 			
 			// Ne faut-il pas des liens renvoyant vers les conventions ?? Ce sont des fichiers PDFs normalement
 			// du coup requête à remplir après discussion...
-			ResultSet res3 = instruction.executeQuery("SELECT * " +"FROM universite "+"WHERE id_univ = "+id_dd+";");
+			ResultSet res3 = instruction.executeQuery("SELECT * " +"FROM convention "+"WHERE id_conv = "+id_dd+";");
 			while(res3.next()){
+				univ.setConvention_path(res3.getString("l_conv")); //lien vers la convention
+
 				
 			}
 			
