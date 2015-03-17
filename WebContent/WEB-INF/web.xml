@@ -50,6 +50,14 @@
 	<servlet-name>AccueilStage</servlet-name>
 	<servlet-class>servlets.Accueil_Stage</servlet-class>
 </servlet>
+<servlet>
+	<servlet-name>AccueilUniv</servlet-name>
+	<servlet-class>servlets.Accueil_Univ</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>AccueilDD</servlet-name>
+	<servlet-class>servlets.Accueil_DD</servlet-class>
+</servlet>
 
 <servlet-mapping>
 	<servlet-name>Login</servlet-name>
@@ -57,7 +65,7 @@
 </servlet-mapping>
 <servlet-mapping>
 	<servlet-name>University</servlet-name>
-	<url-pattern>/university</url-pattern>
+	<url-pattern>/universite</url-pattern>
 </servlet-mapping>
 <servlet-mapping>
 	<servlet-name>DoubleDiplome</servlet-name>
@@ -98,5 +106,13 @@
 <servlet-mapping>
 	<servlet-name>AccueilStage</servlet-name>
 	<url-pattern>/accueil/stages</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>AccueilUniv</servlet-name>
+	<url-pattern>/accueil/universite</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>AccueilDD</servlet-name>
+	<url-pattern>/accueil/doubleDiplome</url-pattern>
 </servlet-mapping>
 </web-app>

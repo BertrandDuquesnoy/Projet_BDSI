@@ -25,7 +25,7 @@ public class Modalite extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("mod", infoMod.getInfos(request));
 		
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/modalite.jsp" ).forward( request, response );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/modalites.jsp" ).forward( request, response );
 	}
 
 }

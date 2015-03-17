@@ -2,13 +2,13 @@ package beans;
 
 import java.util.ArrayList;
 
-public class AStageBean {
+public class ADDBean {
 
 	private ArrayList<String> fonctions, duree, annee, pays, entreprise;
 	private ArrayList<Integer> id;
-	private int nbStages;
+	private int nbDDs;
 	
-	public AStageBean(){
+	public ADDBean(){
 		fonctions = new ArrayList<String>();
 		fonctions.add("null");
 		duree = new ArrayList<String>();
@@ -55,12 +55,12 @@ public class AStageBean {
 		this.pays = pays;
 	}
 
-	public int getNbStages() {
+	public int getNbDDs() {
 		return fonctions.size();
 	}
 
-	public void setNbStages(int nbStages) {
-		this.nbStages = nbStages;
+	public void setNbDDs(int nbDDs) {
+		this.nbDDs = nbDDs;
 	}
 
 	public ArrayList<Integer> getId() {
