@@ -46,33 +46,62 @@
 		<div id="accueil" style="width:20%"><%@ include file="menu.jsp" %></div>
 		<div id="corps">
 			<p>
-						<span class="nb_etudiants_partis">Pourquoi ?  </span>
+						<span class="nb_etudiants_partis">Pourquoi partir à l'étranger ?</span>
 					</p>
 					<p>
-						Valorisation du dipôme
+						Partir à l'étranger pour un stage ou pour suivre un cursus universitaire est une excellente manière de valoriser son diplôme. C'est une façon d'avoir un parcours original. De plus c'est une expérience très enrichissante et recherchée par les entreprises.
 					</p>
+
 					<p>
 						<span class="nb_etudiants_partis">Comment ? </span>
 					</p>
 					<p>
-						ERASMUS
+						Il y a plusieurs moyens de partir à l'étranger:<br/>
+						<br/><U>Pour suivre un cursus universitaire: </U><br/>
+						Pour un <strong>double diplôme</strong>, dans les universités partenaires<br/>
+						En <strong>ERASMUS</strong>, dans les universités partenaires. L'école peut créer des partenariats sur demande des élèves, mais préfère utiliser les partenariats existants.<br/>
+						
+						<U><br/>Lors d'un <strong>stage.</strong></U> 
+						<br/>L'étudiant fait la démarche et l'école est là pour l'aider.<br/>
+					</p>
+
+					<p>
+						<br/><span class="nb_etudiants_partis">Quand ?</span>
 					</p>
 					<p>
-						<span class="nb_etudiants_partis">Où ? </span>
+						Pour le deuxième semestre de la 2ème année.<br/>
+						La 3ème année.<br/>
+						Pendant les périodes de stage.<br/>
+					</p>
+
+					<p>
+						<br/><span class="nb_etudiants_partis">Où ? </span>
 					</p>
 					<p>
-						Lister les différents pays où un accord est signé
-						Le stage est réalisable n’importe où, c’est à l’étudiant de faire la démarche et l’école sera là pour l’aider
+						
+						Télécom Nancy possède des partenariats avec de nombreux pays:<br/>
+						<br/><U>Les doubles diplômes:</U>
+						<br/>L'Université du Québec A Chicoutimi (UQAC), <strong>Canada</strong>, <a href="https://www-intranet.telecomnancy.univ-lorraine.fr/lib/exe/fetch.php/ri/presentation_telecom_nancy.pdf">Présentation Chicoutimi 2014</a><br/>
+						Sup'com, Tunis, <strong>Tunisie</strong><br/>
+						Tecnologico de Monterrey, Monterrey, <strong>Mexique</strong><br/>
+						University of Queensland, Brisbane, <strong>Australie</strong><br/>
+						
+						<br/><U>ERASMUS:</U><br/>
+						Martin-Luther-Universität HalleWittenberg, <strong>Allemagne</strong><br/>
+						Universidad autonoma, Madrid, <strong>Espagne</strong><br/>
+						TKK Aalto, Helzinski, <strong>Finlande</strong><br/>
+						University of Maynooth, <strong>Irlande</strong><br/>
+						Politecnico di Bari, <strong>Italie</strong><br/>
+						NTNU, Trondheim, <strong>Norvège</strong><br/>
+						University of Science and Technology, Cracovie, <strong>Pologne</strong><br/>
+						Universidade Nova de Lisboa, <strong>Portugal</strong><br/>
+						Universitatea STEFAN CEL MARE, Suceava, <strong>Roumanie</strong><br/>
+						Universitatea Din Pitesti, <strong>Roumanie</strong><br/>
+
+						<br/><U>Stage:</U><br/>
+						N'importe où!!
+							
 					</p>
-					<p>
-						<span class="nb_etudiants_partis">Quand ?</span>
-					</p>
-					<p>
-						Deuxième semestre de la 2ème année*
-						3ème année
-						Pendant les périodes de stage
-					</p>
-					
 			</p>
 		</div>
 	</body>

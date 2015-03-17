@@ -26,7 +26,9 @@ function supprimerArticle(id){
 					<div id="infos_univ" class="infos">
 						<p class="text_paragraph">
 							Auteur : ${page.articles[i].auteur} <br/>
-							Promotion : ${page.articles[i].promotionAuteur}
+							Promotion : ${page.articles[i].promotionAuteur} <br/>
+							Email de l'auteur : <br/>
+							${page.article[i].email}
 						</p>
 					</div>
 					<div id="infos_univ_details" class="infos">
