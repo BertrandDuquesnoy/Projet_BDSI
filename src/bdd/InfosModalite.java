@@ -22,7 +22,7 @@ public class InfosModalite {
 	public ModaliteBean getInfos(HttpServletRequest request){
 		//TODO: Requête SQL de récupération des données de modalité
 
-		int id_dd=0;
+		//int id_dd=0;
 		try{
 			Class.forName(pilote);
 
@@ -30,23 +30,28 @@ public class InfosModalite {
 
 			Statement instruction = connexion.createStatement();
 
-			//on récupère où le lien pour les aides ? il faut changer la requête et mettre le nom de la colonne dans le getString
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite "+"WHERE id_univ = "+id_dd+";");
+			//on recupere le lien concerant les aides financieres pour partir etudier a l'etranger
+			ResultSet resultat = instruction.executeQuery("SELECT lien " +"FROM lien_utile "+"WHERE id = 4"+";");
 			while(resultat.next()){
-				modBean.setAides(resultat.getString(""));
+				modBean.setAides(resultat.getString("lien"));
 			}
 
-			//lien de l'université pour les conditions ? C'est télécom qui les pose donc on devrait mettre la page dans les liens utiles
 			
-			/*ResultSet res = instruction.executeQuery("SELECT l_web "+"FROM universite u, lien l "+"WHERE u.id_univ = l.etr_univ"+";");
-			while(res.next()){
-				modBean.setConditions(res.getString("l_web"));
-			}*/
-			
-			ResultSet res = instruction.executeQuery("SELECT lien "+"FROM lien_utile "+"WHERE id = 3"+";"); //lien 3 renvoit vers les conditions
+			// cette requete renvoie vers la page International/partir a l'etranger de TN
+			// on y trouve les conditions 
+			ResultSet res = instruction.executeQuery("SELECT lien "+"FROM lien_utile "+"WHERE id = 3"+";"); 
 			while(res.next()){
 				modBean.setConditions(res.getString("lien"));
 			}
+			
+
+			//lien de l'université pour les conditions ? C'est télécom qui les pose donc on devrait mettre la page dans les liens utiles
+			// cette requete renvoie vers le site web de l'universite 
+			// c'est a l'eleve d'aller chercher les infos qui l'interesse sur ce site
+//			ResultSet res1 = instruction.executeQuery("SELECT l_web "+"FROM universite u, lien l "+"WHERE u.id_univ = l.etr_univ"+";");
+//			while(res1.next()){
+//				modBean.setConditions(res1.getString("l_web"));
+//			}
 		}
 		catch (Exception e){
 
