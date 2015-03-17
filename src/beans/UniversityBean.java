@@ -10,10 +10,10 @@ public class UniversityBean {
 
 	private int id;
 	private String nom;
-	private String url;
+	private String l_web;
 	private String logo_path;
-	private String pays, ville, type, langue, dateFondation, convention_path;
-	private String linkedin_path, facebook_link, twitter_link, linkedin_link;
+	private String pays, ville, type, langue, dateFondation, convention_path, adresse;
+	private String linkedin_path, l_fb, l_tweet, l_linkedin;
 	private String description;
 	private int note, nbEtudiants;
 	private ArrayList<EtudiantBean> personnes ;
@@ -21,25 +21,38 @@ public class UniversityBean {
 	public UniversityBean(){
 		id = 0;
 		nom = "null";
-		url = "null";
+		l_web = "null";
 		logo_path = "null";
 		pays = "null";
 		ville = "null";
+		adresse="null";
 		type = "null";
 		langue = "null";
 		dateFondation = "null";
 		nbEtudiants = 0;
 		description = "null";
-		facebook_link = "null";
-		twitter_link = "null";
-		linkedin_link = "null";
+		l_fb = "null";
+		l_tweet = "null";
+		l_linkedin = "null";
 		note = 5;
 		personnes = new ArrayList<EtudiantBean>();
 		personnes.add(new EtudiantBean());
-		personnes.add(new EtudiantBean());
+		//personnes.add(new EtudiantBean());
 	}
 	
 	
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -58,11 +71,11 @@ public class UniversityBean {
 	}
 
 	public String getUrl() {
-		return url;
+		return l_web;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setUrl(String l_web) {
+		this.l_web = l_web;
 	}
 
 	public String getLogo_path() {
@@ -154,27 +167,27 @@ public class UniversityBean {
 	}
 
 	public String getFacebook_link() {
-		return facebook_link;
+		return l_fb;
 	}
 
-	public void setFacebook_link(String facebook_link) {
-		this.facebook_link = facebook_link;
+	public void setFacebook_link(String l_fb) {
+		this.l_fb = l_fb;
 	}
 
 	public String getTwitter_link() {
-		return twitter_link;
+		return l_tweet;
 	}
 
-	public void setTwitter_link(String twitter_link) {
-		this.twitter_link = twitter_link;
+	public void setTwitter_link(String l_tweet) {
+		this.l_tweet = l_tweet;
 	}
 
 	public String getLinkedin_link() {
-		return linkedin_link;
+		return l_linkedin;
 	}
 
-	public void setLinkedin_link(String linkedin_link) {
-		this.linkedin_link = linkedin_link;
+	public void setLinkedin_link(String l_linkedin) {
+		this.l_linkedin = l_linkedin;
 	}
 
 

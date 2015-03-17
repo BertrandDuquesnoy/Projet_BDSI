@@ -5,15 +5,19 @@
 package controllers;
 
 import modele.LdapException;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import beans.PersonBean;
 
 /**
  *
@@ -45,6 +49,7 @@ public class PersonServlet extends HttpServlet {
 			response.sendRedirect("index.jsp");
 		} else if (request.getMethod().equals("POST")
 				&& (request.getParameter("action").compareTo("login") == 0)) {
+			PersonBean user = new PersonBean();
 			// Person user = new Person();
 			// user.setLogin(request.getParameter("text_login"));
 			// try {

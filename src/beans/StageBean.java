@@ -11,9 +11,10 @@ public class StageBean {
 	private int id;
 	private String nom;
 	private String url;
-	private String email;
+	private String email, numTel;
 	private String logo_path;
 	private String pays, ville, langue, dateFondation;
+	private String adresse;
 	private String facebook_link, twitter_link, linkedin_link;
 	private String description;
 	private int note, nbEmployes;
@@ -24,11 +25,13 @@ public class StageBean {
 		nom = "null";
 		url = "null";
 		email = "null@null";
+		numTel = "06";
 		logo_path = "null";
 		pays = "null";
 		ville = "null";
 		langue = "null";
 		dateFondation = "null";
+		adresse = "null";
 		nbEmployes = 0;
 		description = "null";
 		facebook_link = "null";
@@ -37,7 +40,7 @@ public class StageBean {
 		note = 5;
 		personnes = new ArrayList<EtudiantBean>();
 		personnes.add(new EtudiantBean());
-		personnes.add(new EtudiantBean());
+		personnes.add(new EtudiantBean()); //pourquoi deux fois cette ligne ?
 	}
 	
 	
@@ -176,6 +179,30 @@ public class StageBean {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+
+
+	public String getNumTel() {
+		return numTel;
+	}
+
+
+
+	public void setNumTel(String numTel) {
+		this.numTel = numTel;
 	}
 	
 	

@@ -27,7 +27,6 @@ public class PersonLDAP extends LdapConnect {
 	private String mail;
 	private String firstName;
 	private String lastName;
-	private String categorie;
 
 	public PersonLDAP() {
 		login="";
@@ -35,18 +34,16 @@ public class PersonLDAP extends LdapConnect {
 		mail="";
 		firstName="";
 		lastName="";
-		categorie="";
 	}
 
 	public PersonLDAP(String login, String year, String mail, String firstName,
-			String lastName, String categorie) {
+			String lastName) {
 		super();
 		this.login = login;
 		this.year = year;
 		this.mail = mail;
 		this.firstName = firstName;
 		this.lastName = lastName;
-
 	}
 
 	public String getYear() {
@@ -118,7 +115,7 @@ public class PersonLDAP extends LdapConnect {
 			lc.connect(ldapHost, ldapPort);
 			System.out.println("Recup apres co/Avant recherche");
 			String searchFilterExpand = "(&(objectclass=*)(uid=*))";
-			String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn", "eduPersonAffiliation"};
+			String[] attr = {"uid","supannEtuCursusAnnee","primarymail","givenName","sn"};
 			LDAPSearchResults searchResults = lc.search(searchBase, LDAPConnection.SCOPE_SUB, searchFilterExpand, attr, false);
 			System.out.println("Recup apres recherche");
 			while ( searchResults.hasMore() ) {
@@ -169,9 +166,6 @@ public class PersonLDAP extends LdapConnect {
 
 				case "sn": pb.setNom(val);
 				break;
-
-				case "eduPersonAffiliation": pb.setCategorie(val);
-				break;
 				}
 				pbList.add(pb);
 				hasVals = true;
@@ -183,16 +177,16 @@ public class PersonLDAP extends LdapConnect {
 			}
 		}
 		System.out.println("---------------------------------------------");
-		//System.out.println("Récap de l'utilisateur : " + als); // ordre : uid, annéeEtude, mail, prénom, nom, catégorie
-		System.out.println("pbList : "+pbList);
-		return p = new PersonLDAP(als.get(0),als.get(1),als.get(2),als.get(3),als.get(4),als.get(5));
+		System.out.println("Récap de l'utilisateur : " + als); //ordre : uid, annéeEtude, mail, prénom, nom
+		return p = new PersonLDAP(als.get(0),als.get(1),als.get(2),als.get(3),als.get(4));
 	}
 
 	public String toString() {
 		return "Person [login=" + login + ", year=" + year + ", mail=" + mail
 				+ ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", affectation=" +  "]";
-	}	
+	}
+	
 	public String toStringDataBase() {
 		String res ="\n[";
 		res+=login+';'+mail+";gender;date_of_birth;"+firstName+';'+lastName+";speciality;"+year+']';
@@ -220,51 +214,5 @@ public class PersonLDAP extends LdapConnect {
 		update_user.execute();
 		update_user.close();
 	}
-
-	/*
-	public static Profil getProfil(java.sql.Connection tunnel, String user_name) throws SQLException{
-			System.out.println("Get profil : deb");
-			Profil resProfil;
-			CallableStatement get_profil = tunnel.prepareCall("{call get_profil(?)}");
-			get_profil.setString(1, user_name);
-		    //get_profil.registerOutParameter(1, java.sql.Types.VARCHAR);
-		    System.out.println("Get profil : exe");
-			get_profil.execute();
-			ResultSet res =get_profil.getResultSet();
-		    res.next();
-		          String label = res.getString("label");
-		          if(label==null)label="";
-		          String user_id = res.getString("user_id");
-		          if(user_id==null)user_id="";
-		          String email = res.getString("email");
-		          if(email==null)email="";
-		          String gender = res.getString("gender");
-		          if(gender==null)gender="";
-		          String firstName = res.getString("first_name");
-		          if(firstName==null)firstName="";
-		          String lastName = res.getString("last_name");
-		          if(lastName==null)lastName="";
-		          Date birthT = res.getDate("date_of_birth");
-		          String birth="";
-		          if(birthT!=null)birth=birthT.toString();
-		          String speciality = "";
-		          String level_user = "";
-		          try{
-		        	  speciality = res.getString("speciality");
-			          if(speciality==null)speciality="";
-			          level_user = res.getString("level_user");
-			          if(level_user==null)level_user="";
-		          }catch(Exception e){
-
-		          }
-		    System.out.println(label+' '+user_id+' '+email+' '+gender+' '+firstName+' '+lastName+' '+birth+' '+speciality+' '+level_user);
-
-			//System.out.println("Label : " + get_profil.getString("label"));
-		    res.close();
-			get_profil.close();
-			System.out.println("Get profil : end");
-			resProfil = new Profil(label,user_id,email,gender,firstName,lastName,birth,speciality,level_user);
-			return resProfil;
-	}*/
 }
 

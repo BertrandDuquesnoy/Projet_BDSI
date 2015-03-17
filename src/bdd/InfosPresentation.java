@@ -14,6 +14,7 @@ public class InfosPresentation {
 	
 	public PresentationBean getInfos(HttpServletRequest request){
 		//TODO: Requête SQL pour les champs de presBean
+		// On va chercher où ces champs ??
 		return presBean;
 	}
 }
