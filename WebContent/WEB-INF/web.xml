@@ -15,6 +15,10 @@
 	<servlet-class>servlets.Login</servlet-class>
 </servlet>
 <servlet>
+	<servlet-name>Contact</servlet-name>
+	<servlet-class>servlets.Contact</servlet-class>
+</servlet>
+<servlet>
 	<servlet-name>University</servlet-name>
 	<servlet-class>servlets.University</servlet-class>
 </servlet>
@@ -98,5 +102,9 @@
 <servlet-mapping>
 	<servlet-name>AccueilStage</servlet-name>
 	<url-pattern>/accueil/stages</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>Contact</servlet-name>
+	<url-pattern>/contact</url-pattern>
 </servlet-mapping>
 </web-app>
