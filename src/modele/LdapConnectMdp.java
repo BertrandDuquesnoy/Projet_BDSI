@@ -9,10 +9,8 @@ import org.ietf.ldap.LDAPSearchResults;
 import bdd.PersonLDAP;
 
 class LdapConnectMdp{
-	public static void main(String[] args) throws UnsupportedEncodingException, LDAPException, LdapException{
-		PersonLDAP personne = new PersonLDAP();
-		String mdp="lol";
-		String login="duquesno7u",groupe="";
+	public static void authentifier(String login, String mdp) throws LdapException, UnsupportedEncodingException{
+		String groupe="";
 		String ldapHost="ldap.telecomnancy.univ-lorraine.fr";
 		String searchBase = "dc=telecomnancy, dc=univ-lorraine, dc=fr";
 		String searchFilter = "(objectclass=*)";
@@ -78,5 +76,8 @@ class LdapConnectMdp{
 		} catch (LDAPException e1) {
 			throw new LdapException("Erreur interne LDAP : "+e1.getMessage());			
 		}
+	}
+	public static void main(String[] args) throws UnsupportedEncodingException, LDAPException, LdapException{
+		authentifier("duquesno7u","lol");
 	}
 }
