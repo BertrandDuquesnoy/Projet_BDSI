@@ -20,10 +20,7 @@
 					<c:choose>
 						<c:when test="${(i%3)==0 }">
 						<div id="ligne">
-							<div>
-								<input type="image" id="test" class="categorie" name="${i}" src="<%=request.getContextPath() %>/${list.paths[i]}" onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}"'>
-								<p style="position:relative; text-align:center">Canada</p>
-							</div>
+								<input type="button" class="categorie" name="${i}" style="background:url(<%=request.getContextPath() %>/${list.paths[i]}) no-repeat; background-size: 250px 100px; color: black; border: none" value="${list.pays[i]}" onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}"'>
 						</div>
 					</c:when>
 					<c:otherwise>
