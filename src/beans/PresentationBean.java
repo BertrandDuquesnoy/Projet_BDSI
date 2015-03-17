@@ -1,3 +1,4 @@
+// inutile cf InfosPersonnes.java
 package beans;
 
 import java.util.ArrayList;

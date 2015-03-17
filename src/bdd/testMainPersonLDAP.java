@@ -4,7 +4,7 @@ import java.io.UnsupportedEncodingException;
 
 import bdd.PersonLDAP;
 import modele.LdapConnect;
-import modele.LdapConnectPswd;
+//import modele.LdapConnectPswd;
 import modele.LdapException;
 
 class testMainPersonLDAP{
@@ -12,8 +12,8 @@ class testMainPersonLDAP{
 		PersonLDAP personne = new PersonLDAP();
 		//LdapConnect co = new LdapConnect();
 		//co.Connect("panetto5","");
-		LdapConnectPswd co = new LdapConnectPswd();
-		co.validateLogin("duquesno7u","");
+		//LdapConnectPswd co = new LdapConnectPswd();
+		//co.validateLogin("duquesno7u","");
 		//personne.ldapRecup();
 	}
 }

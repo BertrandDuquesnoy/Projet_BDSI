@@ -2,35 +2,35 @@ package beans;
 
 import java.util.ArrayList;
 
-public class ADDBean {
+public class AUnivBean {
 
-	private ArrayList<String> dd, paths;
+	private ArrayList<String> pays, paths;
 	private ArrayList<Integer> id;
-	private int nbDD;
+	private int nbUniv;
 	
-	public ADDBean(){
+	public AUnivBean(){
+		pays = new ArrayList<String>();
+		pays.add("null");
 		paths = new ArrayList<String>();
 		paths.add("images/pays/canada.png");
-		dd = new ArrayList<String>();
-		dd.add("null");
 		id = new ArrayList<Integer>();
 		id.add(1);
 	}
 
-	public ArrayList<String> getDd() {
-		return dd;
+	public ArrayList<String> getPays() {
+		return pays;
 	}
 
-	public void setDd(ArrayList<String> dd) {
-		this.dd = dd;
+	public void setPays(ArrayList<String> pays) {
+		this.pays = pays;
 	}
 
-	public int getNbDD() {
-		return dd.size();
+	public int getNbUniv() {
+		return pays.size();
 	}
 
-	public void setNbDD(int nbDD) {
-		this.nbDD = nbDD;
+	public void setNbUniv(int nbUniv) {
+		this.nbUniv = nbUniv;
 	}
 
 	public ArrayList<Integer> getId() {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ArticleBean {
 	
 	private ArrayList<String> liensIntitule, liens, commentaires;
-	private String auteur, promotionAuteur, entreprise, urlEntreprise, ville, pays, langue, titre, premiereImpression, commentImpression, villeImpression, conseil;
+	private String auteur, promotionAuteur, entreprise, urlEntreprise, ville, pays, langue, titre, premiereImpression, commentImpression, villeImpression, conseil, email;
 	private int noteEntreprise, noteVille, nbLiens, nbCommentaires, id;
 	
 	public ArticleBean() {
@@ -25,6 +25,7 @@ public class ArticleBean {
 		id = 5;
 		auteur = "Paul Cottin";
 		promotionAuteur = "2016";
+		email = "null@null";
 		entreprise = "null";
 		urlEntreprise = "null";
 		ville = "null";
@@ -196,6 +197,14 @@ public class ArticleBean {
 
 	public void setNbCommentaires(int nbCommentaires) {
 		this.nbCommentaires = nbCommentaires;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
