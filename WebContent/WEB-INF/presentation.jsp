@@ -53,25 +53,25 @@
 					</p>
 
 					<p>
-						<span class="nb_etudiants_partis">Comment ? </span>
+						</br><span class="nb_etudiants_partis">Comment ? </span>
 					</p>
 					<p>
 						Il y a plusieurs moyens de partir à l'étranger:<br/>
 						<br/><U>Pour suivre un cursus universitaire: </U><br/>
-						Pour un <strong>double diplôme</strong>, dans les universités partenaires<br/>
-						En <strong>ERASMUS</strong>, dans les universités partenaires. L'école peut créer des partenariats sur demande des élèves, mais préfère utiliser les partenariats existants.<br/>
+						- Pour un <strong>double diplôme</strong>, dans les universités partenaires<br/>
+						- En <strong>ERASMUS</strong>, dans les universités partenaires. L'école peut créer des partenariats sur demande des élèves, mais préfère utiliser les partenariats existants.<br/>
 						
 						<U><br/>Lors d'un <strong>stage.</strong></U> 
-						<br/>L'étudiant fait la démarche et l'école est là pour l'aider.<br/>
+						<br/>- L'étudiant fait la démarche et l'école est là pour l'aider.<br/>
 					</p>
 
 					<p>
 						<br/><span class="nb_etudiants_partis">Quand ?</span>
 					</p>
 					<p>
-						Pour le deuxième semestre de la 2ème année.<br/>
-						La 3ème année.<br/>
-						Pendant les périodes de stage.<br/>
+						- Pour le deuxième semestre de la 2ème année.<br/>
+						- La 3ème année.<br/>
+						- Pendant les périodes de stage.<br/>
 					</p>
 
 					<p>

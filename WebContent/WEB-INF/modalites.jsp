@@ -45,68 +45,42 @@
 		</div>
 		<div id="accueil" style="width:20%"><%@ include file="menu.jsp" %></div>
 		<div id="corps">
-			<p>
-						<span class="nb_etudiants_partis">Les financements</span>
+			
+					<p>
+						<span class="nb_etudiants_partis">Les Conditions </span>
 					</p>
 					<p>
-						ERASMUS<br/>
-						Région Lorraine<br/>
-						Région d’origine<br/>
-						Ambassades<br/>
-						Appels d’offres spécifiques<br/>
-						Université de Lorraine<br/>
-					</p>
+						<U>Projet de mobilité</U><br/>
+						- Document validé par le responsable de l’approfondissement<br/>
+						    • Motivation<br/>
+						    • Cursus à l’étranger<br/>
+						- Validation par le jury de mobilité<br/>
 
-					<p>
-						<span class="nb_etudiants_partis">Comment ? </span>
-					</p>
-					<p>
-						Il y a plusieurs moyens de partir à l'étranger:<br/>
-						<br/><U>Pour suivre un cursus universitaire: </U><br/>
-						Pour un <strong>double diplôme</strong>, dans les universités partenaires<br/>
-						En <strong>ERASMUS</strong>, dans les universités partenaires. L'école peut créer des partenariats sur demande des élèves, mais préfère utiliser les partenariats existants.<br/>
-						
-						<U><br/>Lors d'un <strong>stage.</strong></U> 
-						<br/>L'étudiant fait la démarche et l'école est là pour l'aider.<br/>
-					</p>
+						<br/><U>Pour le 2ème semestre de la 2ème année</U><br/>
+						- La validation de l’ensemble des thèmes des 3 premiers semestres du cursus d’Ingénieur de TELECOM Nancy<br/>
+						- Une moyenne finale sur les 3 semestres supérieure ou égale à 12/20,<br/>
+						- TOEIC validé,<br/>
+						- 20 crédits CIPA obtenus,<br/>
+						- Aucun dépassement de seuil d’absences injustifiées relevé sur les semestres écoulés.<br/>
 
-					<p>
-						<br/><span class="nb_etudiants_partis">Quand ?</span>
+						<br/><U>Pour la 3ème année</U><br/>
+						- La validation de l’ensemble des thèmes des 4 premiers semestres du cursus d’Ingénieur à TELECOM Nancy<br/>
+						- Une moyenne finale sur les 4 premiers semestres supérieure ou égale à 12/20,<br/>
+						- TOEIC validé,<br/>
+						- CIPA validé,<br/>
+						- Aucun dépassement de seuil d’absences injustifiées sur les semestres écoulés.<br/>
 					</p>
 					<p>
-						Pour le deuxième semestre de la 2ème année.<br/>
-						La 3ème année.<br/>
-						Pendant les périodes de stage.<br/>
-					</p>
-
-					<p>
-						<br/><span class="nb_etudiants_partis">Où ? </span>
+						</br><span class="nb_etudiants_partis">Les financements</span>
 					</p>
 					<p>
-						
-						Télécom Nancy possède des partenariats avec de nombreux pays:<br/>
-						<br/><U>Les doubles diplômes:</U>
-						<br/>L'Université du Québec A Chicoutimi (UQAC), <strong>Canada</strong>, <a href="https://www-intranet.telecomnancy.univ-lorraine.fr/lib/exe/fetch.php/ri/presentation_telecom_nancy.pdf">Présentation Chicoutimi 2014</a><br/>
-						Sup'com, Tunis, <strong>Tunisie</strong><br/>
-						Tecnologico de Monterrey, Monterrey, <strong>Mexique</strong><br/>
-						University of Queensland, Brisbane, <strong>Australie</strong><br/>
-						
-						<br/><U>ERASMUS:</U><br/>
-						Martin-Luther-Universität HalleWittenberg, <strong>Allemagne</strong><br/>
-						Universidad autonoma, Madrid, <strong>Espagne</strong><br/>
-						TKK Aalto, Helzinski, <strong>Finlande</strong><br/>
-						University of Maynooth, <strong>Irlande</strong><br/>
-						Politecnico di Bari, <strong>Italie</strong><br/>
-						NTNU, Trondheim, <strong>Norvège</strong><br/>
-						University of Science and Technology, Cracovie, <strong>Pologne</strong><br/>
-						Universidade Nova de Lisboa, <strong>Portugal</strong><br/>
-						Universitatea STEFAN CEL MARE, Suceava, <strong>Roumanie</strong><br/>
-						Universitatea Din Pitesti, <strong>Roumanie</strong><br/>
-
-						<br/><U>Stage:</U><br/>
-						N'importe où!!
-							
-					</p>
+						- ERASMUS<br/>
+						- Région Lorraine<br/>
+						- Région d’origine<br/>
+						- Ambassades<br/>
+						- Appels d’offres spécifiques<br/>
+						- Université de Lorraine<br/>
+					</p>					
 			</p>
 		</div>
 	</body>
