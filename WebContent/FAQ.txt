@@ -1,0 +1,37 @@
+Pôle étudiant :
+
+Comment trouver l'ensemble des stages effectués à l'étranger ?
+A partir de votre page d'accueil, cochez la case "Stages" située en bas de l'écran, l'ensemble des stages effectués à l'étranger s'afficheront alors sur la google Map, cliquez sur les marqueurs pour obtenir des informations sur un stage en particulier.
+
+
+Comment puis-je faire partager mon ressenti d'un séjour effectué à l'étranger ?
+Vous pouvez partager votre expérience en écrivant un article sur le blog du site, qui sera publié après avoir été validé par un modérateur.
+
+
+Comment puis-je noter une université ?
+Si vous avez effectué un séjour dans une université, vous avez la possibilité de lui attribuer une note entre 0 et 5 à en vous rendant dans l'onglet "Universités"
+
+
+
+Pôle relations internationales :
+
+Comment ajouter un nouveau partenariat sur le site ?
+Vous devez tout d'abord vou être authentifié avant de pouvoir créer un nouveau partenariat. Une fois authentifié, cliquez alors sur "Création partenariat" en haut de l'écran, l'interface de création d'un partenariat s'ouvrira.
+
+Comment modérer les publications des élèves ?
+A partir de votre page d'accueil, cliquez sur "Notifications" en haut de l'écran, l'interface de modération des publications s'ouvrira.
+Vous pouvez alors consulter les avis proposés par les élèves. Une fois ces avis contrôlés, vous devez cliquez sur le bouton "valider" pour rendre un avis visible par le personnel et les étudiants de l'école.
+
+
+
+Pôle enseignants :
+
+
+
+
+
+
+Pôle visiteurs du site :
+
+Puis-je m'identifier pour avoir accès à des informations complémentaires ?
+Seuls les élèves et le personnel de Télécom Nancy peuvent s'authentifier, si vous souhaitez davantage d'informations concernant les séjours à l'étranger effectués par nos élèves, veuillez contacter le responsable des relations internationales de l'école : Herve.Panetto@telecomnancy.eu
