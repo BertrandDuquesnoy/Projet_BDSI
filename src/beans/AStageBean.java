@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class AStageBean {
 
-	private ArrayList<String> noms, duree, annee, pays;
+	private ArrayList<String> fonctions, duree, annee, pays, entreprise;
 	private ArrayList<Integer> id;
 	private int nbStages;
 	
 	public AStageBean(){
-		noms = new ArrayList<String>();
-		noms.add("null");
+		fonctions = new ArrayList<String>();
+		fonctions.add("null");
 		duree = new ArrayList<String>();
 		duree.add("null");
 		annee = new ArrayList<String>();
@@ -19,14 +19,16 @@ public class AStageBean {
 		pays.add("null");
 		id = new ArrayList<Integer>();
 		id.add(1);
+		entreprise = new ArrayList<String>();
+		entreprise.add("null");
 	}
 
 	public ArrayList<String> getNoms() {
-		return noms;
+		return fonctions;
 	}
 
-	public void setNoms(ArrayList<String> noms) {
-		this.noms = noms;
+	public void setNoms(ArrayList<String> fonctions) {
+		this.fonctions = fonctions;
 	}
 
 	public ArrayList<String> getDuree() {
@@ -54,7 +56,7 @@ public class AStageBean {
 	}
 
 	public int getNbStages() {
-		return noms.size();
+		return fonctions.size();
 	}
 
 	public void setNbStages(int nbStages) {
@@ -67,5 +69,13 @@ public class AStageBean {
 
 	public void setId(ArrayList<Integer> id) {
 		this.id = id;
+	}
+
+	public ArrayList<String> getEntreprise() {
+		return entreprise;
+	}
+
+	public void setEntreprise(ArrayList<String> entreprise) {
+		this.entreprise = entreprise;
 	}
 }

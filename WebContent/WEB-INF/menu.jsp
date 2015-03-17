@@ -15,23 +15,24 @@
 	 
 		<div id="Menu" >
 		<ul id = "Onglets">
-   <li><a href="#" title="Accueil">Accueil</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil" title="Accueil">Accueil</a></li>
    <li><a href="#" title="Partir à l'étranger">Partir à l'étranger</a>
    
    
    
                <ul>          
-		              <li><a href="#">Présentation</a></li>
-                      <li><a href="#">Modalité</a></li>
+		              <li><a href="<%=request.getContextPath() %>/accueil/partirEtranger/presentation">Présentation</a></li>
+                      <li><a href="<%=request.getContextPath() %>/accueil/partirEtranger/modalite">Modalité</a></li>
+                      
          
                </ul>
          
    </li>
    
   
-   <li><a href="#" title="Stages réalisés">Stages réalisés</a></li>
-   <li><a href="#" title="Doubles diplômes">Doubles diplômes</a></li>
-   <li><a href="#" title="Université">Université</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/stage" title="Stages réalisés">Stages réalisés</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/doubleDiplome" title="Doubles diplômes">Doubles diplômes</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/universite" title="Université">Université</a></li>
    <li><a href="#" title="FAQ">FAQ</a></li>
    <li><a href="#" title="Contact">Contact</a></li>
   

@@ -24,17 +24,17 @@
    
    
                <ul>          
-		              <li><a href="#">Présentation</a></li>
-                      <li><a href="#">Modalité</a></li>
+		              <li><a href="accueil/presentation">Présentation</a></li>
+                      <li><a href="accueil/modalite">Modalité</a></li>
          
                </ul>
          
    </li>
    
   
-   <li><a href="#" title="Stages réalisés">Stages réalisés</a></li>
-   <li><a href="#" title="Doubles diplômes">Doubles diplômes</a></li>
-   <li><a href="#" title="Université">Université</a></li>
+   <li><a href="accueil/stage" title="Stages réalisés">Stages réalisés</a></li>
+   <li><a href="accueil/doubleDiplome" title="Doubles diplômes">Doubles diplômes</a></li>
+   <li><a href="accueil/universite" title="Université">Université</a></li>
    <li><a href="#" title="FAQ">FAQ</a></li>
    <li><a href="#" title="Contact">Contact</a></li>
   
