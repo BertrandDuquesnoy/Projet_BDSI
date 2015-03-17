@@ -4,63 +4,33 @@ import java.util.ArrayList;
 
 public class ADDBean {
 
-	private ArrayList<String> fonctions, duree, annee, pays, entreprise;
+	private ArrayList<String> dd, paths;
 	private ArrayList<Integer> id;
-	private int nbDDs;
+	private int nbDD;
 	
 	public ADDBean(){
-		fonctions = new ArrayList<String>();
-		fonctions.add("null");
-		duree = new ArrayList<String>();
-		duree.add("null");
-		annee = new ArrayList<String>();
-		annee.add("null");
-		pays = new ArrayList<String>();
-		pays.add("null");
+		paths = new ArrayList<String>();
+		paths.add("images/pays/canada.png");
+		dd = new ArrayList<String>();
+		dd.add("null");
 		id = new ArrayList<Integer>();
 		id.add(1);
-		entreprise = new ArrayList<String>();
-		entreprise.add("null");
 	}
 
-	public ArrayList<String> getNoms() {
-		return fonctions;
+	public ArrayList<String> getDd() {
+		return dd;
 	}
 
-	public void setNoms(ArrayList<String> fonctions) {
-		this.fonctions = fonctions;
+	public void setDd(ArrayList<String> dd) {
+		this.dd = dd;
 	}
 
-	public ArrayList<String> getDuree() {
-		return duree;
+	public int getNbDD() {
+		return dd.size();
 	}
 
-	public void setDuree(ArrayList<String> duree) {
-		this.duree = duree;
-	}
-
-	public ArrayList<String> getAnnee() {
-		return annee;
-	}
-
-	public void setAnnee(ArrayList<String> annee) {
-		this.annee = annee;
-	}
-
-	public ArrayList<String> getPays() {
-		return pays;
-	}
-
-	public void setPays(ArrayList<String> pays) {
-		this.pays = pays;
-	}
-
-	public int getNbDDs() {
-		return fonctions.size();
-	}
-
-	public void setNbDDs(int nbDDs) {
-		this.nbDDs = nbDDs;
+	public void setNbDD(int nbDD) {
+		this.nbDD = nbDD;
 	}
 
 	public ArrayList<Integer> getId() {
@@ -71,11 +41,11 @@ public class ADDBean {
 		this.id = id;
 	}
 
-	public ArrayList<String> getEntreprise() {
-		return entreprise;
+	public ArrayList<String> getPaths() {
+		return paths;
 	}
 
-	public void setEntreprise(ArrayList<String> entreprise) {
-		this.entreprise = entreprise;
+	public void setPaths(ArrayList<String> paths) {
+		this.paths = paths;
 	}
 }

@@ -15,16 +15,21 @@
 	</div>
 	<div id="accueil" style="width:20%"><%@ include file="menu.jsp" %></div>
 	<div id="corps">
-		<p class="titre_section">Liste des universités : </p>
-		<c:if test="${list.nbUniv > 0}">
-			<c:forEach var="i" begin="0" end="${list.nbUniv-1}">
-				<div class="ligne">
-					<a href="<%=request.getContextPath() %>/universite?id=${list.id[i]}" style="text-decoration: none; color: white">
-						${list.noms[i]} - ${list.duree[i]} - ${list.annee[i]} - ${list.pays[i]}
-					</a> 
-				</div>
-			</c:forEach>
-		</c:if>
+		<p class="titre_section">Liste des doubles diplômes</p>
+			<div>
+				<c:forEach var="i" begin="0" end="${list.nbDD-1}">
+					<c:choose>
+						<c:when test="${(i%3)==0 }">
+						<div id="ligne">
+								<input type="button" class="categorie" name="${i}" style="background:url(<%=request.getContextPath() %>/${list.paths[i]}) no-repeat; background-size: 250px 100px; color: black; border: none" value="${list.dd[i]}" onclick='window.location.href="<%=request.getContextPath() %>/doubleDiplome?id=${list.id[i]}"'>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<input type="button" class="categorie" name="${i}" style="background:url(<%=request.getContextPath() %>/${list.paths[i]}) no-repeat; background-size: 250px 100px; color: black; border: none" value="${list.dd[i]}" onclick='window.location.href="<%=request.getContextPath() %>/doubleDiplome?id=${list.id[i]}"'>
+					</c:otherwise>
+					</c:choose>
+				</c:forEach>
+			</div>
 	</div>
 </body>
 </html>
