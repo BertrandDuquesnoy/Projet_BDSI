@@ -40,12 +40,12 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 		System.out.println("null pointer - Login");
 	}
 	
-	if (pb == null) {
+	if (pb != null) {
 		HttpSession session = request.getSession();
-		pb.setPrenom("Paul");
-		pb.setNom("Cottin");
-		pb.setAnnee("2A");
-		pb.setMail("paulcottin@gmail.com");
+//		pb.setPrenom("Paul");
+//		pb.setNom("Cottin");
+//		pb.setAnnee("2A");
+//		pb.setMail("paulcottin@gmail.com");
 		InfosPersonne infos = new InfosPersonne();
 		pb = infos.infoPersonneByName(pb.getNom());
 		session.setAttribute("user", pb);

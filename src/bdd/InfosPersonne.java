@@ -52,7 +52,7 @@ public class InfosPersonne{
 		return personne;
 	}
 	
-	public PersonBean infoPersonneByName(String login){
+	public PersonBean infoPersonneByName(String log){
 		try{
 			Class.forName(pilote);
 
@@ -60,10 +60,10 @@ public class InfosPersonne{
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM profil "+ "WHERE login = "+login+";");
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM profil "+ "WHERE login LIKE '"+log+"';");
 			
 			while(resultat.next()){
-				personne.setId(Integer.valueOf(resultat.getString("id")));
+				personne.setId(Integer.valueOf(resultat.getString("id_profil")));
 				personne.setPrenom(resultat.getString("prenom"));
 				personne.setNom(resultat.getString("nom"));
 				personne.setMail(resultat.getString("mail"));
