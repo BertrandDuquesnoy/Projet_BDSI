@@ -15,7 +15,8 @@ public class UniversityBean {
 	private String pays, ville, type, langue, dateFondation, convention_path, adresse;
 	private String linkedin_path, l_fb, l_tweet, l_linkedin;
 	private String description;
-	private int note, nbEtudiants;
+	private float note;
+	private int nbEtudiants;
 	private ArrayList<EtudiantBean> personnes ;
 	
 	public UniversityBean(){
@@ -150,12 +151,12 @@ public class UniversityBean {
 		this.description = description;
 	}
 
-	public int getNote() {
+	public float getNote() {
 		return note;
 	}
 
-	public void setNote(int note) {
-		this.note = note;
+	public void setNote(float f) {
+		this.note = f;
 	}
 	
 	public String getLinkedin_path() {
