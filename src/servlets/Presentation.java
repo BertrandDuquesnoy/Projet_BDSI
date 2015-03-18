@@ -33,8 +33,15 @@ public class Presentation extends HttpServlet{
 			System.out.println("null pointer - Presentation");
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/presentation.jsp" ).forward( request, response );
 		}
-		
-		
 	}
-
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			if (request.getParameter("modif").equals("2")) {
+				this.getServletContext().getRequestDispatcher( "/WEB-INF/presentation.jsp" ).forward( request, response );
+			}
+		} catch (NullPointerException e) {
+			System.out.println("null pointer - post - presentation");
+		}
+	}
 }
