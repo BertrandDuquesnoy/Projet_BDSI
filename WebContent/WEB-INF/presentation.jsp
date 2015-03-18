@@ -39,7 +39,7 @@
 		<%@ include file="header.jsp"%>
 		<div id="options_admin">
 			<p>
-				<a href="blog?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier</span></a>
+				<a href="presentation?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier</span></a>
 
 				
 		</div>
