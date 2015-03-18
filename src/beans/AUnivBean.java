@@ -10,11 +10,8 @@ public class AUnivBean {
 	
 	public AUnivBean(){
 		pays = new ArrayList<String>();
-		pays.add("null");
 		logo_path = new ArrayList<String>();
-		logo_path.add("images/pays/canada.png");
 		id = new ArrayList<Integer>();
-		id.add(1);
 	}
 
 	public ArrayList<String> getPays() {

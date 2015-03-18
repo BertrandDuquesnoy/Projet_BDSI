@@ -6,6 +6,7 @@ public class AStageBean {
 
 	private ArrayList<String> nom, prenom, annee, entreprise, adresse, ville, pays, domaine, langue, logo_path;
 	private ArrayList<Integer> id;
+	private int nbStages;
 	
 	public AStageBean(){
 		nom = new ArrayList<String>();
@@ -116,6 +117,14 @@ public class AStageBean {
 
 	public void setId(ArrayList<Integer> id) {
 		this.id = id;
+	}
+
+	public int getNbStages() {
+		return nom.size();
+	}
+
+	public void setNbStages(int nbStages) {
+		this.nbStages = nbStages;
 	}
 	
 

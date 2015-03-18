@@ -38,11 +38,7 @@ public class InfosPersonne{
 				personne.setMail(resultat.getString("mail"));
 			}
 			
-			//On ne peut pas avoir la coloration d'un étudiant avec LDAP :(
-			
-			
-			
-			
+			//On ne peut pas avoir la coloration d'un étudiant avec LDAP :(	
 			
 		}
 		catch (Exception e){
@@ -68,9 +64,6 @@ public class InfosPersonne{
 				personne.setNom(resultat.getString("nom"));
 				personne.setMail(resultat.getString("mail"));
 			}
-			
-			//On ne peut pas avoir la coloration d'un étudiant avec LDAP :(
-				
 		}
 		catch (Exception e){
 

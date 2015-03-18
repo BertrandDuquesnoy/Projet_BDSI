@@ -25,14 +25,22 @@ public class Login extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
 public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-	this.getServletContext().getRequestDispatcher( "/WEB-INF/login.jsp" ).forward( request, response );
+	try {
+		if (request.getParameter("disconnect").equals("1")) {
+			request.getSession().invalidate();
+			this.getServletContext().getRequestDispatcher("/WEB-INF/forwardAccueil.jsp").forward(request, response);
+		}
+	} catch (NullPointerException e) {
+		System.out.println("null pointer - Login");
+		this.getServletContext().getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request, response);
+	}
 }
 
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	PersonBean pb = new PersonBean();
 	try {
 		try {
-			pb = LdapConnectMdp.authentifier(request.getParameter("text_login"), request.getParameter("text_pass"));
+			pb = LdapConnectMdp.authentifier(request.getParameter("login"), request.getParameter("pass"));
 		} catch (LdapException e) {
 			e.printStackTrace();
 		}
@@ -53,7 +61,7 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 	}
 	else{
 		//TODO: Mettre un paramètre pour indiquer que c'est faux
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/login.jsp" ).forward( request, response );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/connexion.jsp" ).forward( request, response );
 	}
 }
 
