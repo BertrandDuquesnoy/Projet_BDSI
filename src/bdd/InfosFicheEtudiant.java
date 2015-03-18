@@ -33,8 +33,9 @@ public class InfosFicheEtudiant {
 			while(resultat.next()){
 				fiche.setPrenom(resultat.getString("prenom"));
 				fiche.setNom(resultat.getString("nom"));
-				fiche.setLogin(resultat.getString("fonction"));
+				fiche.setLogin(resultat.getString("login"));
 				fiche.setMail(resultat.getString("mail"));
+				fiche.setAnnee(resultat.getString("annee"));
 				fiche.setAdresse_sejour(resultat.getString("adresse_sejour"));
 				fiche.setAdresse(resultat.getString("adresse"));
 				fiche.setTel(resultat.getString("tel"));	
