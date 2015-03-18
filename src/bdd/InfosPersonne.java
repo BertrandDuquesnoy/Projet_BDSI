@@ -70,11 +70,7 @@ public class InfosPersonne{
 			}
 			
 			//On ne peut pas avoir la coloration d'un étudiant avec LDAP :(
-			
-			
-			
-			
-			
+				
 		}
 		catch (Exception e){
 
