@@ -1,14 +1,11 @@
 package servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modele.LdapConnect;
 import modele.LdapConnectMdp;
 import modele.LdapException;
 
@@ -24,13 +21,23 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) thro
 }
 
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	boolean connected = false;
 	try {
-		System.out.println(request.getParameter("text_pass"));
-			LdapConnectMdp.authentifier(request.getParameter("text_login"), request.getParameter("text_pass"));
+		try {
+			connected = LdapConnectMdp.authentifier(request.getParameter("text_login"), request.getParameter("text_pass"));
+		} catch (LdapException e) {
+			e.printStackTrace();
+		}
 	} catch (NullPointerException e) {
 		System.out.println("null pointer - Login");
-	}catch (LdapException e){
-		System.out.println("ldap - Login");
+	}
+	
+	if (connected) {
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/AccueilEtuConnecte.jsp" ).forward( request, response );
+	}
+	else{
+		//TODO: Mettre un paramètre pour indiquer que c'est faux
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/login.jsp" ).forward( request, response );
 	}
 }
 

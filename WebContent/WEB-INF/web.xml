@@ -10,6 +10,15 @@
 	<welcome-file>index.jsp</welcome-file>
 </welcome-file-list>
 
+<filter>
+	<filter-name>Auth</filter-name>
+	
+</filter>
+
+
+
+
+
 <servlet>
 	<servlet-name>Login</servlet-name>
 	<servlet-class>servlets.Login</servlet-class>
@@ -115,7 +124,7 @@
 	<servlet-name>Contact</servlet-name>
 	<url-pattern>/contact</url-pattern>
 </servlet-mapping>
-</web-app>
+<servlet-mapping>
 	<servlet-name>AccueilUniv</servlet-name>
 	<url-pattern>/accueil/universite</url-pattern>
 </servlet-mapping>

@@ -11,7 +11,9 @@ package modele;
  */
 import java.lang.Exception;
 
-public class LdapException extends Exception {
+import org.ietf.ldap.LDAPException;
+
+public class LdapException extends LDAPException {
 
     /**
 	 * 
@@ -19,7 +21,8 @@ public class LdapException extends Exception {
 	private static final long serialVersionUID = 1L;
 
 	public LdapException(String message) {
-        super(message);
+        super();
+        System.out.println(message);
     }
 
 }
