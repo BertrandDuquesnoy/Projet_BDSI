@@ -2,7 +2,7 @@ package beans;
 
 public class FicheEtudiantBean {
 	
-	private String nom, prenom, annee, mail, login, adresse_sejour, tel, date_sej_deb, date_sej_fin;
+	private String nom, prenom, annee, mail, login, adresse, adresse_sejour, tel, date_sej_deb, date_sej_fin;
 	private int id_fiche, credit_ects, etr_ecrit_par;
 	
 	public FicheEtudiantBean() {
@@ -15,6 +15,7 @@ public class FicheEtudiantBean {
 		mail="null";
 		login="null";
 		adresse_sejour="null";
+		adresse="null";
 		tel="06";
 		
 	}
@@ -113,6 +114,14 @@ public class FicheEtudiantBean {
 
 	public void setDate_sej_fin(String date_sej_fin) {
 		this.date_sej_fin = date_sej_fin;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
 	
 	

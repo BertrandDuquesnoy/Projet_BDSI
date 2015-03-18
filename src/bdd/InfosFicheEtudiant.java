@@ -28,7 +28,7 @@ public class InfosFicheEtudiant {
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT p.login, p.nom, p.prenom, p.annee, p.mail, p.tel, p.adresse " +" FROM profil p, etudiant e, fiche_etudiant f "+ " WHERE p.id_profil=e.etr_profil AND e.id_etud=f.id_fiche AND p.annee=e.annee ;");
+			ResultSet resultat = instruction.executeQuery("SELECT p.login, p.nom, p.prenom, p.annee, p.mail, p.tel, p.adresse, f.adresse_sejour, f.date_sej_deb, f.date_sej_fin " +" FROM profil p, etudiant e, fiche_etudiant f "+ " WHERE p.id_profil=e.etr_profil AND e.id_etud=f.id_fiche AND p.annee=e.annee ;");
 			
 			while(resultat.next()){
 				fiche.setPrenom(resultat.getString("prenom"));
@@ -36,7 +36,13 @@ public class InfosFicheEtudiant {
 				fiche.setLogin(resultat.getString("fonction"));
 				fiche.setMail(resultat.getString("mail"));
 				fiche.setAdresse_sejour(resultat.getString("adresse_sejour"));
-				fiche.setTel(resultat.getString("tel"));				
+				fiche.setAdresse(resultat.getString("adresse"));
+				fiche.setTel(resultat.getString("tel"));	
+				fiche.setDate_sej_deb(resultat.getString("date_sej_deb"));
+				fiche.setDate_sej_fin(resultat.getString("date_sej_fin"));
+				fiche.setCredit_ects(resultat.getInt("credit_ects"));
+				fiche.setEtr_ecrit_par(resultat.getInt("etr_ecrit_par"));
+
 			}			
 		}
 		catch (Exception e){
