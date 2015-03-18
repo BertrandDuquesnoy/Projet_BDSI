@@ -10,11 +10,8 @@ public class ADDBean {
 	
 	public ADDBean(){
 		logo_path = new ArrayList<String>();
-		logo_path.add("images/pays/canada.png");
 		dd_nom = new ArrayList<String>();
-		dd_nom.add("null");
 		id = new ArrayList<Integer>();
-		id.add(1);
 	}
 
 	public ArrayList<String> getDd_nom() {

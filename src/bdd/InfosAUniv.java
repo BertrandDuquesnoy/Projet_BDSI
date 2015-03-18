@@ -20,11 +20,10 @@ public class InfosAUniv {
 	public InfosAUniv() {
 		av = new AUnivBean();
 	}
-	 int id_AUniv=0;
 	 
 	public AUnivBean getInfos(){
 		//TODO: requetes listant les infos de AUnivBean pour tous les stages effectués
-		
+		av = new AUnivBean();
 		try{
 			Class.forName(pilote);
 
@@ -32,14 +31,14 @@ public class InfosAUniv {
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite "+ "WHERE id_univ = "+id_AUniv+";");
+			ResultSet resultat = instruction.executeQuery("SELECT pays, logo_path " +"FROM universite;");
 			
 			while(resultat.next()){
-				av.setPays((ArrayList<String>)resultat.getArray("pays"));
-				av.setLogo_path((ArrayList<String>)resultat.getArray("logo_path"));
+				if (!av.getPays().contains(resultat.getString("pays"))) {
+					av.getPays().add(resultat.getString(("pays")));
+					av.getLogo_path().add(resultat.getString("logo_path"));
+				}
 			}
-		
-			
 		}
 		catch (Exception e){
 

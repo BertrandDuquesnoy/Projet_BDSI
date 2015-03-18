@@ -26,7 +26,7 @@ public class Accueil_Univ extends HttpServlet{
 		request.setAttribute("list", infos_av.getInfos());
 		
 		try {
-			
+			this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil_univ.jsp" ).forward( request, response );
 		} catch (NullPointerException e) {
 			System.out.println("null pointer Accueil-Univ");
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil_univ.jsp" ).forward( request, response );
