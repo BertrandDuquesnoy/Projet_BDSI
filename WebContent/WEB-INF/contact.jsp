@@ -29,6 +29,13 @@
 												<pre> Telephone : 03 83 68 26 01 </pre>		
 												<pre> Bureau : 2.34 </pre>
 												<pre> </pre>
+												
+		<p><span class="Directeur" style="color: #6C2466"><B>Directeur : Olivier Festor </B> 
+												<pre> Olivier.Festor@telecomancy.eu</pre>		
+												<pre> Telephone : 03 83 68 26 01 </pre>		
+												<pre> Bureau : 2.07 </pre>
+												<pre> </pre>
+		</p>
 																	
 	</div>
 	</body>

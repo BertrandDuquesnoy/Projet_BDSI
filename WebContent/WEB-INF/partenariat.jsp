@@ -17,33 +17,34 @@
 
 	<div id="corps">
 		<p class="titre_section">${st.nom}</p>
-			<B style="color: #6C2466">Double diplome</B><input type="radio" name="Double diplome" value="" size="1"/>
-			<B style="color: #6C2466">Université </B><input type="radio" name="Université" value="" size="1" />
-			<B style="color: #6C2466"><pre> Logo </B><input type="file" name="icon" value="" size="15"/>
-			<B style="color: #6C2466"><pre> Nom</B>
+			<B style="color: #6C2466"> Double diplome</B>
+			<input type="radio" name="genre" value="Double diplome" ><br><pre>
+			</pre><B style="color: #6C2466">Université</B>
+			<input type="radio" name="genre" value="Université" ><br><pre>
+			</pre><B style="color: #6C2466"> Logo </B><input type="file" name="icon" value="" size="15"/><pre>
+			</pre><B style="color: #6C2466"> Nom</B><pre>
 			<input type="text" name="Université" value="" size="15">  
-			<B style="color: #6C2466"><pre> Site web </B>
+			</pre><B style="color: #6C2466"> Site web </B><pre>
 			<input type="text" name="Université" value="" size="15"/>
-			<B style="color: #6C2466"><pre> Pays </B>
+			</pre><B style="color: #6C2466"> Pays </B><pre>
 			<input type="text" name="Université" value="" size="15"/>  
-			<B style="color: #6C2466"><pre> Ville </B>
+			</pre><B style="color: #6C2466"> Ville </B><pre>
 			<input type="text" name="Université" value="" size="15"/> 
-			<B style="color: #6C2466"><pre> Adresse Postale </B>
+			</pre><B style="color: #6C2466">Adresse Postale </B><pre>
 			<textarea rows="3"></textarea>
-			<B style="color: #6C2466"><pre> Date de fondation (école, université)</B>
+			</pre><B style="color: #6C2466"> Date de fondation (école, université)</B><pre>
 			<input type="text" name="Université" value="" size="15"/>  
-			<B style="color: #6C2466"><pre> Nombre d'étudiant </B>
+			</pre><B style="color: #6C2466"> Nombre d'étudiant </B><pre>
 			<input type="text" name="Université" value="" size="15"/>
-			<B style="color: #6C2466"><pre> Facebook (école, université) </B>
+			</pre><B style="color: #6C2466"> Facebook (école, université) </B><pre>
 			<input type="text" name="Université" value="" size="15"/>
-			<B style="color: #6C2466"><pre> Twitter (école, université) </B>
+			</pre><B style="color: #6C2466"> Twitter (école, université) </B><pre>
 			<input type="text" name="Université" value="" size="15"/>  
-			<B style="color: #6C2466"><pre> LinkedIn(école, université) </B>
+			</pre><B style="color: #6C2466"> LinkedIn(école, université) </B><pre>
 			<input type="text" name="Université" value="" size="15"/> 
-			<B style="color: #6C2466"><pre> Présentation du partenariat </B>
+			</pre><B style="color: #6C2466"> Présentation du partenariat </B><pre>
 			<textarea rows="3"></textarea></pre>
-			<input type="button" name="Valider" value="Valider" size="15"/> 
-														
+			<p style="text-align:center;"><input type="button" name="Valider" value="Valider" size="15" /></p> 											
 	</div>
 	</body>
 </html>
