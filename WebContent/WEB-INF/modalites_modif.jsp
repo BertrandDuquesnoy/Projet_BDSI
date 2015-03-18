@@ -8,11 +8,9 @@
 </head>
 <body>
 		<%@ include file="header.jsp"%>
+		<form action="modalite?modif=2" method="post">
 		<div id="options_admin">
-			<p>
-				<a href="blog?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier</span></a>
-
-				
+			<input class="options_admin" type="submit" value="enregistrer"/>
 		</div>
 		<div id="accueil" style="width:20%"><%@ include file="menu.jsp" %></div>
 		<div id="corps">
@@ -24,9 +22,9 @@
 						<U><input type="text" name="projetMobiliteTitre" value="${moda.projetMobiliteTitre}"/></U><br/>
 						<input type="text" name="projetMobilite" value="${moda.projetMobilite}"/><br/>
 
-						<br/><U>Pour le 2Ã¨me semestre de la 2Ã¨me annÃ©e</U><br/>
+						<br/><U>Pour le 2ème semestre de la 2ème année</U><br/>
 						<input type="text" name="deuxiemeAnnee" value="${moda.deuxiemeAnnee}"/><br/>
-						<br/><U>Pour la 3Ã¨me annÃ©e</U><br/>
+						<br/><U>Pour la 3ème année</U><br/>
 						<input type="text" name="troisiemeAnnee" value="${moda.troisiemeAnnee}"/><br/>
 					</p>
 					<p>
@@ -34,8 +32,9 @@
 					</p>
 					<p>
 						<input type="text" name="financements" value="${moda.financements}"/><br/>
-					</p>					
-			</p>
+					</p>				
+					</p>
+				</form>
 		</div>
 	</body>
-</head>
+</html>
