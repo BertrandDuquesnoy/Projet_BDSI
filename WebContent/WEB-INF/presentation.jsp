@@ -79,7 +79,7 @@
 					</p>
 					<p>
 						
-						Télécom Nancy possède des partenariats avec de nombreux pays:<br/>
+						Télécom Nancy possède des partenariats dans de nombreux pays:<br/>
 						<br/><U>Les doubles diplômes:</U></br>
 						<a href="http://www.uqam.ca/">Université du Québec à Montréal</a>, Montréal, <strong>Canada</strong><br/>
 						<a href="http://www.uqac.ca/">L'Université du Québec A Chicoutimi (UQAC)</a>, Saguenay, <strong>Canada</strong>, <a href="https://www-intranet.telecomnancy.univ-lorraine.fr/lib/exe/fetch.php/ri/presentation_telecom_nancy.pdf">Présentation Chicoutimi 2014</a><br/>
