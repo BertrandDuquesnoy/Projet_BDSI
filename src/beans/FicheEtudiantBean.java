@@ -4,6 +4,7 @@ public class FicheEtudiantBean {
 	
 	private String nom, prenom, annee, mail, login, adresse, adresse_sejour, tel, date_sej_deb, date_sej_fin;
 	private int id_fiche, credit_ects, etr_ecrit_par;
+
 	
 	public FicheEtudiantBean() {
 		id_fiche=0;
