@@ -20,7 +20,7 @@
 					</p>
 					<p>
 						<U><input type="text" name="projetMobiliteTitre" value="${moda.projetMobiliteTitre}"/></U><br/>
-						<input type="text" name="projetMobilite" value="${moda.projetMobilite}"/><br/>
+						<pre><input type="text" name="projetMobilite" value="${moda.projetMobilite}"/></pre><br/>
 
 						<br/><U>Pour le 2ème semestre de la 2ème année</U><br/>
 						<input type="text" name="deuxiemeAnnee" value="${moda.deuxiemeAnnee}"/><br/>
