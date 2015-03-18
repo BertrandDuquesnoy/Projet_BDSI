@@ -29,13 +29,17 @@ public class University extends HttpServlet{
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		request.setAttribute("personne", infos_pers.infoPersonneById(Integer.valueOf(request.getParameter("id"))));
-		request.setAttribute("university", infos_univ.getinfos(request));
+		
 
 		try{
 			if (request.getParameter("modif").equals("1")) {
+				request.setAttribute("personne", infos_pers.infoPersonneById(Integer.valueOf(request.getParameter("id"))));
+				request.setAttribute("university", infos_univ.getinfos(request));
 				this.getServletContext().getRequestDispatcher("/WEB-INF/university_modif.jsp").forward(request, response);
-			}else{
+			}else if (request.getParameter("pays") != null) {
+				request.setAttribute("list", infos_univ.getInfosByPays(request.getParameter("pays")));
+			}
+			else{
 				this.getServletContext().getRequestDispatcher( "/WEB-INF/university.jsp" ).forward( request, response );
 			}
 		}catch(NullPointerException e){
