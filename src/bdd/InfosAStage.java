@@ -31,18 +31,27 @@ public class InfosAStage {
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM entreprise "+ "WHERE id_entreprise = "+id_Astage+";");
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM entreprise en, etudiant et "+"WHERE en.id_entreprise = et.etr_entrprise "+";");
 			
 			while(resultat.next()){
-				as.setNoms((ArrayList<String>)resultat.getArray("nom"));
-				as.setDuree((ArrayList<String>)resultat.getArray("logo_path"));
-				as.setAnnee((ArrayList<String>)resultat.getArray("logo_path"));
+				as.setAnnee((ArrayList<String>)resultat.getArray("annee"));
 				as.setPays((ArrayList<String>)resultat.getArray("pays"));
-				as.setNbStages(resultat.getInt("logo_path"));
-				as.setEntreprise((ArrayList<String>)resultat.getArray("logo_path"));
+				as.setVille((ArrayList<String>)resultat.getArray("ville"));
+				as.setEntreprise((ArrayList<String>)resultat.getArray("nom"));
+				as.setAdresse((ArrayList<String>)resultat.getArray("adresse"));
+				as.setDomaine((ArrayList<String>)resultat.getArray("domaine"));
+				as.setLangue((ArrayList<String>)resultat.getArray("langue"));
+				as.setLogo_path((ArrayList<String>)resultat.getArray("logo_path"));
 
 
 
+			}
+			
+			ResultSet resultat2 = instruction.executeQuery("SELECT * " +"FROM etudiant et , profil p "+"WHERE et.etr_profil = p.id_profil "+";");
+			
+			while(resultat2.next()){
+				as.setNom((ArrayList<String>)resultat.getArray("nom"));
+				as.setPrenom((ArrayList<String>)resultat.getArray("prenom"));
 
 			}
 		
