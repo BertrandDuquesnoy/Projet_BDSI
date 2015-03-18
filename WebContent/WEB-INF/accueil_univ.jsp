@@ -24,7 +24,7 @@
 						</div>
 					</c:when>
 					<c:otherwise>
-						<input type="button" class="categorie" name="${i}" style="background:url(<%=request.getContextPath() %>/${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none" value="${list.pays[i]}" onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}"'>
+						<input type="button" class="categorie" name="${i}" style="background:url(<%=request.getContextPath() %>/${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none" value="${list.pays[i]}" onclick='window.location.href="<%=request.getContextPath() %>/universite?pays=${list.pays[i]}"'>
 					</c:otherwise>
 					</c:choose>
 				</c:forEach>
