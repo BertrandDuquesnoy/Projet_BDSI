@@ -24,9 +24,9 @@
 						<U><input type="text" name="projetMobiliteTitre" value="${moda.projetMobiliteTitre}"/></U><br/>
 						<input type="text" name="projetMobilite" value="${moda.projetMobilite}"/><br/>
 
-						<br/><U>Pour le 2Ã¨me semestre de la 2Ã¨me annÃ©e</U><br/>
+						<br/><U>Pour le 2ème semestre de la 2ème année</U><br/>
 						<input type="text" name="deuxiemeAnnee" value="${moda.deuxiemeAnnee}"/><br/>
-						<br/><U>Pour la 3Ã¨me annÃ©e</U><br/>
+						<br/><U>Pour la 3ème année</U><br/>
 						<input type="text" name="troisiemeAnnee" value="${moda.troisiemeAnnee}"/><br/>
 					</p>
 					<p>
