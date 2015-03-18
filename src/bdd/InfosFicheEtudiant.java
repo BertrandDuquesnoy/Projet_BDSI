@@ -35,7 +35,7 @@ public class InfosFicheEtudiant {
 				fiche.setNom(resultat.getString("nom"));
 				fiche.setLogin(resultat.getString("fonction"));
 				fiche.setMail(resultat.getString("mail"));
-				fiche.setAdresse(resultat.getString("adresse"));
+				fiche.setAdresse_sejour(resultat.getString("adresse_sejour"));
 				fiche.setTel(resultat.getString("tel"));				
 			}			
 		}
