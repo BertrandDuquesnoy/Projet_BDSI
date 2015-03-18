@@ -21,19 +21,19 @@
 						<span class="nb_etudiants_partis">Les Conditions </span>
 					</p>
 					<p>
-						<U><input type="text" name="projetMobiliteTitre" value="${mod.projetMobiliteTitre}"/></U><br/>
-						<input type="text" name="projetMobilite" value="${mod.projetMobilite}"/><br/>
+						<U><input type="text" name="projetMobiliteTitre" value="${moda.projetMobiliteTitre}"/></U><br/>
+						<input type="text" name="projetMobilite" value="${moda.projetMobilite}"/><br/>
 
 						<br/><U>Pour le 2ème semestre de la 2ème année</U><br/>
-						<input type="text" name="deuxiemeAnnee" value="${mod.deuxiemeAnnee}"/><br/>
+						<input type="text" name="deuxiemeAnnee" value="${moda.deuxiemeAnnee}"/><br/>
 						<br/><U>Pour la 3ème année</U><br/>
-						<input type="text" name="troisiemeAnnee" value="${mod.troisiemeAnnee}"/><br/>
+						<input type="text" name="troisiemeAnnee" value="${moda.troisiemeAnnee}"/><br/>
 					</p>
 					<p>
 						</br><span class="nb_etudiants_partis">Les financements</span>
 					</p>
 					<p>
-						<input type="text" name="financements" value="${mod.financements}"/><br/>
+						<input type="text" name="financements" value="${moda.financements}"/><br/>
 					</p>					
 			</p>
 		</div>
