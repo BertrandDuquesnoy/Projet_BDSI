@@ -33,13 +33,16 @@ public class InfosADD {
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite "+ "WHERE id_univ = "+id_ADD+";");
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite "+ "WHERE doub_dip = true;");
 			
 			while(resultat.next()){
-				add.setDd_nom((ArrayList<String>)resultat.getArray("nom"));
-				add.setLogo_path((ArrayList<String>)resultat.getArray("logo_path"));
+				add.getDd_nom().add(resultat.getString("nom"));
+				add.getLogo_path().add(resultat.getString("logo_path"));
 			}
-		
+			
+			resultat.close();
+			instruction.close();
+			connexion.close();
 			
 		}
 		catch (Exception e){
