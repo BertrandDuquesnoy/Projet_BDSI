@@ -33,8 +33,8 @@
    <li><a href="<%=request.getContextPath() %>/accueil/stages" title="Stages réalisés">Stages réalisés</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/doubleDiplome" title="Doubles diplômes">Doubles diplômes</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/universite" title="Université">Université</a></li>
-   <li><a href="#" title="FAQ">FAQ</a></li>
-   <li><a href="#" title="Contact">Contact</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/faq" title="FAQ">FAQ</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/contact" title="Contact">Contact</a></li>
   
              </ul>
 			
