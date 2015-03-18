@@ -4,29 +4,29 @@ import java.util.ArrayList;
 
 public class ADDBean {
 
-	private ArrayList<String> dd, paths;
+	private ArrayList<String> dd_nom, logo_path;
 	private ArrayList<Integer> id;
 	private int nbDD;
 	
 	public ADDBean(){
-		paths = new ArrayList<String>();
-		paths.add("images/pays/canada.png");
-		dd = new ArrayList<String>();
-		dd.add("null");
+		logo_path = new ArrayList<String>();
+		logo_path.add("images/pays/canada.png");
+		dd_nom = new ArrayList<String>();
+		dd_nom.add("null");
 		id = new ArrayList<Integer>();
 		id.add(1);
 	}
 
-	public ArrayList<String> getDd() {
-		return dd;
+	public ArrayList<String> getDd_nom() {
+		return dd_nom;
 	}
 
-	public void setDd(ArrayList<String> dd) {
-		this.dd = dd;
+	public void setDd_nom(ArrayList<String> dd_nom) {
+		this.dd_nom = dd_nom;
 	}
 
 	public int getNbDD() {
-		return dd.size();
+		return dd_nom.size();
 	}
 
 	public void setNbDD(int nbDD) {
@@ -41,11 +41,11 @@ public class ADDBean {
 		this.id = id;
 	}
 
-	public ArrayList<String> getPaths() {
-		return paths;
+	public ArrayList<String> getLogo_path() {
+		return logo_path;
 	}
 
-	public void setPaths(ArrayList<String> paths) {
-		this.paths = paths;
+	public void setLogo_path(ArrayList<String> logo_path) {
+		this.logo_path = logo_path;
 	}
 }
