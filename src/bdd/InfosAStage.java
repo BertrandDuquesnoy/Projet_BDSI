@@ -43,8 +43,6 @@ public class InfosAStage {
 				as.setLangue((ArrayList<String>)resultat.getArray("langue"));
 				as.setLogo_path((ArrayList<String>)resultat.getArray("logo_path"));
 
-
-
 			}
 			
 			ResultSet resultat2 = instruction.executeQuery("SELECT * " +"FROM etudiant et , profil p "+"WHERE et.etr_profil = p.id_profil "+";");

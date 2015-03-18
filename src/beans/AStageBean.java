@@ -117,5 +117,6 @@ public class AStageBean {
 	public void setId(ArrayList<Integer> id) {
 		this.id = id;
 	}
+	
 
 }
