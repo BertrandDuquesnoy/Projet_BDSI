@@ -11,9 +11,7 @@
 </head>
 
 <%@ include file="header.jsp" %>
-
 <body>
-
  <div id="accueil">
 	 
 		<%@include file="menu.jsp" %>
