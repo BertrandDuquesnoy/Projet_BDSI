@@ -84,4 +84,4 @@
 			</p>
 		</div>
 	</body>
-</head>
+</html>

@@ -9,16 +9,15 @@
 	<body>
 		<body>
 		<%@ include file="header.jsp"%>
+		<form action="presentation?modif=2" method="post">
 		<div id="options_admin">
-			<p>
-				<a href="blog?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier</span></a>
-
-				
+			<input class="options_admin" type="submit" value="enregistrer"/>
 		</div>
 		<div id="accueil" style="width:20%"><%@ include file="menu.jsp" %></div>
 		<div id="corps">
+			
 			<p>
-						<span class="nb_etudiants_partis">Pourquoi partir Ã  l'Ã©tranger ?</span>
+						<span class="nb_etudiants_partis">Pourquoi partir à l'étranger ?</span>
 					</p>
 					<p>
 						<input type="text" name="pourquoi" value="${pre.pourquoi}"/><br/>
@@ -28,7 +27,7 @@
 						</br><span class="nb_etudiants_partis">Comment ? </span>
 					</p>
 					<p>
-						Il y a plusieurs moyens de partir Ã  l'Ã©tranger:<br/>
+						Il y a plusieurs moyens de partir à l'étranger:<br/>
 						<br/><U>Pour suivre un cursus universitaire: </U><br/>
 						<input type="text" name="comment" value="${pre.comment}"/><br/>
 												
@@ -40,26 +39,27 @@
 						<br/><span class="nb_etudiants_partis">Quand ?</span>
 					</p>
 					<p>
-						- Pour le deuxiÃ¨me semestre de la 2Ã¨me annÃ©e.<br/>
-						- La 3Ã¨me annÃ©e.<br/>
-						- Pendant les pÃ©riodes de stage.<br/>
+						- Pour le deuxième semestre de la 2ème année.<br/>
+						- La 3ème année.<br/>
+						- Pendant les périodes de stage.<br/>
 					</p>
 
 					<p>
-						<br/><span class="nb_etudiants_partis">OÃ¹ ? </span>
+						<br/><span class="nb_etudiants_partis">Où ? </span>
 					</p>
 					<p>
 						<input type="text" name="ou1" value="${pre.ou1}"/><br/>
-						<br/><U>Les doubles diplÃ´mes:</U><br/>
+						<br/><U>Les doubles diplômes:</U><br/>
 						<input type="text" name="ou2" value="${pre.ou2}"/><br/>
 						
 						<br/><U>ERASMUS:</U><br/>
 						<input type="text" name="ou3" value="${pre.ou3}"/><br/>
 
 						<br/><U>Stage:</U><br/>
-						<input type="text" name="ou4" value="${pre.ou4}"/><br/>	
+						<input type="text" name="ou4" value="${pre.ou4}"/><br/>
 					</p>
-			</p>
-		</div>
+				</p>
+			</form>
+			</div>
 	</body>
-</head>
+</html>
