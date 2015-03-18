@@ -12,8 +12,8 @@
 		<%-- <img src="<%=request.getContextPath() %>/images/relations_internationales.png" style="align:center" width="100%" height="100px"/> --%>
 		<h1 class="titre_page" style="position:absolute; top: 2%; left:33%">Relations Internationales</h1>
 		<p id="connexion">
-			${personne.prenom} ${personne.nom}<br/>
-			<a href="" style="color:white">Déconnection</a>
+			${sessionScope.user.prenom} ${sessionScope.user.nom}<br/>
+			<a href="" style="color:white">Déconnexion</a>
 		</p>
 	</div>
 	</body>
