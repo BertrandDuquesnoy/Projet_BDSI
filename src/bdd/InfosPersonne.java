@@ -20,7 +20,8 @@ public class InfosPersonne{
 
 	int id_personne = 0; 
 	
-	public PersonBean infoPersonne(HttpServletRequest request){
+	public PersonBean infoPersonneById(int id){
+		id_personne = id;
 		try{
 			Class.forName(pilote);
 
@@ -34,6 +35,37 @@ public class InfosPersonne{
 				personne.setPrenom(resultat.getString("prenom"));
 				personne.setNom(resultat.getString("nom"));
 				personne.setFonction(resultat.getString("fonction"));
+				personne.setMail(resultat.getString("mail"));
+			}
+			
+			//On ne peut pas avoir la coloration d'un étudiant avec LDAP :(
+			
+			
+			
+			
+			
+		}
+		catch (Exception e){
+
+			System.out.println("echec pilote : "+e);
+		}
+		return personne;
+	}
+	
+	public PersonBean infoPersonneByName(String log){
+		try{
+			Class.forName(pilote);
+
+			Connection connexion = DriverManager.getConnection("jdbc:mysql://bdsi.telecomnancy.eu:3306/"+nomBase,"sie1","sie1");
+
+			Statement instruction = connexion.createStatement();
+
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM profil "+ "WHERE login LIKE '"+log+"';");
+			
+			while(resultat.next()){
+				personne.setId(Integer.valueOf(resultat.getString("id_profil")));
+				personne.setPrenom(resultat.getString("prenom"));
+				personne.setNom(resultat.getString("nom"));
 				personne.setMail(resultat.getString("mail"));
 			}
 			

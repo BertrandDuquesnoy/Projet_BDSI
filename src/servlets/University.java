@@ -29,7 +29,7 @@ public class University extends HttpServlet{
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		request.setAttribute("personne", infos_pers.infoPersonne(request));
+		request.setAttribute("personne", infos_pers.infoPersonneById(Integer.valueOf(request.getParameter("id"))));
 		request.setAttribute("university", infos_univ.getinfos(request));
 
 		try{
