@@ -15,7 +15,7 @@
 		<%-- <img src="<%=request.getContextPath() %>/images/relations_internationales.png" style="align:center" width="100%" height="100px"/> --%>
 		<h1 class="titre_page" style="position:absolute; top: 2%; left:40%" style=""><B>RELATIONS INTERNATIONALES</B></h1>
 	</div>
-<form action="accueil" method='post'>
+<form action="login" method="post">
 	<div id="margin" >
 	<h1 class="titre_page" style="color: #660066";style="position : absolute; top: 20%; left:40%">
 	

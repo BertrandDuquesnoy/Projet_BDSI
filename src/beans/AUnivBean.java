@@ -4,17 +4,14 @@ import java.util.ArrayList;
 
 public class AUnivBean {
 
-	private ArrayList<String> pays, paths;
+	private ArrayList<String> pays, logo_path;
 	private ArrayList<Integer> id;
 	private int nbUniv;
 	
 	public AUnivBean(){
 		pays = new ArrayList<String>();
-		pays.add("null");
-		paths = new ArrayList<String>();
-		paths.add("images/pays/canada.png");
+		logo_path = new ArrayList<String>();
 		id = new ArrayList<Integer>();
-		id.add(1);
 	}
 
 	public ArrayList<String> getPays() {
@@ -41,11 +38,11 @@ public class AUnivBean {
 		this.id = id;
 	}
 
-	public ArrayList<String> getPaths() {
-		return paths;
+	public ArrayList<String> getLogo_path() {
+		return logo_path;
 	}
 
-	public void setPaths(ArrayList<String> paths) {
-		this.paths = paths;
+	public void setLogo_path(ArrayList<String> logo_path) {
+		this.logo_path = logo_path;
 	}
 }

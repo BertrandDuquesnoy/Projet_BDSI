@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ï»¿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -16,13 +16,13 @@
 		<div id="Menu" >
 		<ul id = "Onglets">
    <li><a href="<%=request.getContextPath() %>/accueil" title="Accueil">Accueil</a></li>
-   <li><a href="#" title="Partir à l'étranger">Partir à l'étranger</a>
+   <li><a href="#" title="Partir Ã  l'Ã©tranger">Partir Ã  l'Ã©tranger</a>
    
    
    
                <ul>          
-		              <li><a href="<%=request.getContextPath() %>/partirEtranger/presentation">Présentation</a></li>
-                      <li><a href="<%=request.getContextPath() %>/partirEtranger/modalite">Modalité</a></li>
+		              <li><a href="<%=request.getContextPath() %>/partirEtranger/presentation">PrÃ©sentation</a></li>
+                      <li><a href="<%=request.getContextPath() %>/partirEtranger/modalite">ModalitÃ©</a></li>
                       
          
                </ul>
@@ -30,11 +30,12 @@
    </li>
    
   
-   <li><a href="<%=request.getContextPath() %>/accueil/stages" title="Stages réalisés">Stages réalisés</a></li>
-   <li><a href="<%=request.getContextPath() %>/accueil/doubleDiplome" title="Doubles diplômes">Doubles diplômes</a></li>
-   <li><a href="<%=request.getContextPath() %>/accueil/universite" title="Université">Université</a></li>
-   <li><a href="#" title="FAQ">FAQ</a></li>
-   <li><a href="#" title="Contact">Contact</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/stages" title="Stages rÃ©alisÃ©s">Stages rÃ©alisÃ©s</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/doubleDiplome" title="Doubles diplÃ´mes">Doubles diplÃ´mes</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/universite" title="UniversitÃ©">UniversitÃ©</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/faq" title="FAQ">FAQ</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/contact" title="Contact">Contact</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/Liens utiles" title="Liens utiles">Liens utiles</a></li>
   
              </ul>
 			

@@ -7,9 +7,11 @@ import org.ietf.ldap.LDAPException;
 import org.ietf.ldap.LDAPSearchResults;
 
 import bdd.PersonLDAP;
+import beans.PersonBean;
 
 public class LdapConnectMdp{
-	public static boolean authentifier(String login, String mdp) throws LdapException, UnsupportedEncodingException{
+	public static PersonBean authentifier(String login, String mdp) throws LdapException, UnsupportedEncodingException{
+		PersonBean pb = new PersonBean();
 		String groupe="";
 		String ldapHost="ldap.telecomnancy.univ-lorraine.fr";
 		String searchBase = "dc=telecomnancy, dc=univ-lorraine, dc=fr";
@@ -39,7 +41,7 @@ public class LdapConnectMdp{
 				loginDN = searchResults.next().getDN();
 				// System.out.println("loginDN:"+loginDN );
 			} else {
-				return false;
+				return null;
 //				throw new LdapException("login incorrect !");
 				
 			}
@@ -68,7 +70,7 @@ public class LdapConnectMdp{
 				lc.bind(ldapVersion, loginDN, mdp.getBytes("UTF8"));
 				System.out.println("mot de passe correct !");
 			} catch (LDAPException e1) {
-				return false;
+				return null;
 //				throw new LdapException("mot de passe incorrect !");
 				
 			}
@@ -78,7 +80,9 @@ public class LdapConnectMdp{
 		} catch (LDAPException e1) {
 			throw new LdapException("Erreur interne LDAP : "+e1.getMessage());			
 		}
-		return true;
+		pb.setFonction(groupe);
+		pb.setNom(login);
+		return pb;
 	}
 //	public static void main(String[] args) throws UnsupportedEncodingException, LDAPException, LdapException{
 //		authentifier("duquesno7u","lol");
