@@ -37,7 +37,13 @@
 	</div>
 	
 	<div>
-		<p id="options_admin"><span class="options_admin">Supprimer la fiche</span>  <a href="university?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin"> Modifier</span></a></p>
+		<p id="options_admin">
+			<c:if test="${sessionScope.user.fonction == 'Administrateur' || sessionScope.user.fonction == 'Pôle Relations Internationales' || sessionScope.user.fonction == 'Responsable Relations Internationales'}">
+				<span class="options_admin">Supprimer la fiche</span>  
+				<a href="university?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin"> Modifier</span></a>
+			</c:if>
+			<a href="<%=request.getContextPath() %>/accueil" style="text-decoration:none; color: #6C2466"> <span class="options_admin"> Retour accueil</span></a>
+		</p>
 	</div>
 	<div id="corps">
 		<p class="titre_section">${university.nom} 

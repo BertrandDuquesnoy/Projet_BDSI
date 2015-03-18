@@ -121,7 +121,7 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Contact</servlet-name>
-    <url-pattern>/contact</url-pattern>
+    <url-pattern>/accueil/contact</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Partenariat</servlet-name>

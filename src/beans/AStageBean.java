@@ -10,25 +10,15 @@ public class AStageBean {
 	
 	public AStageBean(){
 		nom = new ArrayList<String>();
-		nom.add("null");
 		prenom = new ArrayList<String>();
-		prenom.add("null");
 		annee = new ArrayList<String>();
-		annee.add("null");
 		pays = new ArrayList<String>();
-		pays.add("null");
 		ville = new ArrayList<String>();
-		ville.add("null");
 		id = new ArrayList<Integer>();
-		id.add(1);
 		entreprise = new ArrayList<String>();
-		entreprise.add("null");
 		domaine = new ArrayList<String>();
-		domaine.add("null");
 		langue = new ArrayList<String>();
-		langue.add("null");
 		logo_path = new ArrayList<String>();
-		logo_path.add("null");
 	}
 	
 	public ArrayList<String> getNom() {
