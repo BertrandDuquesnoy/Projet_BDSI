@@ -20,7 +20,7 @@
 			<c:forEach var="i" begin="0" end="${list.nbStages-1}">
 				<div class="ligne">
 					<a href="<%=request.getContextPath() %>/stage?id=${list.id[i]}" style="text-decoration: none; color: white">
-						${list.noms[i]} - ${list.duree[i]} - ${list.annee[i]} - ${list.pays[i]}
+						${list.nom[i]} - ${list.annee[i]} - ${list.pays[i]}
 					</a> 
 				</div>
 			</c:forEach>
