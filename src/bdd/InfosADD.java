@@ -25,6 +25,7 @@ public class InfosADD {
 	int id_ADD = 0;
 	
 	public ADDBean getInfos(){
+		add = new ADDBean();
 		//TODO: requetes listant les infos de ADDBean pour tous les stages effectués
 		try{
 			Class.forName(pilote);

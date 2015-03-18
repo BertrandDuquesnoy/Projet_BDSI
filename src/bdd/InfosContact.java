@@ -26,6 +26,7 @@ public class InfosContact{
 	int id_contact=0;
 	
 	public ContactBean infoContact(int id){
+		contact = new ContactBean();
 		try{
 			id_contact=id;
 			Class.forName(pilote);
