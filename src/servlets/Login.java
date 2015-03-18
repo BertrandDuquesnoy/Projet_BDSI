@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bdd.InfosPersonne;
 import beans.PersonBean;
 
 import com.mysql.jdbc.interceptors.SessionAssociationInterceptor;
@@ -28,11 +29,10 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) thro
 }
 
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-	boolean connected = false;
-	String prenom  = "paul", nom = "cottin";
+	PersonBean pb = new PersonBean();
 	try {
 		try {
-			connected = LdapConnectMdp.authentifier(request.getParameter("text_login"), request.getParameter("text_pass"));
+			pb = LdapConnectMdp.authentifier(request.getParameter("text_login"), request.getParameter("text_pass"));
 		} catch (LdapException e) {
 			e.printStackTrace();
 		}
@@ -40,14 +40,14 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 		System.out.println("null pointer - Login");
 	}
 	
-	if (connected) {
+	if (pb == null) {
 		HttpSession session = request.getSession();
-		PersonBean pb = new PersonBean();
 		pb.setPrenom("Paul");
 		pb.setNom("Cottin");
 		pb.setAnnee("2A");
-		pb.setFonction("Etudiant");
 		pb.setMail("paulcottin@gmail.com");
+		InfosPersonne infos = new InfosPersonne();
+		pb = infos.infoPersonneByName(pb.getNom());
 		session.setAttribute("user", pb);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/forwardAccueil.jsp").forward(request, response);
 	}
