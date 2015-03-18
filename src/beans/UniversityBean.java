@@ -12,6 +12,7 @@ public class UniversityBean {
 	private String nom;
 	private String l_web;
 	private String logo_path;
+	private String l_formation;
 	private String pays, ville, type, langue, dateFondation, convention_path, adresse;
 	private String linkedin_path, l_fb, l_tweet, l_linkedin;
 	private String description;
@@ -203,5 +204,12 @@ public class UniversityBean {
 		this.personnes = personnes;
 	}
 	
+	public String getL_formation() {
+		return l_formation;
+	}
+
+	public void setL_formation(String l_formation) {
+		this.l_formation = l_formation;
+	}
 	
 }

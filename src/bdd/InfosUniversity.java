@@ -43,7 +43,6 @@ public class InfosUniversity {
 				univ.setType(res1.getString("type"));
 				univ.setLangue(res1.getString("langue"));
 				univ.setDateFondation(res1.getString("date_creation"));
-				
 				univ.setNote(res1.getFloat("note"));
 				univ.setNbEtudiants(res1.getInt("nb_etudiant"));
 
