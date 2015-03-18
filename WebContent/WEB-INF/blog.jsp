@@ -39,9 +39,11 @@
 		<%@ include file="header.jsp"%>
 		<div id="options_admin">
 			<p>
+				<c:if test="${sessionScope.user.fonction == 'Administrateur' || sessionScope.user.fonction == 'Pôle Relations Internationales' || sessionScope.user.fonction == 'Responsable Relations Internationales'}">
 				<span class="options_admin" onclick="supprimerCategorie()">Supprimer une catégorie</span>  
 				<a href="blog?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier une catÃ©gorie</span></a>
 				<span class="options_admin">Ajouter une catégorie</span>
+				</c:if>
 			</p>
 		</div>
 		<div id="accueil" style="width:20%"><%@ include file="menu.jsp" %></div>
