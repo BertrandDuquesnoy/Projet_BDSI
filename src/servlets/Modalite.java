@@ -27,7 +27,8 @@ public class Modalite extends HttpServlet{
 		try {
 			if (request.getParameter("modif").equals("1")) {
 				this.getServletContext().getRequestDispatcher( "/WEB-INF/modalites_modif.jsp" ).forward( request, response );
-			}else {
+			}
+			else {
 				this.getServletContext().getRequestDispatcher( "/WEB-INF/modalites.jsp" ).forward( request, response );
 			}
 		} catch (NullPointerException e) {
@@ -35,6 +36,16 @@ public class Modalite extends HttpServlet{
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/modalites.jsp" ).forward( request, response );
 		}
 		
+	}
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		try {
+			if (request.getParameter("modif").equals("2")) {
+				this.getServletContext().getRequestDispatcher( "/WEB-INF/modalites.jsp" ).forward( request, response );
+			}
+		} catch (NullPointerException e) {
+			System.out.println("null pointer - post - modalite");
+		}
 	}
 
 }
