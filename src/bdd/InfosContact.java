@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -25,30 +26,31 @@ public class InfosContact{
 	int etr_entreprise = 0; 
 	int id_contact=0;
 	
-	public ContactBean infoContact(int id){
-		contact = new ContactBean();
+	public ArrayList<ContactBean> infoContact(){
+		ArrayList<ContactBean> list = new ArrayList<ContactBean>();
 		try{
-			id_contact=id;
 			Class.forName(pilote);
 
 			Connection connexion = DriverManager.getConnection("jdbc:mysql://bdsi.telecomnancy.eu:3306/"+nomBase,"sie1","sie1");
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM contact "+ "WHERE id_contact = "+id_contact+";");
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM contact ;");
 			
 			while(resultat.next()){
+				contact = new ContactBean();
 				contact.setPrenom(resultat.getString("prenom"));
 				contact.setNom(resultat.getString("nom"));
 				contact.setFonction(resultat.getString("fonction"));
 				contact.setMail(resultat.getString("mail"));
 				contact.setTel(resultat.getString("tel"));
+				list.add(contact);
 			}	
 		}
 		catch (Exception e){
 
 			System.out.println("echec pilote : "+e);
 		}
-		return contact;
+		return list;
 	}
 }
