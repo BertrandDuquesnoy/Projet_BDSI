@@ -17,9 +17,12 @@
 		<%@include file="menu.jsp" %>
 	 
 	 <div id="corps">
-	 	<iframe src="accueil?carte=1" class="carte" width="100%" height="500px"></iframe>
+	 
+	 
+	 	<iframe src="accueil?carte=1" class="carte" width="94%" height="490px"></iframe>
+	 	
 	 </div>
-       
+     </div>  
     </body>
 
 </html>
