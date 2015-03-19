@@ -20,6 +20,7 @@ public class InfosCreationPartenaire{
 	}
 
 	public CreationPartenaireBean infoCreationPartenaire(){
+		newP = new CreationPartenaireBean();
 		try{
 			Class.forName(pilote);
 

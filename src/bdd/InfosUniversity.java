@@ -24,7 +24,7 @@ public class InfosUniversity {
 	int id_dd=0;
 	
 	public UniversityBean getinfos(HttpServletRequest request){
-
+		univ = new UniversityBean();
 		try{
 			Class.forName(pilote);
 

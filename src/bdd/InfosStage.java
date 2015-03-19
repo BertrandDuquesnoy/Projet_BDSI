@@ -22,6 +22,7 @@ public class InfosStage {
 	int id_dd=0;
 	
 	public StageBean getInfos(){
+		sb = new StageBean();
 		
 		/*private int id;
 		private String nom;
