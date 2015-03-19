@@ -24,7 +24,7 @@ public class InfosUniversity {
 	int id_dd=0;
 	
 	public UniversityBean getinfos(HttpServletRequest request){
-
+		univ = new UniversityBean();
 		try{
 			Class.forName(pilote);
 
@@ -43,8 +43,7 @@ public class InfosUniversity {
 				univ.setType(res1.getString("type"));
 				univ.setLangue(res1.getString("langue"));
 				univ.setDateFondation(res1.getString("date_creation"));
-				
-				univ.setNote(res1.getInt("note"));
+				univ.setNote(res1.getFloat("note"));
 				univ.setNbEtudiants(res1.getInt("nb_etudiant"));
 
 				//note et nbEt

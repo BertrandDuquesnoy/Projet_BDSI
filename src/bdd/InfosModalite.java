@@ -20,6 +20,7 @@ public class InfosModalite {
 	}
 
 	public ModaliteBean getInfos(HttpServletRequest request){
+		modBean = new ModaliteBean();
 		//TODO: Requête SQL de récupération des données de modalité
 
 		//int id_dd=0;

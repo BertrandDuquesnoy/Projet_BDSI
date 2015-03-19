@@ -21,6 +21,7 @@ public class InfosPersonne{
 	int id_personne = 0; 
 	
 	public PersonBean infoPersonneById(int id){
+		personne = new PersonBean();
 		id_personne = id;
 		try{
 			Class.forName(pilote);
@@ -64,9 +65,6 @@ public class InfosPersonne{
 				personne.setNom(resultat.getString("nom"));
 				personne.setMail(resultat.getString("mail"));
 			}
-			
-			//On ne peut pas avoir la coloration d'un étudiant avec LDAP :(		
-			
 		}
 		catch (Exception e){
 

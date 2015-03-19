@@ -21,6 +21,7 @@ public class InfosFicheEtudiant {
 	int id_ficheEtu = 0; 
 	
 	public FicheEtudiantBean getInfos(HttpServletRequest request){
+		fiche = new FicheEtudiantBean();
 		try{
 			Class.forName(pilote);
 

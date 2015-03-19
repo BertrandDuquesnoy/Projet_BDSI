@@ -58,6 +58,12 @@
 						<br/><U>Stage:</U><br/>
 						<input type="text" name="ou4" value="${pre.ou4}"/><br/>
 					</p>
+					<p style="margin-left:562px;">
+
+			<input class="options_admin" type="submit" value="enregistrer"/>
+
+				
+	</p>
 				</p>
 			</form>
 			</div>

@@ -1,4 +1,4 @@
-// cette classe ne sert à rien car les infos sont insérées "en dur" sur la page donc pas besoin de requêtes ...
+// cette classe ne sert ï¿½ rien car les infos sont insï¿½rï¿½es "en dur" sur la page donc pas besoin de requï¿½tes ...
 package bdd;
 
 import java.sql.Connection;
@@ -22,6 +22,7 @@ public class InfosPresentation {
 	}
 	
 	public PresentationBean getInfos(HttpServletRequest request){
+		presBean = new PresentationBean();
 		//TODO: RequÃªte SQL pour les champs de presBean
 		// On va chercher oÃ¹ ces champs ??
 		

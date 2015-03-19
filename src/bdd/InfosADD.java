@@ -25,6 +25,7 @@ public class InfosADD {
 	int id_ADD = 0;
 	
 	public ADDBean getInfos(){
+		add = new ADDBean();
 		//TODO: requetes listant les infos de ADDBean pour tous les stages effectués
 		try{
 			Class.forName(pilote);
@@ -33,13 +34,16 @@ public class InfosADD {
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite "+ "WHERE id_univ = "+id_ADD+";");
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite "+ "WHERE doub_dip = true;");
 			
 			while(resultat.next()){
-				add.setDd_nom((ArrayList<String>)resultat.getArray("nom"));
-				add.setLogo_path((ArrayList<String>)resultat.getArray("logo_path"));
+				add.getDd_nom().add(resultat.getString("nom"));
+				add.getLogo_path().add(resultat.getString("logo_path"));
 			}
-		
+			
+			resultat.close();
+			instruction.close();
+			connexion.close();
 			
 		}
 		catch (Exception e){

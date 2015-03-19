@@ -4,12 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TN International</title>
 </head>
 <body>
 	<%@ include file="header.jsp"%>
 	<div id="options_admin">
 	<p>
-		<a href="universite?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Ajouter une université</span></a>
+		<c:if test="${sessionScope.user.fonction == 'Administrateur' || sessionScope.user.fonction == 'Pôle Relations Internationales' || sessionScope.user.fonction == 'Responsable Relations Internationales'}">
+			<a href="universite?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Ajouter une université</span></a>
+		</c:if>
 	</p>
 	</div>
 	<div id="accueil" style="width:20%"><%@ include file="menu.jsp" %></div>

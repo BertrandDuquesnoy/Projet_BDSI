@@ -22,8 +22,7 @@ public class InfosAStage {
 	int id_Astage = 0;
 
 	public AStageBean getInfos(){
-		//TODO: requetes listant les infos de AStageBean pour tous les stages effectués
-		
+		as = new AStageBean();
 		try{
 			Class.forName(pilote);
 
@@ -31,32 +30,35 @@ public class InfosAStage {
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM entreprise en, etudiant et "+"WHERE en.id_entreprise = et.etr_entrprise "+";");
+			ResultSet resultat = instruction.executeQuery("SELECT et.* " +"FROM entreprise en, etudiant et "+"WHERE en.id_entreprise = et.etr_entreprise AND et.etr_entreprise != 0"+";");
 			
 			while(resultat.next()){
-				as.setAnnee((ArrayList<String>)resultat.getArray("annee"));
-				as.setPays((ArrayList<String>)resultat.getArray("pays"));
-				as.setVille((ArrayList<String>)resultat.getArray("ville"));
-				as.setEntreprise((ArrayList<String>)resultat.getArray("nom"));
-				as.setAdresse((ArrayList<String>)resultat.getArray("adresse"));
-				as.setDomaine((ArrayList<String>)resultat.getArray("domaine"));
-				as.setLangue((ArrayList<String>)resultat.getArray("langue"));
-				as.setLogo_path((ArrayList<String>)resultat.getArray("logo_path"));
+				as.getAnnee().add(resultat.getString("annee"));
+				as.getPays().add(resultat.getString("pays"));
+				as.getVille().add(resultat.getString("ville"));
+				as.getEntreprise().add(resultat.getString("nom"));
+				as.getAdresse().add(resultat.getString("adresse"));
+				as.getDomaine().add(resultat.getString("domaine"));
+				as.getLangue().add(resultat.getString("langue"));
+				as.getLogo_path().add(resultat.getString("logo_path"));
 
 			}
+			resultat.close();
+			ResultSet resultat2 = instruction.executeQuery("SELECT p.nom, p.prenom " +"FROM etudiant et , profil p "+"WHERE et.etr_profil = p.id_profil AND et.etr_entreprise != 0 "+";");
 			
-			ResultSet resultat2 = instruction.executeQuery("SELECT * " +"FROM etudiant et , profil p "+"WHERE et.etr_profil = p.id_profil "+";");
-			
+			int i = 0;
 			while(resultat2.next()){
-				as.setNom((ArrayList<String>)resultat.getArray("nom"));
-				as.setPrenom((ArrayList<String>)resultat.getArray("prenom"));
+				as.getNom().set(i, resultat2.getString("nom"));
+				as.getPrenom().set(i++, resultat2.getString("prenom"));
 
 			}
-		
+			resultat2.close();
+			instruction.close();
+			connexion.close();
 			
 		}
 		catch (Exception e){
-
+			e.printStackTrace();
 			System.out.println("echec pilote : "+e);
 		}
 		return as;

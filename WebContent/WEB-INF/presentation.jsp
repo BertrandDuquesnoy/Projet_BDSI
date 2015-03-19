@@ -81,26 +81,26 @@
 						
 						Télécom Nancy possède des partenariats dans de nombreux pays:<br/>
 						<br/><U>Les doubles diplômes:</U></br>
-						<a href="http://www.uqam.ca/">Université du Québec à Montréal</a>, Montréal, <strong>Canada</strong><br/>
-						<a href="http://www.uqac.ca/">L'Université du Québec A Chicoutimi (UQAC)</a>, Saguenay, <strong>Canada</strong>, <a href="https://www-intranet.telecomnancy.univ-lorraine.fr/lib/exe/fetch.php/ri/presentation_telecom_nancy.pdf">Présentation Chicoutimi 2014</a><br/>
-						<a href="http://www.supcom.mincom.tn/">Sup'com Tunis</a>, Tunis, <strong>Tunisie</strong><br/>
-						<a href="http://www.itesm.mx/wps/portal?WCM_GLOBAL_CONTEXT=">Tecnologico de Monterrey</a>, Monterrey, <strong>Mexique</strong><br/>
-						<a href="http://www.uq.edu.au/">University of Queensland</a>, Brisbane, <strong>Australie</strong><br/>
+						<a href="http://www.uqam.ca/" target="_blank">Université du Québec à Montréal</a>, Montréal, <strong>Canada</strong><br/>
+						<a href="http://www.uqac.ca/" target="_blank">L'Université du Québec A Chicoutimi (UQAC)</a>, Saguenay, <strong>Canada</strong>, <a href="https://www-intranet.telecomnancy.univ-lorraine.fr/lib/exe/fetch.php/ri/presentation_telecom_nancy.pdf" target="_blank">Présentation Chicoutimi 2014</a><br/>
+						<a href="http://www.supcom.mincom.tn/" target="_blank">Sup'com Tunis</a>, Tunis, <strong>Tunisie</strong><br/>
+						<a href="http://www.itesm.mx/wps/portal?WCM_GLOBAL_CONTEXT=" target="_blank">Tecnologico de Monterrey</a>, Monterrey, <strong>Mexique</strong><br/>
+						<a href="http://www.uq.edu.au/" target="_blank">University of Queensland</a>, Brisbane, <strong>Australie</strong><br/>
 						
 						<br/><U>ERASMUS:</U><br/>
-						<a href="http://www.uni-halle.de/">Martin-Luther-Universität</a>, HalleWittenberg, <strong>Allemagne</strong><br/>
-						<a href="http://www.upc.edu/">Universitat Politecnica de Catalunya</a>, Barcelona, <strong>Espagne</strong><br/>
-						<a href="http://www.uam.es/ss/Satellite/es/home/">Universidad autonoma</a>, Madrid, <strong>Espagne</strong><br/>
-						<a href="http://www.aalto.fi/en/">TKK Aalto</a>, Helzinski, <strong>Finlande</strong><br/>
-						<a href="https://www.maynoothuniversity.ie/">University of Maynooth</a>, Maynooth, <strong>Irlande</strong><br/>
-						<a href="http://www.poliba.it/">Politecnico di Bari</a>, Bari, <strong>Italie</strong><br/>
-						<a href="http://www.ntnu.edu/">NTNU</a>, Trondheim, <strong>Norvège</strong><br/>
-						<a href="http://www.agh.edu.pl/en">University of Science and Technology</a>, Cracovie, <strong>Pologne</strong><br/>
-						<a href="http://www.unl.pt/">Universidade Nova de Lisboa</a>, Lisbonne, <strong>Portugal</strong><br/>
-						<a href="http://www.upit.ro/">Universitatea Din Pitesti</a>, Pitesti, <strong>Roumanie</strong><br/>
-						<a href="http://www.usv.ro/">Universitatea STEFAN CEL MARE</a>, Suceava, <strong>Roumanie</strong><br/>
-						<a href="http://www.bris.ac.uk/">University of Bristol</a>, Bristol, <strong>Royaume-Uni</strong><br/>
-						<a href="http://www.le.ac.uk/">University of Leicester</a>, Leicester, <strong>Royaume-Uni</strong><br/>
+						<a href="http://www.uni-halle.de/" target="_blank">Martin-Luther-Universität</a>, HalleWittenberg, <strong>Allemagne</strong><br/>
+						<a href="http://www.upc.edu/" target="_blank">Universitat Politecnica de Catalunya</a>, Barcelona, <strong>Espagne</strong><br/>
+						<a href="http://www.uam.es/ss/Satellite/es/home/" target="_blank">Universidad autonoma</a>, Madrid, <strong>Espagne</strong><br/>
+						<a href="http://www.aalto.fi/en/" target="_blank">TKK Aalto</a>, Helzinski, <strong>Finlande</strong><br/>
+						<a href="https://www.maynoothuniversity.ie/" target="_blank">University of Maynooth</a>, Maynooth, <strong>Irlande</strong><br/>
+						<a href="http://www.poliba.it/" target="_blank">Politecnico di Bari</a>, Bari, <strong>Italie</strong><br/>
+						<a href="http://www.ntnu.edu/" target="_blank">NTNU</a>, Trondheim, <strong>Norvège</strong><br/>
+						<a href="http://www.agh.edu.pl/en" target="_blank">University of Science and Technology</a>, Cracovie, <strong>Pologne</strong><br/>
+						<a href="http://www.unl.pt/" target="_blank">Universidade Nova de Lisboa</a>, Lisbonne, <strong>Portugal</strong><br/>
+						<a href="http://www.upit.ro/" target="_blank">Universitatea Din Pitesti</a>, Pitesti, <strong>Roumanie</strong><br/>
+						<a href="http://www.usv.ro/" target="_blank">Universitatea STEFAN CEL MARE</a>, Suceava, <strong>Roumanie</strong><br/>
+						<a href="http://www.bris.ac.uk/" target="_blank">University of Bristol</a>, Bristol, <strong>Royaume-Uni</strong><br/>
+						<a href="http://www.le.ac.uk/" target="_blank">University of Leicester</a>, Leicester, <strong>Royaume-Uni</strong><br/>
 						
 						<br/><U>Stage:</U><br/>
 						N'importe où!!
