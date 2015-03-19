@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+import beans.UniversityBean;
 import beans.map.PointCarteBean;
 
 public class PointCarte {
@@ -12,14 +14,19 @@ public class PointCarte {
 	String pilote = "com.mysql.jdbc.Driver";
 	String nomBase = "bdsi_sie1";
 	PointCarteBean pcb;
+	ArrayList<PointCarteBean> pcb_list;
+
 	
 	public PointCarte() {
 		pcb = new PointCarteBean();
+		pcb_list = new ArrayList<PointCarteBean>();
+
 	}
 	
 	public PointCarteBean getInfos(){
 		//TODO: Requêtes pour récupérer toutes les universités, stages et ddiplomes avec les infos demandées dans les beans correspondants
 		pcb = new PointCarteBean();
+		pcb_list = new ArrayList<PointCarteBean>();
 		int id_pcb=0;
 		try{
 			Class.forName(pilote);

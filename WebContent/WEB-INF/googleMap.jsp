@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+    <meta charset="ISO-8859-1">
     <title>Geocoding service</title>
     <link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
     <style>

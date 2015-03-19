@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 <title>TN International</title>
 <link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
@@ -39,7 +39,10 @@
 		<%@ include file="header.jsp"%>
 		<div id="options_admin">
 			<p>
+					<c:if test="${sessionScope.user.fonction == 'Administrateur' || sessionScope.user.fonction == 'Pôle Relations Internationales' || sessionScope.user.fonction == 'Responsable Relations Internationales'}">
+			
 				<a href="modalite?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier</span></a>
+		</c:if>
 
 				
 		</div>

@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 <title>TN International</title>
 <link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
@@ -20,7 +20,7 @@
 						<span class="nb_etudiants_partis">Pourquoi partir à l'étranger ?</span>
 					</p>
 					<p>
-						<input type="text" name="pourquoi" value="${pre.pourquoi}"/><br/>
+						<textarea name="pourquoi" cols="120" rows="10"> ${presentation.pourquoi}</textarea><br/>
 					</p>
 
 					<p>
@@ -29,34 +29,32 @@
 					<p>
 						Il y a plusieurs moyens de partir à l'étranger:<br/>
 						<br/><U>Pour suivre un cursus universitaire: </U><br/>
-						<input type="text" name="comment" value="${pre.comment}"/><br/>
+						<textarea name="comment" cols="120" rows="10"> ${presentation.comment}</textarea><br/>
 												
 						<U><br/>Lors d'un <strong>stage.</strong></U> <br/>
-						<input type="text" name="stage" value="${pre.stage}"/><br/>
+						<textarea name="stage" cols="120" rows="10"> ${presentation.stage}</textarea><br/>
 					</p>
 
 					<p>
 						<br/><span class="nb_etudiants_partis">Quand ?</span>
 					</p>
 					<p>
-						- Pour le deuxième semestre de la 2ème année.<br/>
-						- La 3ème année.<br/>
-						- Pendant les périodes de stage.<br/>
+						<textarea name="quand" cols="120" rows="10"> ${presentation.quand}</textarea><br/>
 					</p>
 
 					<p>
 						<br/><span class="nb_etudiants_partis">Où ? </span>
 					</p>
 					<p>
-						<input type="text" name="ou1" value="${pre.ou1}"/><br/>
+						<textarea name="ou1" cols="120" rows="10"> ${presentation.ou1}</textarea><br/>
 						<br/><U>Les doubles diplômes:</U><br/>
-						<input type="text" name="ou2" value="${pre.ou2}"/><br/>
+						<textarea name="ou2" cols="120" rows="10"> ${presentation.ou2}</textarea><br/>
 						
 						<br/><U>ERASMUS:</U><br/>
-						<input type="text" name="ou3" value="${pre.ou3}"/><br/>
+						<textarea name="ou3" cols="120" rows="10"> ${presentation.ou3}</textarea><br/>
 
 						<br/><U>Stage:</U><br/>
-						<input type="text" name="ou4" value="${pre.ou4}"/><br/>
+						<textarea name="ou4" cols="120" rows="10"> ${presentation.ou4}</textarea><br/>
 					</p>
 					<p style="margin-left:562px;">
 
