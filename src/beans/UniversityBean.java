@@ -192,13 +192,9 @@ public class UniversityBean {
 		this.l_linkedin = l_linkedin;
 	}
 
-
-
 	public ArrayList<EtudiantBean> getPersonnes() {
 		return personnes;
 	}
-
-
 
 	public void setPersonnes(ArrayList<EtudiantBean> personnes) {
 		this.personnes = personnes;
