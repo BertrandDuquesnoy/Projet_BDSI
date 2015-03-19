@@ -12,6 +12,10 @@
     <servlet-class>servlets.Login</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>Liens</servlet-name>
+    <servlet-class>servlets.Liens</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>Contact</servlet-name>
     <servlet-class>servlets.Contact</servlet-class>
   </servlet>
@@ -134,5 +138,9 @@
   <servlet-mapping>
     <servlet-name>AccueilDD</servlet-name>
     <url-pattern>/accueil/doubleDiplome</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Liens</servlet-name>
+    <url-pattern>/accueil/liens</url-pattern>
   </servlet-mapping>
 </web-app>

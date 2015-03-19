@@ -5,7 +5,7 @@
 
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	   <title>Page d'accueil </title>
 	   <link href='<%=request.getContextPath() %>/CSS/style.css' rel='stylesheet' type='text/css' />
 </head>
@@ -32,10 +32,10 @@
   
    <li><a href="<%=request.getContextPath() %>/accueil/stages" title="Stages réalisés">Stages réalisés</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/doubleDiplome" title="Doubles diplômes">Doubles diplômes</a></li>
-   <li><a href="<%=request.getContextPath() %>/accueil/universite" title="Université">Université</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/universite" title="Université">Universités</a></li>
    <li><a href="<%=request.getContextPath() %>/blog" title="Blog">Blog</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/faq" title="FAQ">FAQ</a></li>
-   <li><a href="<%=request.getContextPath() %>/accueil/contact" title="Contact">Contact</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/contact" title="Contact">Contacts</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/liens" title="Liens utiles">Liens utiles</a></li>
   
              </ul>
