@@ -38,8 +38,6 @@ public class UniversityBean {
 		l_linkedin = "null";
 		note = 5;
 		personnes = new ArrayList<EtudiantBean>();
-		personnes.add(new EtudiantBean());
-		//personnes.add(new EtudiantBean());
 	}
 	
 	
@@ -206,6 +204,54 @@ public class UniversityBean {
 
 	public void setL_formation(String l_formation) {
 		this.l_formation = l_formation;
+	}
+
+
+
+	public String getL_web() {
+		return l_web;
+	}
+
+
+
+	public void setL_web(String l_web) {
+		this.l_web = l_web;
+	}
+
+
+
+	public String getL_fb() {
+		return l_fb;
+	}
+
+
+
+	public void setL_fb(String l_fb) {
+		this.l_fb = l_fb;
+	}
+
+
+
+	public String getL_tweet() {
+		return l_tweet;
+	}
+
+
+
+	public void setL_tweet(String l_tweet) {
+		this.l_tweet = l_tweet;
+	}
+
+
+
+	public String getL_linkedin() {
+		return l_linkedin;
+	}
+
+
+
+	public void setL_linkedin(String l_linkedin) {
+		this.l_linkedin = l_linkedin;
 	}
 	
 }

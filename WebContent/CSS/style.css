@@ -9,6 +9,7 @@ html {font: 10px #000000; font-family: 'Trebuchet MS';}
 
 .categorie{background-color: #6C2466; width: 250px; height: 100px; color: white; font-size: 14px; margin: 10px; text-align:center; color:white;  border: solid;}
 .ligne {background-color: #6C2466; margin: 10px; padding: 10px; width: 80%; height: 20px; color: white; text-decoration: none;}
+.tuile{position:relative; height:100px; width: 250px; display: inline-block ; margin:30px;}
 
 /* LIENS */
 .lien_default {padding:5px 0; text-decoration: none; color: #000000;}

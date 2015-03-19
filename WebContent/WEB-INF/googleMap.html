@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+    <meta charset="ISO-8859-1">
     <title>Geocoding service</title>
     <style>
       html, body, #map-canvas {
@@ -47,27 +47,27 @@ function initialize() {
 
 
 function displayUniversities() {
-  //adresses qui seront g√©olocalis√©es par l'API
+  //adresses qui seront gÈolocalisÈes par l'API
   var address1 = "Poitiers";
   var address2 = "Dunkerque";
-  var address3 = "Gu√©ret";
+  var address3 = "GuÈret";
 
-//universit√© 1
+//universitÈ 1
   geocoder.geocode( { 'address': address1}, function(results, status) {
       var marker1 = new google.maps.Marker({
           icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
           map: map,
           position: results[0].geometry.location,
-          title : "Universit√© Polytechnique du Poitou"
+          title : "UniversitÈ Polytechnique du Poitou"
       });
     var text1 = '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">Universit√© du Poitou</h1>'+
+    '<h1 id="firstHeading" class="firstHeading">UniversitÈ du Poitou</h1>'+
     '<div id="bodyContent">'+
-    '<p>L\'universit√© du Poitou est super hypra cool, venez vite √©tudiez l√†-bas !!!!!!!'+
+    '<p>L\'universitÈ du Poitou est super hypra cool, venez vite Ètudiez l‡-bas !!!!!!!'+
     '<p>En savoir plus :<a href="http://fr.wikipedia.org/wiki/Poitou">'+
-          'http://fr.wikipedia.org/wiki/Poitou</a> '+    //je sais pas pourquoi si on enl√®ve un des 2 liens √ßa marche plus...  A creuser si on veut faire plus propre...
+          'http://fr.wikipedia.org/wiki/Poitou</a> '+    //je sais pas pourquoi si on enlËve un des 2 liens Áa marche plus...  A creuser si on veut faire plus propre...
           '</div>'+
           '</div>';
     var window1 = new google.maps.InfoWindow({
@@ -78,15 +78,15 @@ function displayUniversities() {
       });
     });
 
-//universit√© 2
+//universitÈ 2
   geocoder.geocode( { 'address': address2}, function(results, status) {
       var marker2 = new google.maps.Marker({
           icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
           map: map,
           position: results[0].geometry.location,
-          title : "Ecole sup√©rieure du charbon et des mat√©riaux combustibles"
+          title : "Ecole supÈrieure du charbon et des matÈriaux combustibles"
       });
-    var text2 = "Longue vie au charbon, aidez nous √† en extraire encore un peu !";
+    var text2 = "Longue vie au charbon, aidez nous ‡ en extraire encore un peu !";
     var window2 = new google.maps.InfoWindow({
       content: text2
     });
@@ -95,15 +95,15 @@ function displayUniversities() {
       });
     });
 
-//universit√© 3
+//universitÈ 3
   geocoder.geocode( { 'address': address3}, function(results, status) {
       var marker3 = new google.maps.Marker({
           icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
           map: map,
           position: results[0].geometry.location,
-          title : "Universit√© Polytechnique de Gu√©ret"
+          title : "UniversitÈ Polytechnique de GuÈret"
       });
-    var text3 = "You gonna enjoy the way of life in Gu√©ret, for sure !";
+    var text3 = "You gonna enjoy the way of life in GuÈret, for sure !";
     var window3 = new google.maps.InfoWindow({
       content: text3
     });
@@ -203,7 +203,7 @@ function displayInternships() {
 function displayDoubleDiploma() {
   var address1 = "Paris";
 
-//Double dipl√¥me 1
+//Double diplÙme 1
   geocoder.geocode( { 'address': address1}, function(results, status) {
       var marker1 = new google.maps.Marker({
           map: map,
@@ -240,9 +240,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
   </head>
   <body>
     <div id="panel">
+<<<<<<< HEAD
       <input color="green" type="button" value="Ex√©cuter la fonction displayUniversities" onclick="displayUniversities()">
       <input color="blue" type="button" value="Ex√©cuter la fonction displayInternships" onclick="displayInternships()">
       <input color="red" type="button" value="Ex√©cuter la fonction displayDoubleDiploma" onclick="displayDoubleDiploma()">
+=======
+      <input type="button" value="ExÈcuter la fonction displayUniversities" onclick="displayUniversities()">
+      <input type="button" value="ExÈcuter la fonction displayInternships" onclick="displayInternships()">
+      <input type="button" value="ExÈcuter la fonction displayDoubleDiploma" onclick="displayDoubleDiploma()">
+>>>>>>> 61b2f33f009c0775d22599e6ee7d782d16500eea
 
     </div>
     <div id="map-canvas"></div>
