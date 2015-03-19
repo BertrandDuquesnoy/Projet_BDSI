@@ -21,6 +21,7 @@ public class InfosFicheEtudiant {
 	int id_ficheEtu = 0; 
 	
 	public FicheEtudiantBean getInfos(HttpServletRequest request){
+		fiche = new FicheEtudiantBean();
 		try{
 			Class.forName(pilote);
 
@@ -28,7 +29,9 @@ public class InfosFicheEtudiant {
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT p.login, p.nom, p.prenom, p.annee, p.mail, p.tel, p.adresse, f.adresse_sejour, f.date_sej_deb, f.date_sej_fin " +" FROM profil p, etudiant e, fiche_etudiant f "+ " WHERE p.id_profil=e.etr_profil AND e.id_etud=f.id_fiche AND p.annee=e.annee ;");
+			ResultSet resultat = instruction.executeQuery("SELECT p.login, p.nom, p.prenom, p.annee, p.mail, p.tel, p.adresse, f.adresse_sejour, f.date_sej_deb, f.date_sej_fin " +
+			" FROM profil p, etudiant e, fiche_etudiant f "+ 
+			" WHERE p.id_profil=e.etr_profil AND e.id_etud=f.id_fiche AND p.annee=e.annee ;");
 			
 			while(resultat.next()){
 				fiche.setPrenom(resultat.getString("prenom"));

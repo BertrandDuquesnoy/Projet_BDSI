@@ -11,7 +11,7 @@ public class PointCarteBean {
 	public PointCarteBean() {
 		titre = "Université de Lorraine";
 		description = "c'est trop long à écrire";
-		item = "Si vous voulez des infos";
+		item = "Pour plus d'infos : ";
 		lien = "cherche le lien";
 		adresse = "Nancy";
 		type = "univ";

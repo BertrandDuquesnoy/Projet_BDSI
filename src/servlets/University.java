@@ -34,10 +34,12 @@ public class University extends HttpServlet{
 		try{
 			if (request.getParameter("modif").equals("1")) {
 				request.setAttribute("personne", infos_pers.infoPersonneById(Integer.valueOf(request.getParameter("id"))));
-				request.setAttribute("university", infos_univ.getinfos(request));
+				request.setAttribute("university", infos_univ.getinfos(Integer.valueOf(request.getParameter("id"))));
 				this.getServletContext().getRequestDispatcher("/WEB-INF/university_modif.jsp").forward(request, response);
-			}else if (request.getParameter("pays") != null) {
-				request.setAttribute("list", infos_univ.getInfosByPays(request.getParameter("pays")));
+			}else if (request.getParameter("id") != null) {
+				System.out.println("id : "+request.getParameter("id"));
+				request.setAttribute("university", infos_univ.getinfos(Integer.valueOf(request.getParameter("id"))));
+				this.getServletContext().getRequestDispatcher( "/WEB-INF/university.jsp" ).forward( request, response );
 			}
 			else{
 				this.getServletContext().getRequestDispatcher( "/WEB-INF/university.jsp" ).forward( request, response );

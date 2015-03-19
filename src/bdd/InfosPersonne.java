@@ -21,6 +21,7 @@ public class InfosPersonne{
 	int id_personne = 0; 
 	
 	public PersonBean infoPersonneById(int id){
+		personne = new PersonBean();
 		id_personne = id;
 		try{
 			Class.forName(pilote);
