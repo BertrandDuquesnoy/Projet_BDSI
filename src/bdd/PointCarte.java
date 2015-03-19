@@ -34,7 +34,7 @@ public class PointCarte {
 			Statement instruction = connexion.createStatement();
 
 			//on recupere le lien concerant les aides financieres pour partir etudier a l'etranger
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite u, lien l "+"WHERE l.etr_univ = u.id_univ AND id = "+";");
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite u, lien l "+"WHERE l.etr_univ = u.id_univ" +";");
 			while(resultat.next()){
 				pcb = new PointCarteBean();
 				pcb.setTitre(resultat.getString("nom"));
@@ -46,7 +46,7 @@ public class PointCarte {
 				
 			}
 			
-			ResultSet resultat2 = instruction.executeQuery("SELECT * " + "FROM entreprise ent, lien l "+"WHERE l.etr_entreprise = ent.id_entreprise AND id = "+";");
+			ResultSet resultat2 = instruction.executeQuery("SELECT * " + "FROM entreprise ent, lien l "+"WHERE l.etr_entreprise = ent.id_entreprise"+";");
 			while(resultat.next()){
 				pcb = new PointCarteBean();
 				pcb.setTitre(resultat2.getString("nom"));
