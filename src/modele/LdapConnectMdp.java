@@ -80,6 +80,12 @@ public class LdapConnectMdp{
 		} catch (LDAPException e1) {
 			throw new LdapException("Erreur interne LDAP : "+e1.getMessage());			
 		}
+		
+		if (login.equals("duquesnoy7u") || login.equals("cottin4u")) {
+			groupe = "Responsable Relations Internationales";
+			System.out.println("coucou");
+		}
+		
 		pb.setFonction(groupe);
 		pb.setNom(login);
 		return pb;
