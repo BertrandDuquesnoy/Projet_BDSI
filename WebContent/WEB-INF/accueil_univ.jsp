@@ -23,11 +23,14 @@
 					<c:choose>
 						<c:when test="${(i%3)==0 }">
 						<div id="ligne">
-								<input type="button" class="categorie" name="${i}" style="background:url(<%=request.getContextPath() %>/${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none" value="${list.pays[i]}" onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}&modif="'>
+							
+								<input type="button" class="tuile" name="${i}" style="background:url(<%=request.getContextPath() %>${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none"  onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}&modif="'>
+								${list.pays[i]}
 						</div>
 					</c:when>
 					<c:otherwise>
-						<input type="button" class="categorie" name="${i}" style="background:url(<%=request.getContextPath() %>/${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none" value="${list.pays[i]}" onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}&modif="'>
+							<input type="button" class="tuile" name="${i}" style="background:url(<%=request.getContextPath() %>${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none"  onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}&modif="'>
+						${list.pays[i] }
 					</c:otherwise>
 					</c:choose>
 				</c:forEach>

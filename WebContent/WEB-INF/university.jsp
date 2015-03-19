@@ -11,10 +11,10 @@
 	<div id="cote_gauche">
 		<div id="infos_univ" class="infos">
 			<p class="text_paragraph">
-				<p align="center"><img src="${university.logo_path}" width="140" height="80" style="align:center" /></p>
+				<p align="center"><img src="<%=request.getContextPath() %>${university.logo_path}" width="140" height="80" style="align:center" /></p>
 				${university.nom}
 			</p>
-			<a href="${university.url}" class="lien_default">Site : ${university.url }</a>
+			<a href="${university.l_formation}" class="lien_default">Site : Accès aux formations</a>
 		</div>
 		<div id="infos_univ_details" class="infos">
 			<p class="text_paragraph">
@@ -68,7 +68,7 @@
 		<p><span class="nb_etudiants_partis">Liste des étudiants :  </span></p>
 		<c:forEach items="${ university.personnes }" varStatus="boucle">
 			<p>
-				${university.personnes[boucle.index].prenom} ${university.personnes[boucle.index].nom} - ${university.personnes[boucle.index].promo} - ${university.personnes[boucle.index].departement} - ${university.personnes[boucle.index].email}
+				${university.personnes[boucle.index].prenom} ${university.personnes[boucle.index].nom} - ${university.personnes[boucle.index].email}
 				<hr class="separateur"/> 
 			</p>
 		</c:forEach>

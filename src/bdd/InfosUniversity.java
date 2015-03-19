@@ -7,8 +7,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.naming.spi.DirStateFactory.Result;
 import javax.servlet.http.HttpServletRequest;
 
+import beans.EtudiantBean;
+import beans.PersonBean;
 import beans.UniversityBean;
 
 public class InfosUniversity {
@@ -46,8 +49,10 @@ public class InfosUniversity {
 				univ.setDateFondation(res1.getString("date_creation"));
 				univ.setNote(res1.getFloat("note"));
 				univ.setNbEtudiants(res1.getInt("nb_etudiant"));
+				univ.setDescription(res1.getString("description"));
+				univ.setL_formation(res1.getString("l_formation"));
 
-				//note et nbEt
+				
 			}
 			
 			ResultSet res2 = instruction.executeQuery("SELECT l_web, l_tweet, l_linkedin, l_fb "+"FROM universite u, lien l "+"WHERE u.id_univ = l.etr_univ"+";");
@@ -64,8 +69,18 @@ public class InfosUniversity {
 			while(res3.next()){
 				univ.setConvention_path(res3.getString("l_conv")); //lien vers la convention
 
-				
 			}
+			int i = 0;
+			ResultSet res4 = instruction.executeQuery("SELECT p.nom, p.prenom, p.mail FROM profil p, etudiant e WHERE e.etr_univ = "+id+" AND e.etr_profil = p.id_profil");
+			while (res4.next()) {
+				EtudiantBean eb = new EtudiantBean();
+				eb.setNom(res4.getString("nom"));
+				eb.setPrenom(res4.getString("prenom"));
+				eb.setEmail(res4.getString("mail"));
+				univ.getPersonnes().add(eb);
+				i++;
+			}
+			univ.setNbEtudiants(i);
 			
 			//Il manque description mais où va-t-on la chercher ? Il manque aussi note et nbEtu, même problème
 		}
