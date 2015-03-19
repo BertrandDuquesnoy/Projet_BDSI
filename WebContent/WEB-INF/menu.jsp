@@ -36,9 +36,9 @@
 	    </div>		
 
 		<div id="lien_res_sociaux">
-				<a href="${university.facebook_link}" id="logo_fb"><img src="<%=request.getContextPath() %>/images/facebook.png" width="30" height="30"/></a>
-				<a href="${university.twitter_link }" id="logo_tw"><img src="<%=request.getContextPath() %>/images/twitter.png" width="30" height="30"/></a>
-				<a href="${university.linkedin_link }" id="logo_ln"><img src="<%=request.getContextPath() %>/images/linkedin.png" width="30" height="30"/></a>
+				<a href="https://www.facebook.com/TELECOMNancy?fref=ts" id="logo_fb"><img src="<%=request.getContextPath() %>/images/facebook.png" width="30" height="30"/></a>
+				<a href="https://twitter.com/telecomnancy" id="logo_tw"><img src="<%=request.getContextPath() %>/images/twitter.png" width="30" height="30"/></a>
+				<a href="https://www.linkedin.com/edu/telecom-nancy-156100" id="logo_ln"><img src="<%=request.getContextPath() %>/images/linkedin.png" width="30" height="30"/></a>
 		</div>
 	</div>
 </body>
