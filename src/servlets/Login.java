@@ -54,8 +54,10 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 //		pb.setNom("Cottin");
 //		pb.setAnnee("2A");
 //		pb.setMail("paulcottin@gmail.com");
+		String fonction = pb.getFonction();
 		InfosPersonne infos = new InfosPersonne();
 		pb = infos.infoPersonneByName(pb.getNom());
+		pb.setFonction(fonction);
 		session.setAttribute("user", pb);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/forwardAccueil.jsp").forward(request, response);
 	}

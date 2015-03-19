@@ -21,7 +21,45 @@ public class InfosBlog {
 	
 	public BlogBean getInfos(HttpServletRequest request){
 		bb = new BlogBean();
-		//TODO: Requêtes qui renvoient les différentes catégories et leurs id
+		try{
+			Class.forName(pilote);
+
+			Connection connexion = DriverManager.getConnection("jdbc:mysql://bdsi.telecomnancy.eu:3306/"+nomBase,"sie1","sie1");
+
+			Statement instruction = connexion.createStatement();
+
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite ;");
+			
+			while(resultat.next()){
+				if (!bb.getPays().contains(resultat.getString("pays"))) {
+					bb.getFlag_path().add(resultat.getString("photo1"));
+					bb.getImg_path().add(resultat.getString("photo2"));
+					bb.getPays().add(resultat.getString("pays"));
+				}
+			}
+			
+			resultat.close();
+			
+			resultat = instruction.executeQuery("SELECT * " +"FROM entreprise ;");
+			
+			while(resultat.next()){
+				if (!bb.getPays().contains(resultat.getString("pays"))) {
+					bb.getFlag_path().add(resultat.getString("photo1"));
+					bb.getImg_path().add(resultat.getString("photo2"));
+					bb.getPays().add(resultat.getString("pays"));
+				}
+			}
+			
+			resultat.close();
+			
+			instruction.close();
+			connexion.close();
+			
+		}
+		catch (Exception e){
+
+			System.out.println("echec pilote : "+e);
+		}
 		return bb;
 	}
 	

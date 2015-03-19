@@ -25,7 +25,7 @@
                       <li><a href="<%=request.getContextPath() %>/partirEtranger/modalite">Modalités</a></li>
                </ul> 
    </li> 
-   <li><a href="<%=request.getContextPath() %>/accueil/stages" title="Stages réalisés">Stages réalisés</a></li>
+  <%--  <li><a href="<%=request.getContextPath() %>/accueil/stages" title="Stages réalisés">Stages réalisés</a></li> --%>
    <li><a href="<%=request.getContextPath() %>/accueil/doubleDiplome" title="Doubles diplômes">Doubles diplômes</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/universite" title="Université">Universités</a></li>
    <li><a href="<%=request.getContextPath() %>/blog" title="Blog">Blog</a></li>
