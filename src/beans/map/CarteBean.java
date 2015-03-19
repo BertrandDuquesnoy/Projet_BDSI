@@ -9,14 +9,14 @@ public class CarteBean {
 	
 	public CarteBean() {
 		pts = new ArrayList<PointCarteBean>();
-//		pts.add(new PointCarteBean());
-//		pts.add(new PointCarteBean());
-//		pts.get(1).setTitre("autre univ");
-//		pts.get(1).setAdresse("Lyon");
-//		pts.add(new PointCarteBean());
-//		pts.get(2).setType("stage");
-//		pts.get(2).setTitre("Poissonnerie des belles-eaux");
-//		pts.get(2).setAdresse("12 quai du port Marseille");
+		pts.add(new PointCarteBean());
+		pts.add(new PointCarteBean());
+		pts.get(1).setTitre("autre univ");
+		pts.get(1).setAdresse("Lyon");
+		pts.add(new PointCarteBean());
+		pts.get(2).setType("stage");
+		pts.get(2).setTitre("Poissonnerie des belles-eaux");
+		pts.get(2).setAdresse("12 quai du port Marseille");
 		nbPts = 1;
 	}
 	

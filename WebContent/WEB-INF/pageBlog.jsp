@@ -19,7 +19,7 @@ function supprimerArticle(id){
 				<div id="options_admin">
 					<p>
 					
-        <a style="text-decoration:none; color: #6C2466" href="/bdsi/accueil">
+        <a style="text-decoration:none; color: #6C2466" href="<%=request.getContextPath() %>/accueil">
             <span class="options_admin">Retour accueil</span>
         </a>
     
