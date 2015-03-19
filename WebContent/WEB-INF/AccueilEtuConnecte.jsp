@@ -17,10 +17,10 @@
 		<%@include file="menu.jsp" %>
 	 
 	 <div id="corps">
-	 
+	 <div id = "Map">
 	 
 	 	<iframe src="accueil?carte=1" class="carte" width="94%" height="490px"></iframe>
-	 	
+	 </div>	
 	 </div>
      </div>  
     </body>
