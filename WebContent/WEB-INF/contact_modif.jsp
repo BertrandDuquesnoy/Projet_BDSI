@@ -11,7 +11,6 @@
 	<div id="options_admin">
 	<p>
 			<p style="margin-left:500px;">
-				<a href="contact?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier</span></a>
 
 				
 		</div>
@@ -21,21 +20,31 @@
 		</div>	
 
 	<div id="corps">
+		<form action="contact" method="post">
+		<input class="options_admin" type="submit" value="enregistrer"/>
 		<p class="titre_section">${st.nom}</p>
-		<p><span class="Responsable" style="color: #6C2466"><B>Responsable Relations Internationales : <input type="text" name="resprelint" value="${con.RespRelInt}"/></B>
-												<pre> <textarea name="description" cols="80" rows="5"> ${contact.description}</textarea> </pre>
-												<pre> </pre>
+		<p class="Responsable" style="color: #6C2466"><B>Responsable Relations Internationales : <input type="text" name="resprelint" value="${con.RespRelInt}"/></B>
+												<pre/><textarea name="c_respoRelInt" cols="80" rows="5"> ${contact.description}</textarea> 
+												
 																											
 		
-		<p style="color: #6C2466"><B>Assistante Relations Internationales : <input type="text" name="assrelint" value="${con.AssRelInt}"/> </B> 
-												<pre> <textarea name="description" cols="80" rows="5"> ${contact.description}</textarea>  </pre>
-												<pre> </pre>
+		<p style="color: #6C2466"><B>Assistante Relations Internationales : <input type="text" name="assrelint" value="${con.AssRelInt}"/> </B> </p>
+												<pre/> <textarea name="c_assRelInt" cols="80" rows="5"> ${contact.description}</textarea>
 												
-		<p><span class="Directeur" style="color: #6C2466"><B><input type="text" name="directeur" value="${con.Dir}"/> </B> 
-												<pre><textarea name="description" cols="80" rows="5"> ${contact.description}</textarea>  </pre>
-												<pre> </pre>
-		</p>
-																	
+		<p class="Directeur" style="color: #6C2466"><B>Directeur : <input type="text" name="directeur" value="${con.Dir}"/> </B> </p>
+												<pre/><textarea name="c_directeur" cols="80" rows="5"> ${contact.description}</textarea>
+												
+		
+		<p style="color: #6C2466"><B>Assistante Relations Internationales : <input type="text" name="assrelint" value="${con.AssRelInt}"/> </B></p> 
+												<pre/> <textarea name="c_assRelInt" cols="80" rows="5"> ${contact.description}</textarea>
+												
+		<p style="color: #6C2466"><B>Secrétaire Générale : <input type="text" name="secGen" value="${con.AssRelInt}"/> </B></p> 
+												<pre/> <textarea name="c_secGen" cols="80" rows="5"> ${contact.description}</textarea>
+												
+		<p style="color: #6C2466"><B>Adresse : <input type="text" name="adresse" value="${con.AssRelInt}"/> </B></p> 
+												<pre/> <textarea name="c_adresse" cols="80" rows="5"> ${contact.description}</textarea>
+		
+		</form>															
 	</div>
 	</body>
 </html>
