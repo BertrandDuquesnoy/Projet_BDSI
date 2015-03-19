@@ -19,6 +19,7 @@ public class PointCarte {
 	
 	public PointCarteBean getInfos(){
 		//TODO: Requêtes pour récupérer toutes les universités, stages et ddiplomes avec les infos demandées dans les beans correspondants
+		pcb = new PointCarteBean();
 		int id_pcb=0;
 		try{
 			Class.forName(pilote);
@@ -34,7 +35,7 @@ public class PointCarte {
 				pcb.setDescription(resultat.getString("description"));
 				pcb.setLien(resultat.getString("l_web"));
 				pcb.setAdresse(resultat.getString("adresse"));
-				pcb.setType(resultat.getString("type"));
+				pcb.setType("universit�");
 			}
 			
 			ResultSet resultat2 = instruction.executeQuery("SELECT * " + "FROM entreprise ent, lien l "+"WHERE l.etr_entreprise = ent.id_entreprise AND id = "+id_pcb+";");
@@ -43,7 +44,7 @@ public class PointCarte {
 				pcb.setDescription(resultat.getString("domaine"));
 				pcb.setLien(resultat.getString("l_web"));
 				pcb.setAdresse(resultat.getString("adresse"));
-				pcb.setType(resultat.getString("type"));
+				pcb.setType("entreprise");
 			}
 			
 		}
