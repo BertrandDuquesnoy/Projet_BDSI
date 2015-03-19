@@ -31,11 +31,12 @@ public class InfosAUniv {
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT pays, logo_path " +"FROM universite;");
+			ResultSet resultat = instruction.executeQuery("SELECT id_univ, nom, logo_path " +"FROM universite;");
 			
 			while(resultat.next()){
-				if (!av.getPays().contains(resultat.getString("pays"))) {
-					av.getPays().add(resultat.getString(("pays")));
+				if (!av.getPays().contains(resultat.getString("nom"))) {
+					av.getId().add(Integer.valueOf(resultat.getString("id_univ")));
+					av.getPays().add(resultat.getString(("nom")));
 					av.getLogo_path().add(resultat.getString("logo_path"));
 				}
 			}
