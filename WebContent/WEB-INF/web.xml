@@ -142,12 +142,11 @@
     <url-pattern>/accueil/doubleDiplome</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-<<<<<<< HEAD
     <servlet-name>FAQ</servlet-name>
     <url-pattern>/accueil/faq</url-pattern>
-=======
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>Liens</servlet-name>
     <url-pattern>/accueil/liens</url-pattern>
->>>>>>> 61b2f33f009c0775d22599e6ee7d782d16500eea
   </servlet-mapping>
 </web-app>
