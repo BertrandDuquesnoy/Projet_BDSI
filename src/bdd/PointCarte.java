@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-import beans.UniversityBean;
 import beans.map.PointCarteBean;
 
 public class PointCarte {
@@ -23,7 +21,7 @@ public class PointCarte {
 
 	}
 	
-	public PointCarteBean getInfos(){
+	public ArrayList<PointCarteBean> getInfos(){
 		//TODO: Requêtes pour récupérer toutes les universités, stages et ddiplomes avec les infos demandées dans les beans correspondants
 		pcb = new PointCarteBean();
 		pcb_list = new ArrayList<PointCarteBean>();
@@ -38,20 +36,26 @@ public class PointCarte {
 			//on recupere le lien concerant les aides financieres pour partir etudier a l'etranger
 			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite u, lien l "+"WHERE l.etr_univ = u.id_univ AND id = "+id_pcb+";");
 			while(resultat.next()){
+				pcb = new PointCarteBean();
 				pcb.setTitre(resultat.getString("nom"));
 				pcb.setDescription(resultat.getString("description"));
 				pcb.setLien(resultat.getString("l_web"));
 				pcb.setAdresse(resultat.getString("adresse"));
 				pcb.setType("universit�");
+				pcb_list.add(pcb);
+				
 			}
 			
 			ResultSet resultat2 = instruction.executeQuery("SELECT * " + "FROM entreprise ent, lien l "+"WHERE l.etr_entreprise = ent.id_entreprise AND id = "+id_pcb+";");
 			while(resultat.next()){
-				pcb.setTitre(resultat.getString("nom"));
-				pcb.setDescription(resultat.getString("domaine"));
-				pcb.setLien(resultat.getString("l_web"));
-				pcb.setAdresse(resultat.getString("adresse"));
+				pcb = new PointCarteBean();
+				pcb.setTitre(resultat2.getString("nom"));
+				pcb.setDescription(resultat2.getString("domaine"));
+				pcb.setLien(resultat2.getString("l_web"));
+				pcb.setAdresse(resultat2.getString("adresse"));
 				pcb.setType("entreprise");
+				pcb_list.add(pcb);
+
 			}
 			
 		}
@@ -61,7 +65,9 @@ public class PointCarte {
 		}
 
 		
-		return pcb;
+		return pcb_list;
+		
+	
 	}
 	
 
