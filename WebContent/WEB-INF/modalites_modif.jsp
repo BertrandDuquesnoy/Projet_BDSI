@@ -20,18 +20,19 @@
 					</p>
 					<p>
 						<U><input type="text" name="projetMobiliteTitre" value="${moda.projetMobiliteTitre}"/></U><br/>
-						<pre><input type="text" name="projetMobilite" value="${moda.projetMobilite}"/></pre><br/>
+						<pre><textarea name="condproj" cols="120" rows="10"> ${modalites.condproj}</textarea><br/>
+</pre><br/>
 
 						<br/><U>Pour le 2ème semestre de la 2ème année</U><br/>
-						<input type="text" name="deuxiemeAnnee" value="${moda.deuxiemeAnnee}"/><br/>
+						<textarea name="cond2" cols="120" rows="10"> ${modalites.cond2}</textarea><br/>
 						<br/><U>Pour la 3ème année</U><br/>
-						<input type="text" name="troisiemeAnnee" value="${moda.troisiemeAnnee}"/><br/>
+						<textarea name="cond3" cols="120" rows="10"> ${modalites.cond3}</textarea><br/>
 					</p>
 					<p>
 						</br><span class="nb_etudiants_partis">Les financements</span>
 					</p>
 					<p>
-						<input type="text" name="financements" value="${moda.financements}"/><br/>
+						<textarea name="financements" cols="120" rows="10"> ${modalites.financements}</textarea><br/>
 					</p>				
 					</p>
 				</form>
