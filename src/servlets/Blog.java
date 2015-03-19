@@ -42,34 +42,34 @@ public class Blog extends HttpServlet{
 				nom = request.getParameter("name");
 				if (nom != null) {
 					System.out.println("Suppression de la catégorie : "+nom);
-					this.getServletContext().getRequestDispatcher( "/WEB-INF/blog1.jsp" ).forward( request, response );
+					this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
 				}
 			}else
-				this.getServletContext().getRequestDispatcher( "/WEB-INF/blog1.jsp" ).forward( request, response );
+				this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
 		}catch(NullPointerException e){
 			System.out.println("nullPointerException");
-			this.getServletContext().getRequestDispatcher( "/WEB-INF/blog1.jsp" ).forward( request, response );
+			this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
 		}
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		BlogBean bb = infos_blog.getInfos(request);
-	
-		ArrayList<String> list = new ArrayList<String>();
-		String tmp ="";
-		int i = 0;
-		while((tmp = (String) request.getParameter(String.valueOf(i))) != null){
-			list.add(tmp);
-			i++;
-		}
+//		BlogBean bb = infos_blog.getInfos(request);
+//	
+//		ArrayList<String> list = new ArrayList<String>();
+//		String tmp ="";
+//		int i = 0;
+//		while((tmp = (String) request.getParameter(String.valueOf(i))) != null){
+//			list.add(tmp);
+//			i++;
+//		}
+//		
+//		bb.setList(list);
+//		bb.setNbCategories(list.size());
+//		
+//		infos_blog.setInfos(bb);
+//		request.setAttribute("bb", infos_blog.getInfos(request));
 		
-		bb.setList(list);
-		bb.setNbCategories(list.size());
-		
-		infos_blog.setInfos(bb);
-		request.setAttribute("bb", infos_blog.getInfos(request));
-		
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/blog1.jsp" ).forward( request, response );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
 	}
 
 }

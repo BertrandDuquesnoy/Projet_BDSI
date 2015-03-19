@@ -4,37 +4,54 @@ import java.util.ArrayList;
 
 public class BlogBean {
 	
-	private ArrayList<String> list;
+	private ArrayList<String> img_path, flag_path, pays;
 	private int nbCategories;
 	
 	public BlogBean() {
-		list = new ArrayList<String>();
-		list.add("categorie1");
-		list.add("categorie2");
-		list.add("categorie3");
-		list.add("categorie4");
-		list.add("categorie5");
-		list.add("categorie6");
-		list.add("categorie7");
-		list.add("categorie8");
-		list.add("categorie9");
-		nbCategories = list.size();
+		img_path = new ArrayList<String>();
+		flag_path = new ArrayList<String>();
+		pays = new ArrayList<String>();
+		pays.add("Allemagne");
+		
 	}
 
-	public ArrayList<String> getList() {
-		return list;
-	}
-
-	public void setList(ArrayList<String> list) {
-		this.list = list;
-	}
 
 	public int getNbCategories() {
-		return list.size();
+		return pays.size();
 	}
 
 	public void setNbCategories(int nbCategories) {
 		this.nbCategories = nbCategories;
+	}
+
+
+	public ArrayList<String> getImg_path() {
+		return img_path;
+	}
+
+
+	public void setImg_path(ArrayList<String> img_path) {
+		this.img_path = img_path;
+	}
+
+
+	public ArrayList<String> getFlag_path() {
+		return flag_path;
+	}
+
+
+	public void setFlag_path(ArrayList<String> flag_path) {
+		this.flag_path = flag_path;
+	}
+
+
+	public ArrayList<String> getPays() {
+		return pays;
+	}
+
+
+	public void setPays(ArrayList<String> pays) {
+		this.pays = pays;
 	}
 
 }
