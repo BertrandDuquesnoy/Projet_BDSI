@@ -21,16 +21,13 @@
 			<div>
 				<c:forEach var="i" begin="0" end="${list.nbUniv-1}">
 					<c:choose>
-						<c:when test="${(i%3)==0 }">
+						<c:when test="${(i%2)==0 }">
 						<div id="ligne">
-							
-								<input type="button" class="tuile" name="${i}" style="background:url(<%=request.getContextPath() %>${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none"  onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}&modif="'>
-								${list.pays[i]}
+								<span style="vertical-align:bottom; float:left; display:inline-block;margin:30px; "><input type="button" class="tuile" name="${i}" style="background:url(<%=request.getContextPath() %>${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none"  onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}&modif="'/><br/>${list.pays[i]}</span>
 						</div>
 					</c:when>
 					<c:otherwise>
-							<input type="button" class="tuile" name="${i}" style="background:url(<%=request.getContextPath() %>${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none"  onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}&modif="'>
-						${list.pays[i] }
+							<span style="vertical-align:bottom; float: right; display:inline-block; margin:30px; "/><input type="button" class="tuile" name="${i}" style="background:url(<%=request.getContextPath() %>${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none"  onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}&modif="'><br/>${list.pays[i]}</span>
 					</c:otherwise>
 					</c:choose>
 				</c:forEach>
