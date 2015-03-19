@@ -23,8 +23,9 @@ public class InfosUniversity {
 	
 	int id_dd=0;
 	
-	public UniversityBean getinfos(HttpServletRequest request){
+	public UniversityBean getinfos(int id){
 		univ = new UniversityBean();
+		id_dd = id;
 		try{
 			Class.forName(pilote);
 

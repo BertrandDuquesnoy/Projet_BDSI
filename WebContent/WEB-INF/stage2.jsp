@@ -23,11 +23,11 @@
 				Email de l'étudiant : <br/> 	${st.email} <br/>
 			</p>
 		</div>
-		<div id="lien_res_sociaux">
+		<!--  <div id="lien_res_sociaux">
 				<a href="${st.facebook_link}" id="logo_fb"><img src="images/facebook.png" width="30" height="30"/></a>
 				<a href="${st.twitter_link }" id="logo_tw"><img src="images/twitter.png" width="30" height="30"/></a>
 				<a href="${st.linkedin_link }" id="logo_ln"><img src="images/linkedin.png" width="30" height="30"/></a>
-		</div>
+		</div> -->
 	</div>
 	
 

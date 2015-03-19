@@ -8,7 +8,6 @@
 </head>
 <body>
 	<%@ include file="headercontact.jsp" %>
-		<%-- 	<p align="center"><img src="images/contacts.png" width="140" height="80" ></p><br/>--%>
 
 		<div id="menu">
 				<%@ include file="menu.jsp" %>

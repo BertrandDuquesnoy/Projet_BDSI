@@ -42,13 +42,13 @@ public class Blog extends HttpServlet{
 				nom = request.getParameter("name");
 				if (nom != null) {
 					System.out.println("Suppression de la catégorie : "+nom);
-					this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
+					this.getServletContext().getRequestDispatcher( "/WEB-INF/blog1.jsp" ).forward( request, response );
 				}
 			}else
-				this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
+				this.getServletContext().getRequestDispatcher( "/WEB-INF/blog1.jsp" ).forward( request, response );
 		}catch(NullPointerException e){
 			System.out.println("nullPointerException");
-			this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
+			this.getServletContext().getRequestDispatcher( "/WEB-INF/blog1.jsp" ).forward( request, response );
 		}
 	}
 	
@@ -69,7 +69,7 @@ public class Blog extends HttpServlet{
 		infos_blog.setInfos(bb);
 		request.setAttribute("bb", infos_blog.getInfos(request));
 		
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/blog1.jsp" ).forward( request, response );
 	}
 
 }
