@@ -9,8 +9,9 @@
 <body>
 	<%@ include file="headercontact.jsp" %>
 	<div id="options_admin">
-			<p>
-				<a href="modalite?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier</span></a>
+	<p>
+			<p style="margin-left:500px;">
+				<a href="contact?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier</span></a>
 
 				
 		</div>
