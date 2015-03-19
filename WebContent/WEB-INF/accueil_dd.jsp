@@ -22,13 +22,13 @@
 				<c:if test="${list.nbDD > 0}">
 					<c:forEach var="i" begin="0" end="${list.nbDD-1}">
 						<c:choose>
-							<c:when test="${(i%3)==0 }">
+							<c:when test="${(i%2)==0 }">
 							<div id="ligne">
-									<input type="button" class="categorie" name="${i}" style="background:url(<%=request.getContextPath() %>/${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none" value="${list.dd_nom[i]}" onclick='window.location.href="<%=request.getContextPath() %>/doubleDiplome?id=${list.id[i]}"'>
+									<span style="vertical-align:bottom; float:left; display:inline-block;margin:30px; "><input type="button" class="categorie" name="${i}" style="background:url(<%=request.getContextPath() %>/${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none" onclick='window.location.href="<%=request.getContextPath() %>/doubleDiplome?id=${list.id[i]}"'><br/>${list.dd_nom[i]}</span>
 							</div>
 						</c:when>
 						<c:otherwise>
-							<input type="button" class="categorie" name="${i}" style="background:url(<%=request.getContextPath() %>/${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none" value="${list.dd_nom[i]}" onclick='window.location.href="<%=request.getContextPath() %>/doubleDiplome?id=${list.id[i]}"'>
+									<span style="vertical-align:bottom; float:left; display:inline-block;margin:30px; "><input type="button" class="categorie" name="${i}" style="background:url(<%=request.getContextPath() %>/${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none" onclick='window.location.href="<%=request.getContextPath() %>/doubleDiplome?id=${list.id[i]}"'><br/>${list.dd_nom[i]}</span>
 						</c:otherwise>
 						</c:choose>
 					</c:forEach>
