@@ -113,7 +113,49 @@ html {font: 10px #000000; font-family: 'Trebuchet MS';}
 color : #ffffff
 }
 
+.paysCat{
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
 
+.paysCat:hover{
+  opacity:0;
+}
+
+.i {
+	display: inline-block ; 
+	margin-top : 40px;
+}
+
+.cf{
+	position:relative;
+  height:110px;
+  width: 300px;
+}
+
+.cf img{
+	position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.cf img.top:hover{
+	opacity:0;
+}
+
+.p {
+	position:relative;
+  height:210px;
+  width: 300px;
+  display: inline-block ; 
+}
 
 
 
