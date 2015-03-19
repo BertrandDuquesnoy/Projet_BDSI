@@ -17,39 +17,21 @@
 		<ul id = "Onglets">
    <li><a href="<%=request.getContextPath() %>/accueil" title="Accueil">Accueil</a></li>
    <li><a href="#" title="Partir à l'étranger">Partir à l'étranger</a>
-   
-   
-   
-               <ul>          
+   				<ul>          
 		              <li><a href="<%=request.getContextPath() %>/partirEtranger/presentation">Présentation</a></li>
                       <li><a href="<%=request.getContextPath() %>/partirEtranger/modalite">Modalités</a></li>
-                      
-         
                </ul>
          
    </li>
-   
-  
    <li><a href="<%=request.getContextPath() %>/accueil/stages" title="Stages réalisés">Stages réalisés</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/doubleDiplome" title="Doubles diplômes">Doubles diplômes</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/universite" title="Université">Universités</a></li>
    <li><a href="<%=request.getContextPath() %>/blog" title="Blog">Blog</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/faq" title="FAQ">FAQ</a></li>
-<<<<<<< HEAD
-   <li><a href="<%=request.getContextPath() %>/accueil/contact" title="Contact">Contact</a></li>
-=======
    <li><a href="<%=request.getContextPath() %>/accueil/contact" title="Contact">Contacts</a></li>
->>>>>>> 61b2f33f009c0775d22599e6ee7d782d16500eea
    <li><a href="<%=request.getContextPath() %>/accueil/liens" title="Liens utiles">Liens utiles</a></li>
-  
              </ul>
-			
-			
 	    </div>
-		
-		
-		
-		
 		<div id="lien_res_sociaux">
 				<a href="${university.facebook_link}" id="logo_fb"><img src="<%=request.getContextPath() %>/images/facebook.png" width="30" height="30"/></a>
 				<a href="${university.twitter_link }" id="logo_tw"><img src="<%=request.getContextPath() %>/images/twitter.png" width="30" height="30"/></a>
