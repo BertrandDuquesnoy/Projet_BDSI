@@ -14,10 +14,10 @@
 		<p id="connexion">
 			${sessionScope.user.prenom} ${sessionScope.user.nom}<br/>
 			<c:if test="${ !empty sessionScope.user.prenom}">
-			<a href="login?disconnect=1" style="color:white">Déconnexion</a>
+			<a href="<%=request.getContextPath() %>/login?disconnect=1" style="color:white">Déconnexion</a>
 			</c:if>
 			<c:if test="${empty sessionScope.user.prenom}">
-			<a href="login" style="color:white">Connexion</a>
+			<a href="<%=request.getContextPath() %>/login" style="color:white">Connexion</a>
 			</c:if>
 		</p>
 	</div>

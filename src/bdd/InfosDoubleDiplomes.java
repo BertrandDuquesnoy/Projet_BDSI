@@ -26,6 +26,7 @@ public class InfosDoubleDiplomes {
 	int id_dd = 0;
 
 	public DoubleDiplomeBean getInfos(HttpServletRequest request){
+		ddBean = new DoubleDiplomeBean();
 		try{
 			Class.forName(pilote);
 
