@@ -47,6 +47,7 @@
 			</p>
 		</div>
 		<div id="accueil" style="width:20%"><%@ include file="menu.jsp" %></div>
+		
 		<div id="corps">
 			<div>
 				<c:forEach var="i" begin="0" end="${bb.nbCategories-1}">
