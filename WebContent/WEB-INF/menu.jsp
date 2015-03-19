@@ -22,7 +22,7 @@
    
                <ul>          
 		              <li><a href="<%=request.getContextPath() %>/partirEtranger/presentation">Présentation</a></li>
-                      <li><a href="<%=request.getContextPath() %>/partirEtranger/modalite">Modalité</a></li>
+                      <li><a href="<%=request.getContextPath() %>/partirEtranger/modalite">Modalités</a></li>
                       
          
                </ul>
