@@ -31,7 +31,7 @@ public class InfosModalite {
 			Statement instruction = connexion.createStatement();
 
 			//on recupere le lien concerant les aides financieres pour partir etudier a l'etranger
-			ResultSet resultat = instruction.executeQuery("SELECT lien " +"FROM lien_utile "+"WHERE id = 4"+";");
+			ResultSet resultat = instruction.executeQuery("SELECT lien " +"FROM lien_utile "+"WHERE id_lien_utile = 4"+";");
 			while(resultat.next()){
 				modBean.setAides(resultat.getString("lien"));
 			}
@@ -39,7 +39,7 @@ public class InfosModalite {
 			
 			// cette requete renvoie vers la page International/partir a l'etranger de TN
 			// on y trouve les conditions 
-			ResultSet res = instruction.executeQuery("SELECT lien "+"FROM lien_utile "+"WHERE id = 3"+";"); 
+			ResultSet res = instruction.executeQuery("SELECT lien "+"FROM lien_utile "+"WHERE id_lien_utile = 3"+";"); 
 			while(res.next()){
 				modBean.setConditions(res.getString("lien"));
 			}
