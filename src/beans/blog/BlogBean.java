@@ -11,7 +11,7 @@ public class BlogBean {
 		img_path = new ArrayList<String>();
 		flag_path = new ArrayList<String>();
 		pays = new ArrayList<String>();
-		pays.add("Allemagne");
+		
 		
 	}
 

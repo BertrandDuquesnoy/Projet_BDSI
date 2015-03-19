@@ -44,7 +44,11 @@ public class Blog extends HttpServlet{
 					System.out.println("Suppression de la catégorie : "+nom);
 					this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
 				}
-			}else
+			}
+			else if (request.getParameter("pays") != null) {
+				request.setAttribute("bb", infos_blog.getInfosByPays(request.getParameter("pays")));
+			}
+			else
 				this.getServletContext().getRequestDispatcher( "/WEB-INF/blog.jsp" ).forward( request, response );
 		}catch(NullPointerException e){
 			System.out.println("nullPointerException");
