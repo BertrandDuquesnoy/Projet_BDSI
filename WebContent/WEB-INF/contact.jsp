@@ -12,8 +12,11 @@
 		<div id="menu">
 				<%@ include file="menu.jsp" %>
 			<div id="options_admin">
+					<c:if test="${sessionScope.user.fonction == 'Administrateur' || sessionScope.user.fonction == 'Pôle Relations Internationales' || sessionScope.user.fonction == 'Responsable Relations Internationales'}">
 			
 				<a href="contact?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier</span></a>
+				</c:if>
+		
 		</div>
 		</div>	
 
