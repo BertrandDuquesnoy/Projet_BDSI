@@ -26,8 +26,8 @@
 				Nombre d'étudiants : ${university.nbEtudiants} <br/>
 			</p>
 			<div id="lien_convention">
-				<a href="${university.convention_path }" class="lien_default" style="align:center; color: #6C2466; text-decoration: underline">Convention en pdf</a>
-			</div>
+				<a href="conventions/convention1.pdf" class="lien_default" style="align:center; color: #6C2466; text-decoration: underline">Convention en pdf</a>
+		</div>
 		</div>
 		<div id="lien_res_sociaux">
 				<a href="${university.facebook_link}" id="logo_fb"><img src="images/facebook.png" width="30" height="30"/></a>
