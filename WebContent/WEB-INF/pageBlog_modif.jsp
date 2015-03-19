@@ -28,8 +28,8 @@
 			<div id="cote_gauche">
 				<div id="infos_univ" class="infos">
 					<p class="text_paragraph">
-						Auteur : Paul Cottin <br/>
-						Promotion : 2016
+						${art.auteur} <br/>
+						promotion: ${art.promotion}
 					</p>
 				</div>
 				<div id="infos_univ_details" class="infos">

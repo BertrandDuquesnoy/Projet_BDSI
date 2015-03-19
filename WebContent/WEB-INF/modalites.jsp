@@ -52,8 +52,8 @@
 					<p>
 						<U>Projet de mobilité</U><br/>
 						- Document validé par le responsable de l’approfondissement<br/>
-						    • Motivation<br/>
-						    • Cursus à l’étranger<br/>
+						    &nbsp&nbsp&nbsp&nbsp&nbsp• Motivation<br/>
+						    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp• Cursus à l’étranger<br/>
 						- Validation par le jury de mobilité<br/>
 
 						<br/><U>Pour le 2ème semestre de la 2ème année</U><br/>
