@@ -30,7 +30,6 @@
    <li><a href="<%=request.getContextPath() %>/accueil/universite" title="Université">Universités</a></li>
    <li><a href="<%=request.getContextPath() %>/blog" title="Blog">Blog</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/faq" title="FAQ">FAQ</a></li>
-   <li><a href="<%=request.getContextPath() %>/accueil/contact" title="Contact">Contact</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/contact" title="Contact">Contacts</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/liens" title="Liens utiles">Liens utiles</a></li> 
              </ul>					
