@@ -17,12 +17,13 @@
 		<ul id = "Onglets">
    <li><a href="<%=request.getContextPath() %>/accueil" title="Accueil">Accueil</a></li>
    <li><a href="#" title="Partir à l'étranger">Partir à l'étranger</a>
-   
-   
-   
-               <ul>          
+   				<ul>          
 		              <li><a href="<%=request.getContextPath() %>/partirEtranger/presentation">Présentation</a></li>
                       <li><a href="<%=request.getContextPath() %>/partirEtranger/modalite">Modalités</a></li>
+               </ul>
+         
+   </li>
+
                </ul> 
    </li> 
    <li><a href="<%=request.getContextPath() %>/accueil/stages" title="Stages réalisés">Stages réalisés</a></li>
@@ -31,6 +32,8 @@
    <li><a href="<%=request.getContextPath() %>/blog" title="Blog">Blog</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/faq" title="FAQ">FAQ</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/contact" title="Contact">Contact</a></li>
+   <li><a href="<%=request.getContextPath() %>/blog" title="Blog">Blog</a></li>
+   <li><a href="<%=request.getContextPath() %>/accueil/faq" title="FAQ">FAQ</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/contact" title="Contact">Contacts</a></li>
    <li><a href="<%=request.getContextPath() %>/accueil/liens" title="Liens utiles">Liens utiles</a></li> 
              </ul>					
