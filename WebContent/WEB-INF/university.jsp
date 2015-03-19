@@ -45,6 +45,8 @@
 			<a href="<%=request.getContextPath() %>/accueil" style="text-decoration:none; color: #6C2466"> <span class="options_admin"> Retour accueil</span></a>
 		</p>
 	</div>
+	
+	
 	<div id="corps">
 		<p class="titre_section">${university.nom} 
 			<c:set var="cpt" value="0" scope="page"/>

@@ -18,6 +18,12 @@ function supprimerArticle(id){
 			<div style="float:left">
 				<div id="options_admin">
 					<p>
+					
+        <a style="text-decoration:none; color: #6C2466" href="/bdsi/accueil">
+            <span class="options_admin">Retour accueil</span>
+        </a>
+    
+					
 						<c:if test="${sessionScope.user.fonction == 'Administrateur' || sessionScope.user.fonction == 'Pôle Relations Internationales' || sessionScope.user.fonction == 'Responsable Relations Internationales'}">
 						<span class="options_admin" onclick="supprimerArticle(${page.articles[i].id})">Supprimer l'article</span>  
 						<a href="page?modif=1&ajout=&id=${page.articles[i].id}" style="text-decoration:none; color: #6C2466"> <span class="options_admin"> Modifier</span></a>
