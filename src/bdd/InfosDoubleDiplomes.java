@@ -25,8 +25,9 @@ public class InfosDoubleDiplomes {
 
 	int id_dd = 0;
 
-	public DoubleDiplomeBean getInfos(HttpServletRequest request){
+	public DoubleDiplomeBean getInfos(int id){
 		ddBean = new DoubleDiplomeBean();
+		id_dd=id;
 		try{
 			Class.forName(pilote);
 
@@ -34,7 +35,7 @@ public class InfosDoubleDiplomes {
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite "+"WHERE id_univ = "+id_dd+";");
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite "+"WHERE id_univ = "+id+";");
 			while(resultat.next()){
 
 				ddBean.setPays(resultat.getString("pays"));

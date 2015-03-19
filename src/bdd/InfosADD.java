@@ -34,7 +34,7 @@ public class InfosADD {
 
 			Statement instruction = connexion.createStatement();
 
-			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite "+ "WHERE doub_dip = true;");
+			ResultSet resultat = instruction.executeQuery("SELECT * " +"FROM universite "+ "WHERE doub_dip LIKE 'oui' ;");
 			
 			while(resultat.next()){
 				add.getDd_nom().add(resultat.getString("nom"));

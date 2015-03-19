@@ -23,7 +23,7 @@ public class DoubleDiplome extends HttpServlet{
 	}
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		request.setAttribute("dd", infos_dd.getInfos(request));
+		request.setAttribute("dd", infos_dd.getInfos(Integer.valueOf(request.getParameter("id_univ"))));
 		
 		
 		this.getServletContext().getRequestDispatcher( "/WEB-INF/doubleDiplome.jsp" ).forward( request, response );
