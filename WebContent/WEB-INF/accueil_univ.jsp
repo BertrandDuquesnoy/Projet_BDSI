@@ -27,7 +27,7 @@
 						</div>
 					</c:when>
 					<c:otherwise>
-							<span style="vertical-align:bottom; float: right; display:inline-block; margin:30px; "/><input type="button" class="tuile" name="${i}" style="background:url(<%=request.getContextPath() %>${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none"  onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}&modif="'><br/>${list.pays[i]}</span>
+							<span style="vertical-align:bottom; float: right; display:inline-block; margin:30px; "><input type="button" class="tuile" name="${i}" style="background:url(<%=request.getContextPath() %>${list.logo_path[i]}) no-repeat; background-size: 250px 100px; color: black; border: none"  onclick='window.location.href="<%=request.getContextPath() %>/universite?id=${list.id[i]}&modif="'><br/>${list.pays[i]}</span>
 					</c:otherwise>
 					</c:choose>
 				</c:forEach>
