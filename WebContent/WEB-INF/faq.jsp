@@ -28,7 +28,7 @@
                     var top = (document.body.clientHeight-height)/2;
             }
             popup = window.open('','SuppC','menubar=no, scrollbars=no, top='+top+', left='+left+', width='+width+', height='+height+'');
-            popup.document.writeln("CatÃ©gorie Ã  supprimer : ");
+            popup.document.writeln("Catégorie à  supprimer : ");
             popup.document.writeln('<select id="comboBox"></select>');
             var cb = popup.document.getElementById("comboBox");
             popup.document.write('<p><a href="blog?modif=2&name='+value+'" onmouseover="updateComboBox()" onMouseUp="window.close()">Supprimer</a> <a href="" onclick=window.close();>Annuler</a>');
@@ -39,7 +39,10 @@
 		<%@ include file="header.jsp"%>
 		<div id="options_admin">
 			<p>
+					<c:if test="${sessionScope.user.fonction == 'Administrateur' || sessionScope.user.fonction == 'Pôle Relations Internationales' || sessionScope.user.fonction == 'Responsable Relations Internationales'}">
+			
 				<a href="presentation?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin">Modifier</span></a>
+		</c:if>
 
 				
 		</div>
@@ -48,32 +51,32 @@
 
 
 <div id ="texte">
-        <p> <span class="nb_etudiants_partis">Comment puis-je visualiser l'ensemble des stages effectuÃ©s Ã  l'Ã©tranger ?</span></p>
-<p>A partir de votre page d'accueil, cochez la case "Stages" situÃ©e en bas de l'Ã©cran, l'ensemble des stages effectuÃ©s Ã  l'Ã©tranger s'afficheront alors sur la google Map, cliquez sur les marqueurs pour obtenir des informations sur un stage en particulier.
+        <p> <span class="nb_etudiants_partis">Comment puis-je visualiser l'ensemble des stages effectués à  l'étranger ?</span></p>
+<p>A partir de votre page d'accueil, cochez la case "Stages" situé en bas de l'écran, l'ensemble des stages effectués à  l'étranger s'afficheront alors sur la google Map, cliquez sur les marqueurs pour obtenir des informations sur un stage en particulier.
 </p>
 <p>
- <span class="nb_etudiants_partis">Comment puis-je faire partager mon ressenti d'un sÃ©jour effectuÃ© Ã  l'Ã©tranger ?</span></p>
-<p>Vous pouvez partager votre expÃ©rience en Ã©crivant un article sur le blog du site, qui sera publiÃ© aprÃ¨s avoir Ã©tÃ© validÃ© par un modÃ©rateur.
+ <span class="nb_etudiants_partis">Comment puis-je faire partager mon ressenti d'un séjour effectué à  l'étranger ?</span></p>
+<p>Vous pouvez partager votre expérience en écrivant un article sur le blog du site, qui sera publié après avoir été validé par un modérateur.
 </p>
 <p>
-<span class="nb_etudiants_partis">Comment puis-je noter une universitÃ© ?>/span></p>
+<span class="nb_etudiants_partis">Comment puis-je noter une université ?>/span></p>
 <p>
-AprÃ¨s vous Ãªtre authentifiÃ©, si vous avez effectuÃ© un sÃ©jour dans une universitÃ©, vous avez la possibilitÃ© de lui attribuer une note entre 0 et 5 Ã  en vous rendant dans l'onglet  "UniversitÃ©s"
+Après vous être authentifié, si vous avez effectué un séjour dans une université, vous avez la possibilité de lui attribuer une note entre 0 et 5 à  en vous rendant dans l'onglet  "Universités"
 </p>
 	<li> Relations internationales </li>
 <p>
 <span class="nb_etudiants_partis">Comment puis-je ajouter un nouveau partenariat sur le site ?</span></p>
-<p>Vous devez tout d'abord vous Ãªtre authentifiÃ© avant de pouvoir crÃ©er un nouveau partenariat. Une fois authentifiÃ©, cliquez alors sur "CrÃ©ation partenariat" en haut de l'Ã©cran, l'interface de crÃ©ation d'un partenariat s'ouvrira.
+<p>Vous devez tout d'abord vous être authentifié avant de pouvoir créer un nouveau partenariat. Une fois authentifié, cliquez alors sur "Création partenariat" en haut de l'écran, l'interface de création d'un partenariat s'ouvrira.
 </p>
 <p>
-<span class="nb_etudiants_partis">Comment puis-je modÃ©rer les publications des Ã©lÃ¨ves ?</span></p>
-<p>AprÃ¨s vous Ãªtre authentifiÃ©, Ã  partir de votre page d'accueil, cliquez sur "Notifications" en haut de l'Ã©cran, l'interface de modÃ©ration des publications s'ouvrira.
-Vous pouvez alors consulter les avis en attente de validation proposÃ©s par les Ã©lÃ¨ves. Une fois ces avis jugÃ©s conformes, vous devez cliquez sur le bouton "valider" pour rendre ces avis visibles par le personnel et les Ã©tudiants de l'Ã©cole. 
+<span class="nb_etudiants_partis">Comment puis-je modérer les publications des élèves ?</span></p>
+<p>Après vous être authentifié, à  partir de votre page d'accueil, cliquez sur "Notifications" en haut de l'écran, l'interface de modération des publications s'ouvrira.
+Vous pouvez alors consulter les avis en attente de validation proposés par les élèves. Une fois ces avis jugés conformes, vous devez cliquez sur le bouton "valider" pour rendre ces avis visibles par le personnel et les étudiants de l'école. 
 <p/>
         <li>Visiteurs du site</li>
         <p>
-         <span class="nb_etudiants_partis">Puis-je m'identifier pour avoir accÃ¨s Ã  des informations complÃ©mentaires ?</span></p>
-<p>Seuls les Ã©lÃ¨ves et le personnel de TÃ©lÃ©com Nancy peuvent s'authentifier. Si vous souhaitez davantage d'informations concernant les sÃ©jours Ã  l'Ã©tranger effectuÃ©s par nos Ã©lÃ¨ves, veuillez contacter le responsable des relations internationales de l'Ã©cole : Herve.Panetto@telecomnancy.eu
+         <span class="nb_etudiants_partis">Puis-je m'identifier pour avoir accès à  des informations complémentaires ?</span></p>
+<p>Seuls les élèves et le personnel de Télécom Nancy peuvent s'authentifier. Si vous souhaitez davantage d'informations concernant les séjours à  l'étranger effectués par nos élèves, veuillez contacter le responsable des relations internationales de l'école : Herve.Panetto@telecomnancy.eu
         </p>
     </div>    
     
