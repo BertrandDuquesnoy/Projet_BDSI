@@ -42,7 +42,7 @@
 				<span class="options_admin">Supprimer la fiche</span>  
 				<a href="university?modif=1" style="text-decoration:none; color: #6C2466"> <span class="options_admin"> Modifier</span></a>
 			</c:if>
-			<a href="<%=request.getContextPath() %>/accueil" style="text-decoration:none; color: #6C2466"> <span class="options_admin"> Retour accueil</span></a>
+			<a href="<%=request.getContextPath() %>/accueil/universite" style="text-decoration:none; color: #6C2466"> <span class="options_admin"> Retour</span></a>
 		</p>
 	</div>
 	
