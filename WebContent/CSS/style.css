@@ -20,7 +20,7 @@ html {font: 10px #000000; font-family: 'Trebuchet MS';}
 /* POSITION */
 #cote_gauche {float: left; width: 20%}
 #connexion {position: absolute; right: 2%; top: 2%;}
-#corps {float: right; width: 80%; height: 80%;}
+#corps {float: right; width: 80%; height: 80%; margin-left: 1300px;margin-top: -445px;}
 #options_admin {color: #6C2466; text-align: center}
 #ligne {display: inline;}
 #bandeau{background:-webkit-gradient(linear, left top, right bottom, color-stop(0.05,white), color-stop(0.95, #8E6F67)); margin-bottom:10px; margin-top:-10px;}
@@ -115,7 +115,8 @@ color : #ffffff
 #cote_gauche{
 
 
-margin-top : 40px 
+margin-top : 40px;
+width: 300px;
 }
 
 
